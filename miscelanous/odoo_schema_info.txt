@@ -1,0 +1,826 @@
+=== ODOO DATABASE SCHEMA INFORMATION ===
+Extracted on: 2025-03-26 10:28:36
+Database: Final6.Copy250301
+URL: https://api-odoo.visiniaga.com
+
+
+================================================================================
+MODEL: ir.model.data
+================================================================================
+
+Record Count: 110348
+
+FIELDS:
+--------------------------------------------------------------------------------
+Field Name                     Type            Relation                       Required  
+--------------------------------------------------------------------------------
+name                           char                                           Yes       
+complete_name                  char                                           No        
+model                          char                                           Yes       
+module                         char                                           Yes       
+res_id                         many2one_reference                                No        
+noupdate                       boolean                                        No        
+reference                      char                                           No        
+studio                         boolean                                        No        
+id                             integer                                        No        
+display_name                   char                                           No        
+create_uid                     many2one        res.users                      No        
+create_date                    datetime                                       No        
+write_uid                      many2one        res.users                      No        
+write_date                     datetime                                       No        
+__last_update                  datetime                                       No        
+
+XML ID EXAMPLES:
+--------------------------------------------------------------------------------
+No XML ID examples found.
+
+================================================================================
+MODEL: product.product
+================================================================================
+
+Record Count: 13720
+
+FIELDS:
+--------------------------------------------------------------------------------
+Field Name                     Type            Relation                       Required  
+--------------------------------------------------------------------------------
+price                          float                                          No        
+price_extra                    float                                          No        
+lst_price                      float                                          No        
+default_code                   char                                           No        
+code                           char                                           No        
+partner_ref                    char                                           No        
+active                         boolean                                        No        
+product_tmpl_id                many2one        product.template               Yes       
+barcode                        char                                           No        
+product_template_attribute_value_ids many2many       product.template.attribute.value No        
+combination_indices            char                                           No        
+is_product_variant             boolean                                        No        
+standard_price                 float                                          No        
+volume                         float                                          No        
+weight                         float                                          No        
+pricelist_item_count           integer                                        No        
+packaging_ids                  one2many        product.packaging              No        
+image_variant_1920             binary                                         No        
+image_variant_1024             binary                                         No        
+image_variant_512              binary                                         No        
+image_variant_256              binary                                         No        
+image_variant_128              binary                                         No        
+can_image_variant_1024_be_zoomed boolean                                        No        
+image_1920                     binary                                         No        
+image_1024                     binary                                         No        
+image_512                      binary                                         No        
+image_256                      binary                                         No        
+image_128                      binary                                         No        
+can_image_1024_be_zoomed       boolean                                        No        
+stock_quant_ids                one2many        stock.quant                    No        
+stock_move_ids                 one2many        stock.move                     No        
+qty_available                  float                                          No        
+virtual_available              float                                          No        
+free_qty                       float                                          No        
+incoming_qty                   float                                          No        
+outgoing_qty                   float                                          No        
+orderpoint_ids                 one2many        stock.warehouse.orderpoint     No        
+nbr_reordering_rules           integer                                        No        
+reordering_min_qty             float                                          No        
+reordering_max_qty             float                                          No        
+putaway_rule_ids               one2many        stock.putaway.rule             No        
+variant_bom_ids                one2many        mrp.bom                        No        
+bom_line_ids                   one2many        mrp.bom.line                   No        
+bom_count                      integer                                        No        
+used_in_bom_count              integer                                        No        
+mrp_product_qty                float                                          No        
+date_from                      date                                           No        
+date_to                        date                                           No        
+invoice_state                  selection                                      No        
+sale_avg_price                 float                                          No        
+purchase_avg_price             float                                          No        
+sale_num_invoiced              float                                          No        
+purchase_num_invoiced          float                                          No        
+sales_gap                      float                                          No        
+purchase_gap                   float                                          No        
+turnover                       float                                          No        
+total_cost                     float                                          No        
+sale_expected                  float                                          No        
+normal_cost                    float                                          No        
+total_margin                   float                                          No        
+expected_margin                float                                          No        
+total_margin_rate              float                                          No        
+expected_margin_rate           float                                          No        
+purchased_product_qty          float                                          No        
+value_svl                      float                                          No        
+quantity_svl                   float                                          No        
+stock_valuation_layer_ids      one2many        stock.valuation.layer          No        
+valuation                      selection                                      No        
+cost_method                    selection                                      No        
+purchase_order_line_ids        one2many        purchase.order.line            No        
+sales_count                    float                                          No        
+website_id                     many2one        website                        No        
+product_variant_image_ids      one2many        product.image                  No        
+website_url                    char                                           No        
+cart_qty                       integer                                        No        
+activity_ids                   one2many        mail.activity                  No        
+activity_state                 selection                                      No        
+activity_date_deadline         date                                           No        
+my_activity_date_deadline      date                                           No        
+activity_exception_decoration  selection                                      No        
+activity_exception_icon        char                                           No        
+activity_user_id               many2one        res.users                      No        
+activity_type_id               many2one        mail.activity.type             No        
+activity_type_icon             char                                           No        
+activity_summary               char                                           No        
+message_is_follower            boolean                                        No        
+message_follower_ids           one2many        mail.followers                 No        
+message_partner_ids            many2many       res.partner                    No        
+message_channel_ids            many2many       mail.channel                   No        
+message_ids                    one2many        mail.message                   No        
+message_unread                 boolean                                        No        
+message_unread_counter         integer                                        No        
+message_needaction             boolean                                        No        
+message_needaction_counter     integer                                        No        
+message_has_error              boolean                                        No        
+message_has_error_counter      integer                                        No        
+message_attachment_count       integer                                        No        
+message_main_attachment_id     many2one        ir.attachment                  No        
+website_message_ids            one2many        mail.message                   No        
+message_has_sms_error          boolean                                        No        
+id                             integer                                        No        
+display_name                   char                                           No        
+create_uid                     many2one        res.users                      No        
+create_date                    datetime                                       No        
+write_uid                      many2one        res.users                      No        
+write_date                     datetime                                       No        
+__last_update                  datetime                                       No        
+x_studio_keterangan            char                                           No        
+x_studio_photo                 binary                                         No        
+x_studio_sn                    char                                           No        
+x_studio_product_cost          float                                          No        
+x_studio_cost_ref_difference   float                                          No        
+x_studio_item                  selection                                      No        
+x_studio_active_item           boolean                                        No        
+name                           char                                           Yes       
+sequence                       integer                                        No        
+description                    text                                           No        
+description_purchase           text                                           No        
+description_sale               text                                           No        
+categ_id                       many2one        product.category               Yes       
+currency_id                    many2one        res.currency                   No        
+cost_currency_id               many2one        res.currency                   No        
+list_price                     float                                          No        
+volume_uom_name                char                                           No        
+weight_uom_name                char                                           No        
+sale_ok                        boolean                                        No        
+purchase_ok                    boolean                                        No        
+pricelist_id                   many2one        product.pricelist              No        
+uom_id                         many2one        uom.uom                        Yes       
+uom_name                       char                                           No        
+uom_po_id                      many2one        uom.uom                        Yes       
+company_id                     many2one        res.company                    No        
+seller_ids                     one2many        product.supplierinfo           No        
+variant_seller_ids             one2many        product.supplierinfo           No        
+color                          integer                                        No        
+attribute_line_ids             one2many        product.template.attribute.line No        
+valid_product_template_attribute_line_ids many2many       product.template.attribute.line No        
+product_variant_ids            one2many        product.product                Yes       
+product_variant_id             many2one        product.product                No        
+product_variant_count          integer                                        No        
+has_configurable_attributes    boolean                                        No        
+rating_ids                     one2many        rating.rating                  No        
+rating_last_value              float                                          No        
+rating_last_feedback           text                                           No        
+rating_last_image              binary                                         No        
+rating_count                   integer                                        No        
+rating_avg                     float                                          No        
+taxes_id                       many2many       account.tax                    No        
+supplier_taxes_id              many2many       account.tax                    No        
+property_account_income_id     many2one        account.account                No        
+property_account_expense_id    many2one        account.account                No        
+responsible_id                 many2one        res.users                      No        
+type                           selection                                      Yes       
+property_stock_production      many2one        stock.location                 No        
+property_stock_inventory       many2one        stock.location                 No        
+sale_delay                     float                                          No        
+tracking                       selection                                      Yes       
+description_picking            text                                           No        
+description_pickingout         text                                           No        
+description_pickingin          text                                           No        
+location_id                    many2one        stock.location                 No        
+warehouse_id                   many2one        stock.warehouse                No        
+has_available_route_ids        boolean                                        No        
+route_from_categ_ids           many2many       stock.location.route           No        
+show_on_hand_qty_status_button boolean                                        No        
+is_seo_optimized               boolean                                        No        
+website_meta_title             char                                           No        
+website_meta_description       text                                           No        
+website_meta_keywords          char                                           No        
+website_meta_og_img            char                                           No        
+seo_name                       char                                           No        
+is_published                   boolean                                        No        
+can_publish                    boolean                                        No        
+website_published              boolean                                        No        
+can_be_expensed                boolean                                        No        
+bom_ids                        one2many        mrp.bom                        No        
+produce_delay                  float                                          No        
+property_account_creditor_price_difference many2one        account.account                No        
+purchase_method                selection                                      No        
+purchase_line_warn             selection                                      Yes       
+purchase_line_warn_msg         text                                           No        
+allow_negative_stock           boolean                                        No        
+purchase_requisition           selection                                      No        
+route_ids                      many2many       stock.location.route           No        
+sale_line_warn                 selection                                      Yes       
+sale_line_warn_msg             text                                           No        
+expense_policy                 selection                                      No        
+visible_expense_policy         boolean                                        No        
+visible_qty_configurator       boolean                                        No        
+invoice_policy                 selection                                      No        
+service_to_purchase            boolean                                        No        
+website_description            html                                           No        
+alternative_product_ids        many2many       product.template               No        
+accessory_product_ids          many2many       product.product                No        
+website_size_x                 integer                                        No        
+website_size_y                 integer                                        No        
+website_ribbon_id              many2one        product.ribbon                 No        
+website_sequence               integer                                        No        
+public_categ_ids               many2many       product.public.category        No        
+product_template_image_ids     one2many        product.image                  No        
+hs_code                        char                                           No        
+is_pack                        boolean                                        No        
+cal_pack_price                 boolean                                        No        
+pack_ids                       one2many        product.pack                   No        
+service_tracking               selection                                      No        
+recurring_invoice              boolean                                        No        
+subscription_template_id       many2one        sale.subscription.template     No        
+inventory_availability         selection                                      No        
+available_threshold            float                                          No        
+custom_message                 text                                           No        
+service_policy                 selection                                      No        
+service_type                   selection                                      No        
+project_id                     many2one        project.project                No        
+project_template_id            many2one        project.project                No        
+x_studio_link_tokopedia        char                                           No        
+x_studio_old_name              char                                           No        
+x_studio_product_type_vn       selection                                      No        
+
+XML ID EXAMPLES:
+--------------------------------------------------------------------------------
+XML ID: __export__.product_product_9_1027c72d, Res ID: 9
+
+================================================================================
+MODEL: product.template
+================================================================================
+
+Record Count: 13720
+
+FIELDS:
+--------------------------------------------------------------------------------
+Field Name                     Type            Relation                       Required  
+--------------------------------------------------------------------------------
+name                           char                                           Yes       
+sequence                       integer                                        No        
+description                    text                                           No        
+description_purchase           text                                           No        
+description_sale               text                                           No        
+categ_id                       many2one        product.category               Yes       
+currency_id                    many2one        res.currency                   No        
+cost_currency_id               many2one        res.currency                   No        
+price                          float                                          No        
+list_price                     float                                          No        
+lst_price                      float                                          No        
+standard_price                 float                                          No        
+volume                         float                                          No        
+volume_uom_name                char                                           No        
+weight                         float                                          No        
+weight_uom_name                char                                           No        
+sale_ok                        boolean                                        No        
+purchase_ok                    boolean                                        No        
+pricelist_id                   many2one        product.pricelist              No        
+uom_id                         many2one        uom.uom                        Yes       
+uom_name                       char                                           No        
+uom_po_id                      many2one        uom.uom                        Yes       
+company_id                     many2one        res.company                    No        
+packaging_ids                  one2many        product.packaging              No        
+seller_ids                     one2many        product.supplierinfo           No        
+variant_seller_ids             one2many        product.supplierinfo           No        
+active                         boolean                                        No        
+color                          integer                                        No        
+is_product_variant             boolean                                        No        
+attribute_line_ids             one2many        product.template.attribute.line No        
+valid_product_template_attribute_line_ids many2many       product.template.attribute.line No        
+product_variant_ids            one2many        product.product                Yes       
+product_variant_id             many2one        product.product                No        
+product_variant_count          integer                                        No        
+barcode                        char                                           No        
+default_code                   char                                           No        
+pricelist_item_count           integer                                        No        
+can_image_1024_be_zoomed       boolean                                        No        
+has_configurable_attributes    boolean                                        No        
+rating_ids                     one2many        rating.rating                  No        
+rating_last_value              float                                          No        
+rating_last_feedback           text                                           No        
+rating_last_image              binary                                         No        
+rating_count                   integer                                        No        
+rating_avg                     float                                          No        
+taxes_id                       many2many       account.tax                    No        
+supplier_taxes_id              many2many       account.tax                    No        
+property_account_income_id     many2one        account.account                No        
+property_account_expense_id    many2one        account.account                No        
+responsible_id                 many2one        res.users                      No        
+type                           selection                                      Yes       
+property_stock_production      many2one        stock.location                 No        
+property_stock_inventory       many2one        stock.location                 No        
+sale_delay                     float                                          No        
+tracking                       selection                                      Yes       
+description_picking            text                                           No        
+description_pickingout         text                                           No        
+description_pickingin          text                                           No        
+qty_available                  float                                          No        
+virtual_available              float                                          No        
+incoming_qty                   float                                          No        
+outgoing_qty                   float                                          No        
+location_id                    many2one        stock.location                 No        
+warehouse_id                   many2one        stock.warehouse                No        
+has_available_route_ids        boolean                                        No        
+nbr_reordering_rules           integer                                        No        
+reordering_min_qty             float                                          No        
+reordering_max_qty             float                                          No        
+route_from_categ_ids           many2many       stock.location.route           No        
+show_on_hand_qty_status_button boolean                                        No        
+is_seo_optimized               boolean                                        No        
+website_meta_title             char                                           No        
+website_meta_description       text                                           No        
+website_meta_keywords          char                                           No        
+website_meta_og_img            char                                           No        
+seo_name                       char                                           No        
+website_id                     many2one        website                        No        
+is_published                   boolean                                        No        
+can_publish                    boolean                                        No        
+website_url                    char                                           No        
+website_published              boolean                                        No        
+can_be_expensed                boolean                                        No        
+bom_line_ids                   one2many        mrp.bom.line                   No        
+bom_ids                        one2many        mrp.bom                        No        
+bom_count                      integer                                        No        
+used_in_bom_count              integer                                        No        
+mrp_product_qty                float                                          No        
+produce_delay                  float                                          No        
+property_account_creditor_price_difference many2one        account.account                No        
+purchased_product_qty          float                                          No        
+purchase_method                selection                                      No        
+purchase_line_warn             selection                                      Yes       
+purchase_line_warn_msg         text                                           No        
+cost_method                    selection                                      No        
+valuation                      selection                                      No        
+allow_negative_stock           boolean                                        No        
+purchase_requisition           selection                                      No        
+route_ids                      many2many       stock.location.route           No        
+sale_line_warn                 selection                                      Yes       
+sale_line_warn_msg             text                                           No        
+expense_policy                 selection                                      No        
+visible_expense_policy         boolean                                        No        
+sales_count                    float                                          No        
+visible_qty_configurator       boolean                                        No        
+invoice_policy                 selection                                      No        
+service_to_purchase            boolean                                        No        
+website_description            html                                           No        
+alternative_product_ids        many2many       product.template               No        
+accessory_product_ids          many2many       product.product                No        
+website_size_x                 integer                                        No        
+website_size_y                 integer                                        No        
+website_ribbon_id              many2one        product.ribbon                 No        
+website_sequence               integer                                        No        
+public_categ_ids               many2many       product.public.category        No        
+product_template_image_ids     one2many        product.image                  No        
+hs_code                        char                                           No        
+is_pack                        boolean                                        No        
+cal_pack_price                 boolean                                        No        
+pack_ids                       one2many        product.pack                   No        
+service_tracking               selection                                      No        
+recurring_invoice              boolean                                        No        
+subscription_template_id       many2one        sale.subscription.template     No        
+inventory_availability         selection                                      No        
+available_threshold            float                                          No        
+custom_message                 text                                           No        
+service_policy                 selection                                      No        
+service_type                   selection                                      No        
+project_id                     many2one        project.project                No        
+project_template_id            many2one        project.project                No        
+image_1920                     binary                                         No        
+image_1024                     binary                                         No        
+image_512                      binary                                         No        
+image_256                      binary                                         No        
+image_128                      binary                                         No        
+activity_ids                   one2many        mail.activity                  No        
+activity_state                 selection                                      No        
+activity_user_id               many2one        res.users                      No        
+activity_type_id               many2one        mail.activity.type             No        
+activity_type_icon             char                                           No        
+activity_date_deadline         date                                           No        
+my_activity_date_deadline      date                                           No        
+activity_summary               char                                           No        
+activity_exception_decoration  selection                                      No        
+activity_exception_icon        char                                           No        
+message_is_follower            boolean                                        No        
+message_follower_ids           one2many        mail.followers                 No        
+message_partner_ids            many2many       res.partner                    No        
+message_channel_ids            many2many       mail.channel                   No        
+message_ids                    one2many        mail.message                   No        
+message_unread                 boolean                                        No        
+message_unread_counter         integer                                        No        
+message_needaction             boolean                                        No        
+message_needaction_counter     integer                                        No        
+message_has_error              boolean                                        No        
+message_has_error_counter      integer                                        No        
+message_attachment_count       integer                                        No        
+message_main_attachment_id     many2one        ir.attachment                  No        
+website_message_ids            one2many        mail.message                   No        
+message_has_sms_error          boolean                                        No        
+id                             integer                                        No        
+display_name                   char                                           No        
+create_uid                     many2one        res.users                      No        
+create_date                    datetime                                       No        
+write_uid                      many2one        res.users                      No        
+write_date                     datetime                                       No        
+__last_update                  datetime                                       No        
+x_studio_link_tokopedia        char                                           No        
+x_studio_old_name              char                                           No        
+x_studio_product_type_vn       selection                                      No        
+
+XML ID EXAMPLES:
+--------------------------------------------------------------------------------
+XML ID: __export__.product_template_10061_f6fe37e7, Res ID: 10061
+XML ID: __export__.product_template_12068_b2471e38, Res ID: 12068
+XML ID: __export__.product_template_14766_c67ea611, Res ID: 14766
+XML ID: __export__.product_template_17626_802c20f5, Res ID: 17626
+XML ID: __export__.product_template_2800_12adc8b0, Res ID: 2800
+
+================================================================================
+MODEL: product.supplierinfo
+================================================================================
+
+Record Count: 14248
+
+FIELDS:
+--------------------------------------------------------------------------------
+Field Name                     Type            Relation                       Required  
+--------------------------------------------------------------------------------
+name                           many2one        res.partner                    Yes       
+product_name                   char                                           No        
+product_code                   char                                           No        
+sequence                       integer                                        No        
+product_uom                    many2one        uom.uom                        No        
+min_qty                        float                                          Yes       
+price                          float                                          Yes       
+company_id                     many2one        res.company                    No        
+currency_id                    many2one        res.currency                   Yes       
+date_start                     date                                           No        
+date_end                       date                                           No        
+product_id                     many2one        product.product                No        
+product_tmpl_id                many2one        product.template               No        
+product_variant_count          integer                                        No        
+delay                          integer                                        Yes       
+purchase_requisition_id        many2one        purchase.requisition           No        
+purchase_requisition_line_id   many2one        purchase.requisition.line      No        
+id                             integer                                        No        
+display_name                   char                                           No        
+create_uid                     many2one        res.users                      No        
+create_date                    datetime                                       No        
+write_uid                      many2one        res.users                      No        
+write_date                     datetime                                       No        
+__last_update                  datetime                                       No        
+x_studio_so_number             integer                                        No        
+
+XML ID EXAMPLES:
+--------------------------------------------------------------------------------
+XML ID: __export__.product_supplierinfo_10707_e046cfbb, Res ID: 10707
+XML ID: __export__.product_supplierinfo_11331_3ac2086d, Res ID: 11331
+XML ID: __export__.product_supplierinfo_5749_e2a751b0, Res ID: 5749
+XML ID: __export__.product_supplierinfo_6521_38f22f42, Res ID: 6521
+XML ID: __export__.product_supplierinfo_894_b0534c5e, Res ID: 894
+
+================================================================================
+MODEL: res.partner
+================================================================================
+
+Record Count: 6573
+
+FIELDS:
+--------------------------------------------------------------------------------
+Field Name                     Type            Relation                       Required  
+--------------------------------------------------------------------------------
+name                           char                                           No        
+display_name                   char                                           No        
+date                           date                                           No        
+title                          many2one        res.partner.title              No        
+parent_id                      many2one        res.partner                    No        
+parent_name                    char                                           No        
+child_ids                      one2many        res.partner                    No        
+ref                            char                                           No        
+lang                           selection                                      No        
+active_lang_count              integer                                        No        
+tz                             selection                                      No        
+tz_offset                      char                                           No        
+vat                            char                                           No        
+same_vat_partner_id            many2one        res.partner                    No        
+bank_ids                       one2many        res.partner.bank               No        
+website                        char                                           No        
+comment                        text                                           No        
+category_id                    many2many       res.partner.category           No        
+credit_limit                   float                                          No        
+active                         boolean                                        No        
+employee                       boolean                                        No        
+function                       char                                           No        
+type                           selection                                      No        
+street                         char                                           No        
+street2                        char                                           No        
+zip                            char                                           No        
+city                           char                                           No        
+state_id                       many2one        res.country.state              No        
+country_id                     many2one        res.country                    No        
+partner_latitude               float                                          No        
+partner_longitude              float                                          No        
+email_formatted                char                                           No        
+mobile                         char                                           No        
+is_company                     boolean                                        No        
+industry_id                    many2one        res.partner.industry           No        
+company_type                   selection                                      No        
+company_id                     many2one        res.company                    No        
+color                          integer                                        No        
+user_ids                       one2many        res.users                      No        
+partner_share                  boolean                                        No        
+contact_address                char                                           No        
+commercial_partner_id          many2one        res.partner                    No        
+commercial_company_name        char                                           No        
+company_name                   char                                           No        
+barcode                        char                                           No        
+self                           many2one        res.partner                    No        
+im_status                      char                                           No        
+date_localization              date                                           No        
+activity_ids                   one2many        mail.activity                  No        
+activity_state                 selection                                      No        
+activity_user_id               many2one        res.users                      No        
+activity_type_id               many2one        mail.activity.type             No        
+activity_type_icon             char                                           No        
+activity_date_deadline         date                                           No        
+my_activity_date_deadline      date                                           No        
+activity_summary               char                                           No        
+activity_exception_decoration  selection                                      No        
+activity_exception_icon        char                                           No        
+message_is_follower            boolean                                        No        
+message_follower_ids           one2many        mail.followers                 No        
+message_partner_ids            many2many       res.partner                    No        
+message_channel_ids            many2many       mail.channel                   No        
+message_ids                    one2many        mail.message                   No        
+message_unread                 boolean                                        No        
+message_unread_counter         integer                                        No        
+message_needaction             boolean                                        No        
+message_needaction_counter     integer                                        No        
+message_has_error              boolean                                        No        
+message_has_error_counter      integer                                        No        
+message_attachment_count       integer                                        No        
+message_main_attachment_id     many2one        ir.attachment                  No        
+email_normalized               char                                           No        
+is_blacklisted                 boolean                                        No        
+message_bounce                 integer                                        No        
+email                          char                                           No        
+phone                          char                                           No        
+channel_ids                    many2many       mail.channel                   No        
+user_id                        many2one        res.users                      No        
+contact_address_complete       char                                           No        
+image_medium                   binary                                         No        
+signup_token                   char                                           No        
+signup_type                    char                                           No        
+signup_expiration              datetime                                       No        
+signup_valid                   boolean                                        No        
+signup_url                     char                                           No        
+calendar_last_notif_ack        datetime                                       No        
+plan_to_change_car             boolean                                        No        
+phone_sanitized                char                                           No        
+phone_sanitized_blacklisted    boolean                                        No        
+phone_blacklisted              boolean                                        No        
+mobile_blacklisted             boolean                                        No        
+property_product_pricelist     many2one        product.pricelist              No        
+ocn_token                      char                                           No        
+partner_gid                    integer                                        No        
+additional_info                char                                           No        
+website_message_ids            one2many        mail.message                   No        
+message_has_sms_error          boolean                                        No        
+certifications_count           integer                                        No        
+certifications_company_count   integer                                        No        
+signature_count                integer                                        No        
+credit                         monetary                                       No        
+debit                          monetary                                       No        
+debit_limit                    monetary                                       No        
+total_invoiced                 monetary                                       No        
+currency_id                    many2one        res.currency                   No        
+journal_item_count             integer                                        No        
+property_account_payable_id    many2one        account.account                Yes       
+property_account_receivable_id many2one        account.account                Yes       
+property_account_position_id   many2one        account.fiscal.position        No        
+property_payment_term_id       many2one        account.payment.term           No        
+property_supplier_payment_term_id many2one        account.payment.term           No        
+ref_company_ids                one2many        res.company                    No        
+has_unreconciled_entries       boolean                                        No        
+last_time_entries_checked      datetime                                       No        
+invoice_ids                    one2many        account.move                   No        
+contract_ids                   one2many        account.analytic.account       No        
+bank_account_count             integer                                        No        
+trust                          selection                                      No        
+invoice_warn                   selection                                      No        
+invoice_warn_msg               text                                           No        
+supplier_rank                  integer                                        No        
+customer_rank                  integer                                        No        
+team_id                        many2one        crm.team                       No        
+opportunity_ids                one2many        crm.lead                       No        
+meeting_ids                    many2many       calendar.event                 No        
+opportunity_count              integer                                        No        
+meeting_count                  integer                                        No        
+document_count                 integer                                        No        
+ticket_count                   integer                                        No        
+user_livechat_username         char                                           No        
+task_ids                       one2many        project.task                   No        
+task_count                     integer                                        No        
+property_stock_customer        many2one        stock.location                 No        
+property_stock_supplier        many2one        stock.location                 No        
+picking_warn                   selection                                      No        
+picking_warn_msg               text                                           No        
+is_seo_optimized               boolean                                        No        
+website_meta_title             char                                           No        
+website_meta_description       text                                           No        
+website_meta_keywords          char                                           No        
+website_meta_og_img            char                                           No        
+seo_name                       char                                           No        
+website_id                     many2one        website                        No        
+is_published                   boolean                                        No        
+can_publish                    boolean                                        No        
+website_url                    char                                           No        
+website_published              boolean                                        No        
+visitor_ids                    one2many        website.visitor                No        
+online_partner_vendor_name     char                                           No        
+online_partner_bank_account    char                                           No        
+payment_token_ids              one2many        payment.token                  No        
+payment_token_count            integer                                        No        
+property_purchase_currency_id  many2one        res.currency                   No        
+purchase_order_count           integer                                        No        
+supplier_invoice_count         integer                                        No        
+purchase_warn                  selection                                      No        
+purchase_warn_msg              text                                           No        
+receipt_reminder_email         boolean                                        No        
+reminder_date_before_receipt   integer                                        No        
+website_description            html                                           No        
+website_short_description      text                                           No        
+online_partner_information     char                                           No        
+purchase_line_ids              one2many        purchase.order.line            No        
+on_time_rate                   float                                          No        
+sale_order_count               integer                                        No        
+sale_order_ids                 one2many        sale.order                     No        
+sale_warn                      selection                                      No        
+sale_warn_msg                  text                                           No        
+payment_next_action_date       date                                           No        
+unreconciled_aml_ids           one2many        account.move.line              No        
+unpaid_invoices                one2many        account.move                   No        
+total_due                      monetary                                       No        
+total_overdue                  monetary                                       No        
+followup_status                selection                                      No        
+followup_level                 many2one        account_followup.followup.line No        
+payment_responsible_id         many2one        res.users                      No        
+last_website_so_id             many2one        sale.order                     No        
+slide_channel_ids              many2many       slide.channel                  No        
+slide_channel_count            integer                                        No        
+slide_channel_company_count    integer                                        No        
+property_delivery_carrier_id   many2one        delivery.carrier               No        
+subscription_count             integer                                        No        
+is_affiliated                  boolean                                        No        
+image_1920                     binary                                         No        
+image_1024                     binary                                         No        
+image_512                      binary                                         No        
+image_256                      binary                                         No        
+image_128                      binary                                         No        
+id                             integer                                        No        
+create_uid                     many2one        res.users                      No        
+create_date                    datetime                                       No        
+write_uid                      many2one        res.users                      No        
+write_date                     datetime                                       No        
+__last_update                  datetime                                       No        
+x_studio_old_payment_term      char                                           No        
+x_studio_selected_focus_account boolean                                        No        
+x_partner_id__helpdesk_ticket_count integer                                        No        
+x_studio_economic              selection                                      No        
+x_studio_budget                selection                                      No        
+x_studio_coach                 selection                                      No        
+x_studio_user                  selection                                      No        
+x_studio_technical             selection                                      No        
+x_studio_store_notes           text                                           No        
+x_studio_last_sale_order_date  datetime                                       No        
+x_studio_sales_lead            many2one        res.users                      No        
+x_studio_last_sale_order_date_1 datetime                                       No        
+x_studio_sales_payment_terms   char                                           No        
+x_studio_date_of_birth         date                                           No        
+x_studio_catatan_pembayaran    char                                           No        
+x_studio_provide_services      boolean                                        No        
+x_studio_contact_name          char                                           No        
+x_studio_dokumen_perusahaan    binary                                         No        
+x_studio_dokumen_perusahaan_filename char                                           No        
+x_studio_form_kelengkapan_subkon binary                                         No        
+x_studio_form_kelengkapan_subkon_filename char                                           No        
+x_studio_credit_limit_lock     boolean                                        No        
+x_studio_credit_limit_tracking float                                          No        
+x_studio_kartu_identitas       selection                                      No        
+x_studio_strategic_bidding     selection                                      No        
+x_studio_new_client            boolean                                        No        
+x_studio_new_client_update     datetime                                       No        
+x_studio_kartu_identitas_no    char                                           No        
+x_studio_pemilik_rekening_no_rekening char                                           No        
+
+XML ID EXAMPLES:
+--------------------------------------------------------------------------------
+No XML ID examples found.
+
+
+================================================================================
+SPECIAL SECTION: UNDERSTANDING XML IDs
+================================================================================
+
+XML IDs dalam Odoo memiliki format 'module.identifier', misalnya 'export.product_product_14828_24ea7638'.
+- 'export' adalah nama modul
+- 'product_product_14828_24ea7638' adalah identifier unik untuk record tersebut
+
+XML IDs disimpan dalam tabel ir.model.data dan digunakan untuk mengidentifikasi
+record secara unik di seluruh database, terutama untuk proses impor/ekspor data.
+
+CONTOH ANALISIS XML ID:
+
+--- XML ID: export.product_product_14828_24ea7638 ---
+XML ID tidak ditemukan di database.
+
+--- XML ID: export.product_supplierinfo_2072_dede4d49 ---
+XML ID tidak ditemukan di database.
+
+
+================================================================================
+SPECIAL SECTION: PRODUCT SUPPLIER INFO RELATIONSHIPS
+================================================================================
+
+Hubungan antar model untuk informasi supplier produk:
+
+1. product.product (memiliki field default_code = 'Internal References')
+   ↓ (produk memiliki product_tmpl_id yang mengarah ke template)
+2. product.template (template produk)
+   ↓ (template memiliki seller_ids yang mengarah ke supplier info)
+3. product.supplierinfo (info supplier untuk produk)
+   - Field name: mengarah ke res.partner (vendor)
+   - Field product_tmpl_id: mengarah ke product.template
+   - Field product_id: mengarah ke product.product (opsional, untuk variant spesifik)
+   - Field price: harga dari supplier
+
+CONTOH CARA MENGAMBIL DATA SUPPLIER UNTUK PRODUK:
+
+1. Cari product.product berdasarkan default_code ('Internal References')
+2. Dapatkan product_tmpl_id-nya
+3. Cari di product.supplierinfo berdasarkan product_tmpl_id
+4. Filter berdasarkan nama supplier jika diperlukan
+
+CONTOH KODE PYTHON:
+
+```python
+# Cari produk berdasarkan default_code
+product_ids = models.execute_kw(
+    db, uid, password, 'product.product', 'search',
+    [[['default_code', '=', 'KODE-PRODUK']]]
+)
+
+# Dapatkan template_id
+product_data = models.execute_kw(
+    db, uid, password, 'product.product', 'read',
+    [product_ids[0]], {'fields': ['product_tmpl_id']}
+)
+product_tmpl_id = product_data[0]['product_tmpl_id'][0]
+
+# Cari supplier info
+supplier_info = models.execute_kw(
+    db, uid, password, 'product.supplierinfo', 'search_read',
+    [[['product_tmpl_id', '=', product_tmpl_id]]],
+    {'fields': ['name', 'price']}
+)
+
+# Dapatkan nama supplier
+for info in supplier_info:
+    partner_id = info['name'][0]
+    partner_data = models.execute_kw(
+        db, uid, password, 'res.partner', 'read',
+        [partner_id], {'fields': ['name']}
+    )
+    info['supplier_name'] = partner_data[0]['name']
+```
+
+CONTOH DATA NYATA:
+
+Produk dengan default_code = 'C18.18.32':
+  Product not found.
+
+Produk dengan default_code = 'C18.18.28':
+  Product not found.
+
+Produk dengan default_code = 'C18.18.22':
+  Product not found.
+

@@ -1,0 +1,471 @@
+2025-03-23 22:03:57,541 - etl_test - INFO - Border detection info: header_row=8, data_start_row=9, data_end_row=72
+2025-03-23 22:03:57,542 - etl_test - INFO - Loaded Book1.xlsx with 64 rows and 20 columns
+2025-03-23 22:03:57,542 - etl_test - INFO - Testing DataValidator...
+2025-03-23 22:03:57,547 - etl_test - INFO - Found 101 validation issues
+2025-03-23 22:03:57,548 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 0
+2025-03-23 22:03:57,548 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 1
+2025-03-23 22:03:57,549 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 2
+2025-03-23 22:03:57,549 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 3
+2025-03-23 22:03:57,549 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 4
+2025-03-23 22:03:57,550 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 5
+2025-03-23 22:03:57,550 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 6
+2025-03-23 22:03:57,550 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 7
+2025-03-23 22:03:57,550 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 8
+2025-03-23 22:03:57,551 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 9
+2025-03-23 22:03:57,551 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 10
+2025-03-23 22:03:57,551 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 11
+2025-03-23 22:03:57,551 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 12
+2025-03-23 22:03:57,551 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 13
+2025-03-23 22:03:57,552 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 14
+2025-03-23 22:03:57,552 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 15
+2025-03-23 22:03:57,552 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 16
+2025-03-23 22:03:57,553 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 17
+2025-03-23 22:03:57,553 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 18
+2025-03-23 22:03:57,553 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 19
+2025-03-23 22:03:57,553 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 20
+2025-03-23 22:03:57,553 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 21
+2025-03-23 22:03:57,554 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 22
+2025-03-23 22:03:57,554 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 23
+2025-03-23 22:03:57,555 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 24
+2025-03-23 22:03:57,556 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 25
+2025-03-23 22:03:57,556 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 26
+2025-03-23 22:03:57,556 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 27
+2025-03-23 22:03:57,556 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 28
+2025-03-23 22:03:57,556 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 29
+2025-03-23 22:03:57,557 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 30
+2025-03-23 22:03:57,557 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 31
+2025-03-23 22:03:57,557 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 32
+2025-03-23 22:03:57,557 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 33
+2025-03-23 22:03:57,557 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 34
+2025-03-23 22:03:57,558 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 35
+2025-03-23 22:03:57,558 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 36
+2025-03-23 22:03:57,558 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 37
+2025-03-23 22:03:57,558 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 38
+2025-03-23 22:03:57,559 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 39
+2025-03-23 22:03:57,559 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 40
+2025-03-23 22:03:57,559 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 41
+2025-03-23 22:03:57,560 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 42
+2025-03-23 22:03:57,560 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 43
+2025-03-23 22:03:57,560 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 44
+2025-03-23 22:03:57,561 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 45
+2025-03-23 22:03:57,561 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 46
+2025-03-23 22:03:57,562 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 47
+2025-03-23 22:03:57,562 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 48
+2025-03-23 22:03:57,562 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 49
+2025-03-23 22:03:57,563 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 50
+2025-03-23 22:03:57,563 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 51
+2025-03-23 22:03:57,563 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 52
+2025-03-23 22:03:57,563 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 53
+2025-03-23 22:03:57,563 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 54
+2025-03-23 22:03:57,563 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 55
+2025-03-23 22:03:57,564 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 56
+2025-03-23 22:03:57,564 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 57
+2025-03-23 22:03:57,564 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 58
+2025-03-23 22:03:57,564 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 59
+2025-03-23 22:03:57,564 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 60
+2025-03-23 22:03:57,564 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 61
+2025-03-23 22:03:57,565 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 62
+2025-03-23 22:03:57,565 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 63
+2025-03-23 22:03:57,565 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 0
+2025-03-23 22:03:57,565 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 6
+2025-03-23 22:03:57,565 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 7
+2025-03-23 22:03:57,565 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 8
+2025-03-23 22:03:57,565 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 9
+2025-03-23 22:03:57,565 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 10
+2025-03-23 22:03:57,566 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 11
+2025-03-23 22:03:57,566 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 12
+2025-03-23 22:03:57,566 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 13
+2025-03-23 22:03:57,566 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 14
+2025-03-23 22:03:57,566 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 15
+2025-03-23 22:03:57,566 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 16
+2025-03-23 22:03:57,567 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 23
+2025-03-23 22:03:57,567 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 24
+2025-03-23 22:03:57,567 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 25
+2025-03-23 22:03:57,567 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 26
+2025-03-23 22:03:57,568 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 27
+2025-03-23 22:03:57,568 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 28
+2025-03-23 22:03:57,568 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 29
+2025-03-23 22:03:57,569 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 30
+2025-03-23 22:03:57,569 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 31
+2025-03-23 22:03:57,569 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 32
+2025-03-23 22:03:57,570 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 44
+2025-03-23 22:03:57,570 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 45
+2025-03-23 22:03:57,570 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 46
+2025-03-23 22:03:57,570 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 47
+2025-03-23 22:03:57,571 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 48
+2025-03-23 22:03:57,571 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 54
+2025-03-23 22:03:57,571 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 55
+2025-03-23 22:03:57,571 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 56
+2025-03-23 22:03:57,571 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 57
+2025-03-23 22:03:57,571 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 58
+2025-03-23 22:03:57,572 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 59
+2025-03-23 22:03:57,572 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 60
+2025-03-23 22:03:57,572 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 61
+2025-03-23 22:03:57,572 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 62
+2025-03-23 22:03:57,572 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 63
+2025-03-23 22:03:57,603 - etl_test - INFO - Validation report saved to validation_report.xlsx
+2025-03-23 22:03:57,608 - etl_test - INFO - Border detection info: header_row=8, data_start_row=9, data_end_row=32
+2025-03-23 22:03:57,608 - etl_test - INFO - Loaded Book2.xlsx with 24 rows and 4 columns
+2025-03-23 22:03:57,608 - etl_test - INFO - Testing CrossFileValidator...
+2025-03-23 22:03:57,610 - etl_test - WARNING - Found mismatches between Description - Item yang Ditawarkan and BOM Line
+2025-03-23 22:03:57,611 - etl_test - WARNING - Mismatch: Value 'material unit' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,611 - etl_test - WARNING - Mismatch: Value 'v - converter av to hdmi 1080p' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,612 - etl_test - WARNING - Mismatch: Value 'v - roller shutter sensor magnetic door alarm contact with l bracket (zona 10 / rolling door gudang)' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,612 - etl_test - WARNING - Mismatch: Value 'dummy - pintu kayu jati 545' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,613 - etl_test - WARNING - Mismatch: Value 'dummy - jendela kayu hijau 546' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,613 - etl_test - WARNING - Mismatch: Value 'material cable' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,613 - etl_test - WARNING - Mismatch: Value 'v - belden kabel fo 12 core singlemode indoor' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,614 - etl_test - WARNING - Mismatch: Value 'v - cable duct 50x50 mm 3 meter' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,614 - etl_test - WARNING - Mismatch: Value 'dummy - kabel hijau pak smi' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,614 - etl_test - WARNING - Mismatch: Value 'dummy - kabel merah pak ujang' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,615 - etl_test - WARNING - Mismatch: Value 'dummy - kabel oranye pak ujang' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,615 - etl_test - WARNING - Mismatch: Value 'material support' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,615 - etl_test - WARNING - Mismatch: Value 'v - faceplate hdmi' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,616 - etl_test - WARNING - Mismatch: Value 'v - kabel ties 20 cm putih' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,616 - etl_test - WARNING - Mismatch: Value 'v - duradus hitam 105x105' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,616 - etl_test - WARNING - Mismatch: Value 'v - baut uk 8 x 30 mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,616 - etl_test - WARNING - Mismatch: Value 'v - bracet gantung adjustable 3-4 mtr' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,617 - etl_test - WARNING - Mismatch: Value 'v - mur uk 8mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,617 - etl_test - WARNING - Mismatch: Value 'v - protector cable yt 100x50 mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,617 - etl_test - WARNING - Mismatch: Value 'v - clem buaya + piluk 20 mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,617 - etl_test - WARNING - Mismatch: Value 'dummy - buntalan kapas kedap suara' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,617 - etl_test - WARNING - Mismatch: Value 'dummy - prisma' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,618 - etl_test - WARNING - Mismatch: Value 'jasa instalasi' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,618 - etl_test - WARNING - Mismatch: Value 'v - biaya pemasangan rack standing server' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,618 - etl_test - WARNING - Mismatch: Value 'v - biaya pemasangan bracket tv 50 inch' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:03:57,618 - etl_test - WARNING - Mismatch: Value 'kabel awg 24 cat 6 commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,618 - etl_test - WARNING - Mismatch: Value 'faceplate 1 slot rj 45 commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,618 - etl_test - WARNING - Mismatch: Value 'modular jack commscope cat 6' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,619 - etl_test - WARNING - Mismatch: Value 'npc06uvdb-bl004f patchord utp commscope 4 feet' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,619 - etl_test - WARNING - Mismatch: Value '24 port rj45 patch panel for rack commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,619 - etl_test - WARNING - Mismatch: Value 'wiring managemet commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,619 - etl_test - WARNING - Mismatch: Value '[g024094324] v - high impact pipa conduit 20mm putih' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,619 - etl_test - WARNING - Mismatch: Value '[g024094109] v - flexible conduit boss 20 mm putih' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,620 - etl_test - WARNING - Mismatch: Value '[g024094561] v - t dus 20mm boss putih' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,620 - etl_test - WARNING - Mismatch: Value 'solasi hitam / listrik' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,620 - etl_test - WARNING - Mismatch: Value 'penarikan kabel utp' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,620 - etl_test - WARNING - Mismatch: Value 'pemasangan face plate 1 hole' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,620 - etl_test - WARNING - Mismatch: Value 'terminasi modular' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,620 - etl_test - WARNING - Mismatch: Value 'bobok beton' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,621 - etl_test - WARNING - Mismatch: Value 'normalisasi horizontal & vertikal' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,621 - etl_test - WARNING - Mismatch: Value 'dokumentasi horizontal & vertikal' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,621 - etl_test - WARNING - Mismatch: Value 'testing dan commisioning' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:03:57,643 - etl_test - INFO - Cross-validation report saved to cross_validation_report.xlsx
+2025-03-23 22:03:57,644 - etl_test - INFO - Skipping Odoo connection test (missing credentials)
+2025-03-23 22:03:57,644 - etl_test - INFO - Testing complete
+2025-03-23 22:07:08,635 - etl_test - INFO - Border detection info: header_row=8, data_start_row=9, data_end_row=72
+2025-03-23 22:07:08,635 - etl_test - INFO - Loaded Book1.xlsx with 64 rows and 20 columns
+2025-03-23 22:07:08,635 - etl_test - INFO - Testing DataValidator...
+2025-03-23 22:07:08,639 - etl_test - INFO - Found 101 validation issues
+2025-03-23 22:07:08,640 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 0
+2025-03-23 22:07:08,640 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 1
+2025-03-23 22:07:08,640 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 2
+2025-03-23 22:07:08,641 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 3
+2025-03-23 22:07:08,641 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 4
+2025-03-23 22:07:08,641 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 5
+2025-03-23 22:07:08,641 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 6
+2025-03-23 22:07:08,642 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 7
+2025-03-23 22:07:08,642 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 8
+2025-03-23 22:07:08,642 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 9
+2025-03-23 22:07:08,642 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 10
+2025-03-23 22:07:08,642 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 11
+2025-03-23 22:07:08,643 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 12
+2025-03-23 22:07:08,643 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 13
+2025-03-23 22:07:08,643 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 14
+2025-03-23 22:07:08,643 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 15
+2025-03-23 22:07:08,644 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 16
+2025-03-23 22:07:08,644 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 17
+2025-03-23 22:07:08,644 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 18
+2025-03-23 22:07:08,645 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 19
+2025-03-23 22:07:08,645 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 20
+2025-03-23 22:07:08,645 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 21
+2025-03-23 22:07:08,645 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 22
+2025-03-23 22:07:08,646 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 23
+2025-03-23 22:07:08,647 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 24
+2025-03-23 22:07:08,647 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 25
+2025-03-23 22:07:08,647 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 26
+2025-03-23 22:07:08,648 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 27
+2025-03-23 22:07:08,648 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 28
+2025-03-23 22:07:08,648 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 29
+2025-03-23 22:07:08,649 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 30
+2025-03-23 22:07:08,649 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 31
+2025-03-23 22:07:08,649 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 32
+2025-03-23 22:07:08,649 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 33
+2025-03-23 22:07:08,650 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 34
+2025-03-23 22:07:08,650 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 35
+2025-03-23 22:07:08,650 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 36
+2025-03-23 22:07:08,650 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 37
+2025-03-23 22:07:08,651 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 38
+2025-03-23 22:07:08,651 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 39
+2025-03-23 22:07:08,651 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 40
+2025-03-23 22:07:08,651 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 41
+2025-03-23 22:07:08,651 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 42
+2025-03-23 22:07:08,652 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 43
+2025-03-23 22:07:08,652 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 44
+2025-03-23 22:07:08,652 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 45
+2025-03-23 22:07:08,653 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 46
+2025-03-23 22:07:08,653 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 47
+2025-03-23 22:07:08,653 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 48
+2025-03-23 22:07:08,653 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 49
+2025-03-23 22:07:08,653 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 50
+2025-03-23 22:07:08,654 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 51
+2025-03-23 22:07:08,654 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 52
+2025-03-23 22:07:08,654 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 53
+2025-03-23 22:07:08,654 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 54
+2025-03-23 22:07:08,654 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 55
+2025-03-23 22:07:08,655 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 56
+2025-03-23 22:07:08,655 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 57
+2025-03-23 22:07:08,655 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 58
+2025-03-23 22:07:08,655 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 59
+2025-03-23 22:07:08,655 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 60
+2025-03-23 22:07:08,656 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 61
+2025-03-23 22:07:08,656 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 62
+2025-03-23 22:07:08,656 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 63
+2025-03-23 22:07:08,656 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 0
+2025-03-23 22:07:08,656 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 6
+2025-03-23 22:07:08,657 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 7
+2025-03-23 22:07:08,657 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 8
+2025-03-23 22:07:08,657 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 9
+2025-03-23 22:07:08,657 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 10
+2025-03-23 22:07:08,657 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 11
+2025-03-23 22:07:08,657 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 12
+2025-03-23 22:07:08,658 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 13
+2025-03-23 22:07:08,658 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 14
+2025-03-23 22:07:08,658 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 15
+2025-03-23 22:07:08,659 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 16
+2025-03-23 22:07:08,659 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 23
+2025-03-23 22:07:08,659 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 24
+2025-03-23 22:07:08,659 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 25
+2025-03-23 22:07:08,660 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 26
+2025-03-23 22:07:08,660 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 27
+2025-03-23 22:07:08,661 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 28
+2025-03-23 22:07:08,661 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 29
+2025-03-23 22:07:08,661 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 30
+2025-03-23 22:07:08,661 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 31
+2025-03-23 22:07:08,661 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 32
+2025-03-23 22:07:08,662 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 44
+2025-03-23 22:07:08,662 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 45
+2025-03-23 22:07:08,662 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 46
+2025-03-23 22:07:08,662 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 47
+2025-03-23 22:07:08,662 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 48
+2025-03-23 22:07:08,662 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 54
+2025-03-23 22:07:08,663 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 55
+2025-03-23 22:07:08,663 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 56
+2025-03-23 22:07:08,663 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 57
+2025-03-23 22:07:08,663 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 58
+2025-03-23 22:07:08,663 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 59
+2025-03-23 22:07:08,663 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 60
+2025-03-23 22:07:08,663 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 61
+2025-03-23 22:07:08,664 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 62
+2025-03-23 22:07:08,664 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 63
+2025-03-23 22:07:08,697 - etl_test - INFO - Validation report saved to validation_report.xlsx
+2025-03-23 22:07:08,702 - etl_test - INFO - Border detection info: header_row=8, data_start_row=9, data_end_row=32
+2025-03-23 22:07:08,702 - etl_test - INFO - Loaded Book2.xlsx with 24 rows and 4 columns
+2025-03-23 22:07:08,702 - etl_test - INFO - Testing CrossFileValidator...
+2025-03-23 22:07:08,704 - etl_test - WARNING - Found mismatches between Description - Item yang Ditawarkan and BOM Line
+2025-03-23 22:07:08,704 - etl_test - WARNING - Mismatch: Value 'material unit' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,705 - etl_test - WARNING - Mismatch: Value 'v - converter av to hdmi 1080p' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,705 - etl_test - WARNING - Mismatch: Value 'v - roller shutter sensor magnetic door alarm contact with l bracket (zona 10 / rolling door gudang)' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,705 - etl_test - WARNING - Mismatch: Value 'dummy - pintu kayu jati 545' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,705 - etl_test - WARNING - Mismatch: Value 'dummy - jendela kayu hijau 546' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,706 - etl_test - WARNING - Mismatch: Value 'material cable' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,706 - etl_test - WARNING - Mismatch: Value 'v - belden kabel fo 12 core singlemode indoor' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,706 - etl_test - WARNING - Mismatch: Value 'v - cable duct 50x50 mm 3 meter' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,706 - etl_test - WARNING - Mismatch: Value 'dummy - kabel hijau pak smi' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,706 - etl_test - WARNING - Mismatch: Value 'dummy - kabel merah pak ujang' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,706 - etl_test - WARNING - Mismatch: Value 'dummy - kabel oranye pak ujang' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,707 - etl_test - WARNING - Mismatch: Value 'material support' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,707 - etl_test - WARNING - Mismatch: Value 'v - faceplate hdmi' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,707 - etl_test - WARNING - Mismatch: Value 'v - kabel ties 20 cm putih' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,707 - etl_test - WARNING - Mismatch: Value 'v - duradus hitam 105x105' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,707 - etl_test - WARNING - Mismatch: Value 'v - baut uk 8 x 30 mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,707 - etl_test - WARNING - Mismatch: Value 'v - bracet gantung adjustable 3-4 mtr' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,707 - etl_test - WARNING - Mismatch: Value 'v - mur uk 8mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,707 - etl_test - WARNING - Mismatch: Value 'v - protector cable yt 100x50 mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,708 - etl_test - WARNING - Mismatch: Value 'v - clem buaya + piluk 20 mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,708 - etl_test - WARNING - Mismatch: Value 'dummy - buntalan kapas kedap suara' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,708 - etl_test - WARNING - Mismatch: Value 'dummy - prisma' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,708 - etl_test - WARNING - Mismatch: Value 'jasa instalasi' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,708 - etl_test - WARNING - Mismatch: Value 'v - biaya pemasangan rack standing server' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,708 - etl_test - WARNING - Mismatch: Value 'v - biaya pemasangan bracket tv 50 inch' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:07:08,708 - etl_test - WARNING - Mismatch: Value 'kabel awg 24 cat 6 commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,708 - etl_test - WARNING - Mismatch: Value 'faceplate 1 slot rj 45 commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,709 - etl_test - WARNING - Mismatch: Value 'modular jack commscope cat 6' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,709 - etl_test - WARNING - Mismatch: Value 'npc06uvdb-bl004f patchord utp commscope 4 feet' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,709 - etl_test - WARNING - Mismatch: Value '24 port rj45 patch panel for rack commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,709 - etl_test - WARNING - Mismatch: Value 'wiring managemet commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,709 - etl_test - WARNING - Mismatch: Value '[g024094324] v - high impact pipa conduit 20mm putih' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,710 - etl_test - WARNING - Mismatch: Value '[g024094109] v - flexible conduit boss 20 mm putih' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,710 - etl_test - WARNING - Mismatch: Value '[g024094561] v - t dus 20mm boss putih' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,710 - etl_test - WARNING - Mismatch: Value 'solasi hitam / listrik' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,710 - etl_test - WARNING - Mismatch: Value 'penarikan kabel utp' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,710 - etl_test - WARNING - Mismatch: Value 'pemasangan face plate 1 hole' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,710 - etl_test - WARNING - Mismatch: Value 'terminasi modular' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,710 - etl_test - WARNING - Mismatch: Value 'bobok beton' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,711 - etl_test - WARNING - Mismatch: Value 'normalisasi horizontal & vertikal' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,711 - etl_test - WARNING - Mismatch: Value 'dokumentasi horizontal & vertikal' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,711 - etl_test - WARNING - Mismatch: Value 'testing dan commisioning' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:07:08,732 - etl_test - INFO - Cross-validation report saved to cross_validation_report.xlsx
+2025-03-23 22:07:08,732 - etl_test - INFO - Testing OdooConnector...
+2025-03-23 22:07:08,733 - load - ERROR - Connection error: ServerProxy.__init__() got an unexpected keyword argument 'timeout'
+2025-03-23 22:07:08,733 - etl_test - ERROR - Failed to connect to Odoo
+2025-03-23 22:07:08,733 - etl_test - INFO - Odoo connection status: Failed
+2025-03-23 22:07:08,733 - etl_test - INFO - Testing complete
+2025-03-23 22:09:22,426 - etl_test - INFO - Border detection info: header_row=8, data_start_row=9, data_end_row=72
+2025-03-23 22:09:22,427 - etl_test - INFO - Loaded Book1.xlsx with 64 rows and 20 columns
+2025-03-23 22:09:22,427 - etl_test - INFO - Testing DataValidator...
+2025-03-23 22:09:22,430 - etl_test - INFO - Found 101 validation issues
+2025-03-23 22:09:22,431 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 0
+2025-03-23 22:09:22,432 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 1
+2025-03-23 22:09:22,432 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 2
+2025-03-23 22:09:22,433 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 3
+2025-03-23 22:09:22,434 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 4
+2025-03-23 22:09:22,434 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 5
+2025-03-23 22:09:22,435 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 6
+2025-03-23 22:09:22,435 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 7
+2025-03-23 22:09:22,436 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 8
+2025-03-23 22:09:22,436 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 9
+2025-03-23 22:09:22,436 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 10
+2025-03-23 22:09:22,436 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 11
+2025-03-23 22:09:22,437 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 12
+2025-03-23 22:09:22,437 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 13
+2025-03-23 22:09:22,438 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 14
+2025-03-23 22:09:22,438 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 15
+2025-03-23 22:09:22,438 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 16
+2025-03-23 22:09:22,439 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 17
+2025-03-23 22:09:22,439 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 18
+2025-03-23 22:09:22,439 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 19
+2025-03-23 22:09:22,439 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 20
+2025-03-23 22:09:22,440 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 21
+2025-03-23 22:09:22,440 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 22
+2025-03-23 22:09:22,440 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 23
+2025-03-23 22:09:22,440 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 24
+2025-03-23 22:09:22,440 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 25
+2025-03-23 22:09:22,440 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 26
+2025-03-23 22:09:22,441 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 27
+2025-03-23 22:09:22,441 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 28
+2025-03-23 22:09:22,441 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 29
+2025-03-23 22:09:22,441 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 30
+2025-03-23 22:09:22,441 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 31
+2025-03-23 22:09:22,442 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 32
+2025-03-23 22:09:22,442 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 33
+2025-03-23 22:09:22,442 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 34
+2025-03-23 22:09:22,443 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 35
+2025-03-23 22:09:22,443 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 36
+2025-03-23 22:09:22,444 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 37
+2025-03-23 22:09:22,444 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 38
+2025-03-23 22:09:22,444 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 39
+2025-03-23 22:09:22,445 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 40
+2025-03-23 22:09:22,445 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 41
+2025-03-23 22:09:22,445 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 42
+2025-03-23 22:09:22,445 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 43
+2025-03-23 22:09:22,445 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 44
+2025-03-23 22:09:22,446 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 45
+2025-03-23 22:09:22,446 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 46
+2025-03-23 22:09:22,446 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 47
+2025-03-23 22:09:22,446 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 48
+2025-03-23 22:09:22,447 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 49
+2025-03-23 22:09:22,447 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 50
+2025-03-23 22:09:22,447 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 51
+2025-03-23 22:09:22,447 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 52
+2025-03-23 22:09:22,447 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 53
+2025-03-23 22:09:22,448 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 54
+2025-03-23 22:09:22,448 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 55
+2025-03-23 22:09:22,448 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 56
+2025-03-23 22:09:22,449 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 57
+2025-03-23 22:09:22,449 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 58
+2025-03-23 22:09:22,449 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 59
+2025-03-23 22:09:22,449 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 60
+2025-03-23 22:09:22,450 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 61
+2025-03-23 22:09:22,450 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 62
+2025-03-23 22:09:22,450 - etl_test - WARNING - Validation issue: Nilai Column_1 tidak boleh kosong at row 63
+2025-03-23 22:09:22,450 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 0
+2025-03-23 22:09:22,450 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 6
+2025-03-23 22:09:22,451 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 7
+2025-03-23 22:09:22,451 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 8
+2025-03-23 22:09:22,451 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 9
+2025-03-23 22:09:22,451 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 10
+2025-03-23 22:09:22,451 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 11
+2025-03-23 22:09:22,451 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 12
+2025-03-23 22:09:22,452 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 13
+2025-03-23 22:09:22,452 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 14
+2025-03-23 22:09:22,452 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 15
+2025-03-23 22:09:22,452 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 16
+2025-03-23 22:09:22,452 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 23
+2025-03-23 22:09:22,452 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 24
+2025-03-23 22:09:22,453 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 25
+2025-03-23 22:09:22,453 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 26
+2025-03-23 22:09:22,453 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 27
+2025-03-23 22:09:22,453 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 28
+2025-03-23 22:09:22,453 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 29
+2025-03-23 22:09:22,453 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 30
+2025-03-23 22:09:22,453 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 31
+2025-03-23 22:09:22,453 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 32
+2025-03-23 22:09:22,454 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 44
+2025-03-23 22:09:22,454 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 45
+2025-03-23 22:09:22,454 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 46
+2025-03-23 22:09:22,454 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 47
+2025-03-23 22:09:22,454 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 48
+2025-03-23 22:09:22,454 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 54
+2025-03-23 22:09:22,454 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 55
+2025-03-23 22:09:22,455 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 56
+2025-03-23 22:09:22,455 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 57
+2025-03-23 22:09:22,455 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 58
+2025-03-23 22:09:22,455 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 59
+2025-03-23 22:09:22,455 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 60
+2025-03-23 22:09:22,455 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 61
+2025-03-23 22:09:22,455 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 62
+2025-03-23 22:09:22,456 - etl_test - WARNING - Validation issue: Nilai Qty. harus lebih dari 0 at row 63
+2025-03-23 22:09:22,494 - etl_test - INFO - Validation report saved to validation_report.xlsx
+2025-03-23 22:09:22,498 - etl_test - INFO - Border detection info: header_row=8, data_start_row=9, data_end_row=32
+2025-03-23 22:09:22,498 - etl_test - INFO - Loaded Book2.xlsx with 24 rows and 4 columns
+2025-03-23 22:09:22,498 - etl_test - INFO - Testing CrossFileValidator...
+2025-03-23 22:09:22,501 - etl_test - WARNING - Found mismatches between Description - Item yang Ditawarkan and BOM Line
+2025-03-23 22:09:22,502 - etl_test - WARNING - Mismatch: Value 'material unit' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,503 - etl_test - WARNING - Mismatch: Value 'v - converter av to hdmi 1080p' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,503 - etl_test - WARNING - Mismatch: Value 'v - roller shutter sensor magnetic door alarm contact with l bracket (zona 10 / rolling door gudang)' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,503 - etl_test - WARNING - Mismatch: Value 'dummy - pintu kayu jati 545' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,503 - etl_test - WARNING - Mismatch: Value 'dummy - jendela kayu hijau 546' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,503 - etl_test - WARNING - Mismatch: Value 'material cable' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,504 - etl_test - WARNING - Mismatch: Value 'v - belden kabel fo 12 core singlemode indoor' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,504 - etl_test - WARNING - Mismatch: Value 'v - cable duct 50x50 mm 3 meter' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,504 - etl_test - WARNING - Mismatch: Value 'dummy - kabel hijau pak smi' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,505 - etl_test - WARNING - Mismatch: Value 'dummy - kabel merah pak ujang' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,505 - etl_test - WARNING - Mismatch: Value 'dummy - kabel oranye pak ujang' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,505 - etl_test - WARNING - Mismatch: Value 'material support' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,505 - etl_test - WARNING - Mismatch: Value 'v - faceplate hdmi' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,505 - etl_test - WARNING - Mismatch: Value 'v - kabel ties 20 cm putih' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,506 - etl_test - WARNING - Mismatch: Value 'v - duradus hitam 105x105' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,506 - etl_test - WARNING - Mismatch: Value 'v - baut uk 8 x 30 mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,506 - etl_test - WARNING - Mismatch: Value 'v - bracet gantung adjustable 3-4 mtr' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,506 - etl_test - WARNING - Mismatch: Value 'v - mur uk 8mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,506 - etl_test - WARNING - Mismatch: Value 'v - protector cable yt 100x50 mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,506 - etl_test - WARNING - Mismatch: Value 'v - clem buaya + piluk 20 mm' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,507 - etl_test - WARNING - Mismatch: Value 'dummy - buntalan kapas kedap suara' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,507 - etl_test - WARNING - Mismatch: Value 'dummy - prisma' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,507 - etl_test - WARNING - Mismatch: Value 'jasa instalasi' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,507 - etl_test - WARNING - Mismatch: Value 'v - biaya pemasangan rack standing server' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,507 - etl_test - WARNING - Mismatch: Value 'v - biaya pemasangan bracket tv 50 inch' in File1.Description - Item yang Ditawarkan has no match in File2.BOM Line
+2025-03-23 22:09:22,508 - etl_test - WARNING - Mismatch: Value 'kabel awg 24 cat 6 commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,508 - etl_test - WARNING - Mismatch: Value 'faceplate 1 slot rj 45 commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,508 - etl_test - WARNING - Mismatch: Value 'modular jack commscope cat 6' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,508 - etl_test - WARNING - Mismatch: Value 'npc06uvdb-bl004f patchord utp commscope 4 feet' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,508 - etl_test - WARNING - Mismatch: Value '24 port rj45 patch panel for rack commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,509 - etl_test - WARNING - Mismatch: Value 'wiring managemet commscope' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,509 - etl_test - WARNING - Mismatch: Value '[g024094324] v - high impact pipa conduit 20mm putih' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,509 - etl_test - WARNING - Mismatch: Value '[g024094109] v - flexible conduit boss 20 mm putih' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,510 - etl_test - WARNING - Mismatch: Value '[g024094561] v - t dus 20mm boss putih' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,510 - etl_test - WARNING - Mismatch: Value 'solasi hitam / listrik' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,510 - etl_test - WARNING - Mismatch: Value 'penarikan kabel utp' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,510 - etl_test - WARNING - Mismatch: Value 'pemasangan face plate 1 hole' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,510 - etl_test - WARNING - Mismatch: Value 'terminasi modular' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,510 - etl_test - WARNING - Mismatch: Value 'bobok beton' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,511 - etl_test - WARNING - Mismatch: Value 'normalisasi horizontal & vertikal' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,511 - etl_test - WARNING - Mismatch: Value 'dokumentasi horizontal & vertikal' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,511 - etl_test - WARNING - Mismatch: Value 'testing dan commisioning' in File2.BOM Line has no match in File1.Description - Item yang Ditawarkan
+2025-03-23 22:09:22,533 - etl_test - INFO - Cross-validation report saved to cross_validation_report.xlsx
+2025-03-23 22:09:22,533 - etl_test - INFO - Testing OdooConnector...
+2025-03-23 22:09:23,020 - load - ERROR - Connection error: <ProtocolError for api-odoo.visiniaga.com/xmlrpc/2/common: 301 Moved Permanently>
+2025-03-23 22:09:23,021 - etl_test - ERROR - Failed to connect to Odoo
+2025-03-23 22:09:23,021 - etl_test - INFO - Odoo connection status: Failed
+2025-03-23 22:09:23,021 - etl_test - INFO - Testing complete

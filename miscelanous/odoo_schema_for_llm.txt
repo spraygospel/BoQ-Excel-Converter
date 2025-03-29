@@ -1,0 +1,3411 @@
+# Model: Product (product.product)
+
+## Fields:
+- accessory_product_ids: many2many -> product.product
+   Label: Accessory Products
+   Help: Accessories show up when the customer reviews the cart before payment (cross-sell strategy).
+- active: boolean
+   Label: Active
+   Help: If unchecked, it will allow you to hide the product without removing it.
+- activity_date_deadline: date (readonly)
+   Label: Next Activity Deadline
+- activity_exception_decoration: selection (readonly)
+   Label: Activity Exception Decoration
+   Help: Type of the exception activity on record.
+- activity_exception_icon: char (readonly)
+   Label: Icon
+   Help: Icon to indicate an exception activity.
+- activity_ids: one2many -> mail.activity
+   Label: Activities
+- activity_state: selection (readonly)
+   Label: Activity State
+   Help: Status based on activities
+Overdue: Due date is already passed
+Today: Activity date is today
+Planned: Future activities.
+- activity_summary: char
+   Label: Next Activity Summary
+- activity_type_icon: char (readonly)
+   Label: Activity Type Icon
+   Help: Font awesome icon e.g. fa-tasks
+- activity_type_id: many2one -> mail.activity.type
+   Label: Next Activity Type
+- activity_user_id: many2one -> res.users
+   Label: Responsible User
+- allow_negative_stock: boolean
+   Label: Allow Negative Stock
+   Help: If this option is not active on this product nor on its product category and that this product is a stockable product, then the validation of the related stock moves will be blocked if the stock level becomes negative with the stock move.
+- alternative_product_ids: many2many -> product.template
+   Label: Alternative Products
+   Help: Suggest alternatives to your customer (upsell strategy). Those products show up on the product page.
+- attribute_line_ids: one2many -> product.template.attribute.line
+   Label: Product Attributes
+- available_threshold: float
+   Label: Availability Threshold
+- barcode: char
+   Label: Barcode
+   Help: International Article Number used for product identification.
+- bom_count: integer (readonly)
+   Label: # Bill of Material
+- bom_ids: one2many -> mrp.bom
+   Label: Bill of Materials
+- bom_line_ids: one2many -> mrp.bom.line
+   Label: BoM Components
+- cal_pack_price: boolean
+   Label: Calculate Pack Price
+- can_be_expensed: boolean
+   Label: Can be Expensed
+   Help: Specify whether the product can be selected in an expense.
+- can_image_1024_be_zoomed: boolean (readonly)
+   Label: Can Image 1024 be zoomed
+- can_image_variant_1024_be_zoomed: boolean (readonly)
+   Label: Can Variant Image 1024 be zoomed
+- can_publish: boolean (readonly)
+   Label: Can Publish
+- cart_qty: integer (readonly)
+   Label: Cart Qty
+- categ_id: many2one -> product.category* (REQUIRED)
+   Label: Product Category
+   Help: Select category for the current product
+- code: char (readonly)
+   Label: Reference
+- color: integer
+   Label: Color Index
+- combination_indices: char (readonly)
+   Label: Combination Indices
+- company_id: many2one -> res.company
+   Label: Company
+- cost_currency_id: many2one -> res.currency (readonly)
+   Label: Cost Currency
+- cost_method: selection (readonly)
+   Label: Costing Method
+   Help: Standard Price: The products are valued at their standard cost defined on the product.
+        Average Cost (AVCO): The products are valued at weighted average cost.
+        First In First Out (FIFO): The products are valued supposing those that enter the company first will also leave it first.
+        
+- create_date: datetime (readonly)
+   Label: Created on
+- create_uid: many2one -> res.users (readonly)
+   Label: Created by
+- currency_id: many2one -> res.currency (readonly)
+   Label: Currency
+- custom_message: text
+   Label: Custom Message
+- date_from: date (readonly)
+   Label: Margin Date From
+- date_to: date (readonly)
+   Label: Margin Date To
+- default_code: char
+   Label: Internal Reference
+- description: text
+   Label: Description
+- description_picking: text
+   Label: Description on Picking
+- description_pickingin: text
+   Label: Description on Receptions
+- description_pickingout: text
+   Label: Description on Delivery Orders
+- description_purchase: text
+   Label: Purchase Description
+- description_sale: text
+   Label: Sales Description
+   Help: A description of the Product that you want to communicate to your customers. This description will be copied to every Sales Order, Delivery Order and Customer Invoice/Credit Note
+- display_name: char (readonly)
+   Label: Display Name
+- expected_margin: float (readonly)
+   Label: Expected Margin
+   Help: Expected Sale - Normal Cost
+- expected_margin_rate: float (readonly)
+   Label: Expected Margin (%)
+   Help: Expected margin * 100 / Expected Sale
+- expense_policy: selection
+   Label: Re-Invoice Expenses
+   Help: Expenses and vendor bills can be re-invoiced to a customer.With this option, a validated expense can be re-invoice to a customer at its cost or sales price.
+- failed_message_ids: one2many -> mail.message
+   Label: Failed Messages
+- free_qty: float (readonly)
+   Label: Free To Use Quantity 
+   Help: Forecast quantity (computed as Quantity On Hand - reserved quantity)
+In a context with a single Stock Location, this includes goods stored in this location, or any of its children.
+In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.
+Otherwise, this includes goods stored in any Stock Location with 'internal' type.
+- has_available_route_ids: boolean (readonly)
+   Label: Routes can be selected on this product
+- has_configurable_attributes: boolean (readonly)
+   Label: Is a configurable product
+- hs_code: char
+   Label: HS Code
+   Help: Standardized code for international shipping and goods declaration. At the moment, only used for the FedEx shipping provider.
+- id: integer (readonly)
+   Label: ID
+- image_1024: binary (readonly)
+   Label: Image 1024
+- image_128: binary (readonly)
+   Label: Image 128
+- image_1920: binary
+   Label: Image
+- image_256: binary (readonly)
+   Label: Image 256
+- image_512: binary (readonly)
+   Label: Image 512
+- image_variant_1024: binary (readonly)
+   Label: Variant Image 1024
+- image_variant_128: binary (readonly)
+   Label: Variant Image 128
+- image_variant_1920: binary
+   Label: Variant Image
+- image_variant_256: binary (readonly)
+   Label: Variant Image 256
+- image_variant_512: binary (readonly)
+   Label: Variant Image 512
+- incoming_qty: float (readonly)
+   Label: Incoming
+   Help: Quantity of planned incoming products.
+In a context with a single Stock Location, this includes goods arriving to this Location, or any of its children.
+In a context with a single Warehouse, this includes goods arriving to the Stock Location of this Warehouse, or any of its children.
+Otherwise, this includes goods arriving to any Stock Location with 'internal' type.
+- inventory_availability: selection
+   Label: Inventory Availability
+   Help: Adds an inventory availability status on the web product page.
+- invoice_policy: selection
+   Label: Invoicing Policy
+   Help: Ordered Quantity: Invoice quantities ordered by the customer.
+Delivered Quantity: Invoice quantities delivered to the customer.
+- invoice_state: selection (readonly)
+   Label: Invoice State
+- is_pack: boolean
+   Label: Is Product Pack
+- is_product_variant: boolean (readonly)
+   Label: Is Product Variant
+- is_published: boolean
+   Label: Is Published
+- is_seo_optimized: boolean (readonly)
+   Label: SEO optimized
+- __last_update: datetime (readonly)
+   Label: Last Modified on
+- list_price: float
+   Label: Sales Price
+   Help: Price at which the product is sold to customers.
+- location_id: many2one -> stock.location
+   Label: Location
+- lst_price: float
+   Label: Public Price
+   Help: The sale price is managed from the product template. Click on the 'Configure Variants' button to set the extra attribute prices.
+- message_attachment_count: integer (readonly)
+   Label: Attachment Count
+- message_channel_ids: many2many -> mail.channel (readonly)
+   Label: Followers (Channels)
+- message_follower_ids: one2many -> mail.followers
+   Label: Followers
+- message_has_error: boolean (readonly)
+   Label: Message Delivery error
+   Help: If checked, some messages have a delivery error.
+- message_has_error_counter: integer (readonly)
+   Label: Number of errors
+   Help: Number of messages with delivery error
+- message_has_sms_error: boolean (readonly)
+   Label: SMS Delivery error
+   Help: If checked, some messages have a delivery error.
+- message_ids: one2many -> mail.message
+   Label: Messages
+- message_is_follower: boolean (readonly)
+   Label: Is Follower
+- message_main_attachment_id: many2one -> ir.attachment
+   Label: Main Attachment
+- message_needaction: boolean (readonly)
+   Label: Action Needed
+   Help: If checked, new messages require your attention.
+- message_needaction_counter: integer (readonly)
+   Label: Number of Actions
+   Help: Number of messages which requires an action
+- message_partner_ids: many2many -> res.partner (readonly)
+   Label: Followers (Partners)
+- message_unread: boolean (readonly)
+   Label: Unread Messages
+   Help: If checked, new messages require your attention.
+- message_unread_counter: integer (readonly)
+   Label: Unread Messages Counter
+   Help: Number of unread messages
+- mrp_product_qty: float (readonly)
+   Label: Manufactured
+- my_activity_date_deadline: date (readonly)
+   Label: My Activity Deadline
+- name: char* (REQUIRED)
+   Label: Name
+- nbr_reordering_rules: integer (readonly)
+   Label: Reordering Rules
+- normal_cost: float (readonly)
+   Label: Normal Cost
+   Help: Sum of Multiplication of Cost price and quantity of Vendor Bills
+- orderpoint_ids: one2many -> stock.warehouse.orderpoint
+   Label: Minimum Stock Rules
+- outgoing_qty: float (readonly)
+   Label: Outgoing
+   Help: Quantity of planned outgoing products.
+In a context with a single Stock Location, this includes goods leaving this Location, or any of its children.
+In a context with a single Warehouse, this includes goods leaving the Stock Location of this Warehouse, or any of its children.
+Otherwise, this includes goods leaving any Stock Location with 'internal' type.
+- packaging_ids: one2many -> product.packaging
+   Label: Product Packages
+   Help: Gives the different ways to package the same product.
+- pack_ids: one2many -> product.pack
+   Label: Product pack
+- partner_ref: char (readonly)
+   Label: Customer Ref
+- price: float
+   Label: Price
+- price_extra: float (readonly)
+   Label: Variant Price Extra
+   Help: This is the sum of the extra price of all attributes
+- pricelist_id: many2one -> product.pricelist
+   Label: Pricelist
+   Help: Technical field. Used for searching on pricelists, not stored in database.
+- pricelist_item_count: integer (readonly)
+   Label: Number of price rules
+- produce_delay: float
+   Label: Manufacturing Lead Time
+   Help: Average lead time in days to manufacture this product. In the case of multi-level BOM, the manufacturing lead times of the components will be added.
+- product_template_attribute_value_ids: many2many -> product.template.attribute.value
+   Label: Attribute Values
+- product_template_image_ids: one2many -> product.image
+   Label: Extra Product Media
+- product_tmpl_id: many2one -> product.template* (REQUIRED)
+   Label: Product Template
+- product_variant_count: integer (readonly)
+   Label: # Product Variants
+- product_variant_id: many2one -> product.product (readonly)
+   Label: Product
+- product_variant_ids: one2many -> product.product* (REQUIRED)
+   Label: Products
+- product_variant_image_ids: one2many -> product.image
+   Label: Extra Variant Images
+- project_id: many2one -> project.project
+   Label: Project
+   Help: Select a billable project on which tasks can be created. This setting must be set for each company.
+- project_template_id: many2one -> project.project
+   Label: Project Template
+   Help: Select a billable project to be the skeleton of the new created project when selling the current product. Its stages and tasks will be duplicated.
+- property_account_creditor_price_difference: many2one -> account.account
+   Label: Price Difference Account
+   Help: This account is used in automated inventory valuation to record the price difference between a purchase order and its related vendor bill when validating this vendor bill.
+- property_account_expense_id: many2one -> account.account
+   Label: Expense Account
+   Help: Keep this field empty to use the default value from the product category. If anglo-saxon accounting with automated valuation method is configured, the expense account on the product category will be used.
+- property_account_income_id: many2one -> account.account
+   Label: Income Account
+   Help: Keep this field empty to use the default value from the product category.
+- property_stock_inventory: many2one -> stock.location
+   Label: Inventory Location
+   Help: This stock location will be used, instead of the default one, as the source location for stock moves generated when you do an inventory.
+- property_stock_production: many2one -> stock.location
+   Label: Production Location
+   Help: This stock location will be used, instead of the default one, as the source location for stock moves generated by manufacturing orders.
+- public_categ_ids: many2many -> product.public.category
+   Label: Website Product Category
+   Help: The product will be available in each mentioned eCommerce category. Go to Shop > Customize and enable 'eCommerce categories' to view all eCommerce categories.
+- purchase_avg_price: float (readonly)
+   Label: Avg. Purchase Unit Price
+   Help: Avg. Price in Vendor Bills 
+- purchased_product_qty: float (readonly)
+   Label: Purchased
+- purchase_gap: float (readonly)
+   Label: Purchase Gap
+   Help: Normal Cost - Total Cost
+- purchase_line_warn: selection* (REQUIRED)
+   Label: Purchase Order Line Warning
+   Help: Selecting the "Warning" option will notify user with the message, Selecting "Blocking Message" will throw an exception with the message and block the flow. The Message has to be written in the next field.
+- purchase_line_warn_msg: text
+   Label: Message for Purchase Order Line
+- purchase_method: selection
+   Label: Control Policy
+   Help: On ordered quantities: Control bills based on ordered quantities.
+On received quantities: Control bills based on received quantities.
+- purchase_num_invoiced: float (readonly)
+   Label: # Invoiced in Purchase
+   Help: Sum of Quantity in Vendor Bills
+- purchase_ok: boolean
+   Label: Can be Purchased
+- purchase_order_line_ids: one2many -> purchase.order.line
+   Label: Purchase Order Line
+   Help: Technical: used to compute quantities.
+- purchase_requisition: selection
+   Label: Procurement
+   Help: Create a draft purchase order: Based on your product configuration, the system will create a draft purchase order.Propose a call for tender : If the 'purchase_requisition' module is installed and this option is selected, the system will create a draft call for tender.
+- putaway_rule_ids: one2many -> stock.putaway.rule
+   Label: Putaway Rules
+- qty_available: float (readonly)
+   Label: Quantity On Hand
+   Help: Current quantity of products.
+In a context with a single Stock Location, this includes goods stored at this Location, or any of its children.
+In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.
+stored in the Stock Location of the Warehouse of this Shop, or any of its children.
+Otherwise, this includes goods stored in any Stock Location with 'internal' type.
+- quantity_svl: float (readonly)
+   Label: Quantity Svl
+- rating_avg: float (readonly)
+   Label: Rating Average
+- rating_count: integer (readonly)
+   Label: Rating count
+- rating_ids: one2many -> rating.rating
+   Label: Rating
+- rating_last_feedback: text (readonly)
+   Label: Rating Last Feedback
+   Help: Reason of the rating
+- rating_last_image: binary (readonly)
+   Label: Rating Last Image
+- rating_last_value: float (readonly)
+   Label: Rating Last Value
+- recurring_invoice: boolean
+   Label: Subscription Product
+   Help: If set, confirming a sale order with this product will create a subscription
+- reordering_max_qty: float (readonly)
+   Label: Reordering Max Qty
+- reordering_min_qty: float (readonly)
+   Label: Reordering Min Qty
+- responsible_id: many2one -> res.users
+   Label: Responsible
+   Help: This user will be responsible of the next activities related to logistic operations for this product.
+- route_from_categ_ids: many2many -> stock.location.route
+   Label: Category Routes
+- route_ids: many2many -> stock.location.route
+   Label: Routes
+   Help: Depending on the modules installed, this will allow you to define the route of the product: whether it will be bought, manufactured, replenished on order, etc.
+- sale_avg_price: float (readonly)
+   Label: Avg. Sale Unit Price
+   Help: Avg. Price in Customer Invoices.
+- sale_delay: float
+   Label: Customer Lead Time
+   Help: Delivery lead time, in days. It's the number of days, promised to the customer, between the confirmation of the sales order and the delivery.
+- sale_expected: float (readonly)
+   Label: Expected Sale
+   Help: Sum of Multiplication of Sale Catalog price and quantity of Customer Invoices
+- sale_line_warn: selection* (REQUIRED)
+   Label: Sales Order Line
+   Help: Selecting the "Warning" option will notify user with the message, Selecting "Blocking Message" will throw an exception with the message and block the flow. The Message has to be written in the next field.
+- sale_line_warn_msg: text
+   Label: Message for Sales Order Line
+- sale_num_invoiced: float (readonly)
+   Label: # Invoiced in Sale
+   Help: Sum of Quantity in Customer Invoices
+- sale_ok: boolean
+   Label: Can be Sold
+- sales_count: float (readonly)
+   Label: Sold
+- sales_gap: float (readonly)
+   Label: Sales Gap
+   Help: Expected Sale - Turn Over
+- seller_ids: one2many -> product.supplierinfo
+   Label: Vendors
+   Help: Define vendor pricelists.
+- seo_name: char
+   Label: Seo name
+- sequence: integer
+   Label: Sequence
+   Help: Gives the sequence order when displaying a product list
+- service_policy: selection
+   Label: Service Invoicing Policy
+- service_to_purchase: boolean
+   Label: Purchase Automatically
+   Help: If ticked, each time you sell this product through a SO, a RfQ is automatically created to buy the product. Tip: don't forget to set a vendor on the product.
+- service_tracking: selection
+   Label: Service Tracking
+   Help: On Sales order confirmation, this product can generate a project and/or task.         From those, you can track the service you are selling.
+         'In sale order's project': Will use the sale order's configured project if defined or fallback to         creating a new project based on the selected template.
+- service_type: selection
+   Label: Track Service
+   Help: Manually set quantities on order: Invoice based on the manually entered quantity, without creating an analytic account.
+Timesheets on contract: Invoice based on the tracked hours on the related timesheet.
+Create a task and track hours: Create a task on the sales order validation and track the work hours.
+- show_on_hand_qty_status_button: boolean (readonly)
+   Label: Show On Hand Qty Status Button
+- standard_price: float
+   Label: Cost
+   Help: In Standard Price & AVCO: value of the product (automatically computed in AVCO).
+        In FIFO: value of the next unit that will leave the stock (automatically computed).
+        Used to value the product when the purchase cost is not known (e.g. inventory adjustment).
+        Used to compute margins on sale orders.
+- stock_move_ids: one2many -> stock.move
+   Label: Stock Move
+   Help: Technical: used to compute quantities.
+- stock_quant_ids: one2many -> stock.quant
+   Label: Stock Quant
+   Help: Technical: used to compute quantities.
+- stock_valuation_layer_ids: one2many -> stock.valuation.layer
+   Label: Stock Valuation Layer
+- subscription_template_id: many2one -> sale.subscription.template
+   Label: Subscription Template
+   Help: Product will be included in a selected template
+- supplier_taxes_id: many2many -> account.tax
+   Label: Vendor Taxes
+   Help: Default taxes used when buying the product.
+- taxes_id: many2many -> account.tax
+   Label: Customer Taxes
+   Help: Default taxes used when selling the product.
+- total_cost: float (readonly)
+   Label: Total Cost
+   Help: Sum of Multiplication of Invoice price and quantity of Vendor Bills 
+- total_margin: float (readonly)
+   Label: Total Margin
+   Help: Turnover - Standard price
+- total_margin_rate: float (readonly)
+   Label: Total Margin Rate(%)
+   Help: Total margin * 100 / Turnover
+- tracking: selection* (REQUIRED)
+   Label: Tracking
+   Help: Ensure the traceability of a storable product in your warehouse.
+- turnover: float (readonly)
+   Label: Turnover
+   Help: Sum of Multiplication of Invoice price and quantity of Customer Invoices
+- type: selection* (REQUIRED)
+   Label: Product Type
+   Help: A storable product is a product for which you manage stock. The Inventory app has to be installed.
+A consumable product is a product for which stock is not managed.
+A service is a non-material product you provide.
+- uom_id: many2one -> uom.uom* (REQUIRED)
+   Label: Unit of Measure
+   Help: Default unit of measure used for all stock operations.
+- uom_name: char (readonly)
+   Label: Unit of Measure Name
+- uom_po_id: many2one -> uom.uom* (REQUIRED)
+   Label: Purchase Unit of Measure
+   Help: Default unit of measure used for purchase orders. It must be in the same category as the default unit of measure.
+- used_in_bom_count: integer (readonly)
+   Label: # BoM Where Used
+- valid_product_template_attribute_line_ids: many2many -> product.template.attribute.line (readonly)
+   Label: Valid Product Attribute Lines
+   Help: Technical compute
+- valuation: selection (readonly)
+   Label: Inventory Valuation
+   Help: Manual: The accounting entries to value the inventory are not posted automatically.
+        Automated: An accounting entry is automatically created to value the inventory when a product enters or leaves the company.
+        
+- value_svl: float (readonly)
+   Label: Value Svl
+- variant_bom_ids: one2many -> mrp.bom
+   Label: BOM Product Variants
+- variant_seller_ids: one2many -> product.supplierinfo
+   Label: Variant Seller
+- virtual_available: float (readonly)
+   Label: Forecast Quantity
+   Help: Forecast quantity (computed as Quantity On Hand - Outgoing + Incoming)
+In a context with a single Stock Location, this includes goods stored in this location, or any of its children.
+In a context with a single Warehouse, this includes goods stored in the Stock Location of this Warehouse, or any of its children.
+Otherwise, this includes goods stored in any Stock Location with 'internal' type.
+- visible_expense_policy: boolean (readonly)
+   Label: Re-Invoice Policy visible
+- visible_qty_configurator: boolean (readonly)
+   Label: Quantity visible in configurator
+- volume: float
+   Label: Volume
+- volume_uom_name: char (readonly)
+   Label: Volume unit of measure label
+- warehouse_id: many2one -> stock.warehouse
+   Label: Warehouse
+- website_description: html
+   Label: Description for the website
+- website_id: many2one -> website
+   Label: Website
+   Help: Restrict publishing to this website.
+- website_message_ids: one2many -> mail.message
+   Label: Website Messages
+   Help: Website communication history
+- website_meta_description: text
+   Label: Website meta description
+- website_meta_keywords: char
+   Label: Website meta keywords
+- website_meta_og_img: char
+   Label: Website opengraph image
+- website_meta_title: char
+   Label: Website meta title
+- website_published: boolean
+   Label: Visible on current website
+- website_ribbon_id: many2one -> product.ribbon
+   Label: Ribbon
+- website_sequence: integer
+   Label: Website Sequence
+   Help: Determine the display order in the Website E-commerce
+- website_size_x: integer
+   Label: Size X
+- website_size_y: integer
+   Label: Size Y
+- website_url: char (readonly)
+   Label: Website URL
+   Help: The full URL to access the document through the website.
+- weight: float
+   Label: Weight
+- weight_uom_name: char (readonly)
+   Label: Weight unit of measure label
+- write_date: datetime (readonly)
+   Label: Last Updated on
+- write_uid: many2one -> res.users (readonly)
+   Label: Last Updated by
+- x_studio_char_field_CnWkx: char
+   Label: New Text
+- x_studio_char_field_xT5Ss: char
+   Label: New Text
+- x_studio_cost_ref_difference: float (readonly)
+   Label: Cost Ref. Difference
+- x_studio_keterangan: char
+   Label: Keterangan
+- x_studio_link_tokopedia: char
+   Label: Link Tokopedia
+- x_studio_old_name: char
+   Label: Old Name
+- x_studio_photo: binary
+   Label: Photo
+- x_studio_product_cost: float
+   Label: Product Cost Ref.
+- x_studio_product_type_vn: selection
+   Label: Product Type Info
+- x_studio_related_field_FHJG5: float (readonly)
+   Label: New Related Field
+- x_studio_related_field_oGq57: selection (readonly)
+   Label: New Related Field
+- x_studio_sn: char
+   Label: SN
+
+## Relationships:
+- accessory_product_ids (many2many): product.product
+   Description: Accessory Products
+- activity_ids (one2many): mail.activity
+   Description: Activities
+- activity_type_id (many2one): mail.activity.type
+   Description: Next Activity Type
+- activity_user_id (many2one): res.users
+   Description: Responsible User
+- alternative_product_ids (many2many): product.template
+   Description: Alternative Products
+- attribute_line_ids (one2many): product.template.attribute.line
+   Description: Product Attributes
+- bom_ids (one2many): mrp.bom
+   Description: Bill of Materials
+- bom_line_ids (one2many): mrp.bom.line
+   Description: BoM Components
+- categ_id (many2one): product.category
+   Description: Product Category
+- company_id (many2one): res.company
+   Description: Company
+- cost_currency_id (many2one): res.currency
+   Description: Cost Currency
+- create_uid (many2one): res.users
+   Description: Created by
+- currency_id (many2one): res.currency
+   Description: Currency
+- failed_message_ids (one2many): mail.message
+   Description: Failed Messages
+- location_id (many2one): stock.location
+   Description: Location
+- message_channel_ids (many2many): mail.channel
+   Description: Followers (Channels)
+- message_follower_ids (one2many): mail.followers
+   Description: Followers
+- message_ids (one2many): mail.message
+   Description: Messages
+- message_main_attachment_id (many2one): ir.attachment
+   Description: Main Attachment
+- message_partner_ids (many2many): res.partner
+   Description: Followers (Partners)
+- orderpoint_ids (one2many): stock.warehouse.orderpoint
+   Description: Minimum Stock Rules
+- packaging_ids (one2many): product.packaging
+   Description: Product Packages
+- pack_ids (one2many): product.pack
+   Description: Product pack
+- pricelist_id (many2one): product.pricelist
+   Description: Pricelist
+- product_template_attribute_value_ids (many2many): product.template.attribute.value
+   Description: Attribute Values
+- product_template_image_ids (one2many): product.image
+   Description: Extra Product Media
+- product_tmpl_id (many2one): product.template
+   Description: Product Template
+- product_variant_id (many2one): product.product
+   Description: Product
+- product_variant_ids (one2many): product.product
+   Description: Products
+- product_variant_image_ids (one2many): product.image
+   Description: Extra Variant Images
+- project_id (many2one): project.project
+   Description: Project
+- project_template_id (many2one): project.project
+   Description: Project Template
+- property_account_creditor_price_difference (many2one): account.account
+   Description: Price Difference Account
+- property_account_expense_id (many2one): account.account
+   Description: Expense Account
+- property_account_income_id (many2one): account.account
+   Description: Income Account
+- property_stock_inventory (many2one): stock.location
+   Description: Inventory Location
+- property_stock_production (many2one): stock.location
+   Description: Production Location
+- public_categ_ids (many2many): product.public.category
+   Description: Website Product Category
+- purchase_order_line_ids (one2many): purchase.order.line
+   Description: Purchase Order Line
+- putaway_rule_ids (one2many): stock.putaway.rule
+   Description: Putaway Rules
+- rating_ids (one2many): rating.rating
+   Description: Rating
+- responsible_id (many2one): res.users
+   Description: Responsible
+- route_from_categ_ids (many2many): stock.location.route
+   Description: Category Routes
+- route_ids (many2many): stock.location.route
+   Description: Routes
+- seller_ids (one2many): product.supplierinfo
+   Description: Vendors
+- stock_move_ids (one2many): stock.move
+   Description: Stock Move
+- stock_quant_ids (one2many): stock.quant
+   Description: Stock Quant
+- stock_valuation_layer_ids (one2many): stock.valuation.layer
+   Description: Stock Valuation Layer
+- subscription_template_id (many2one): sale.subscription.template
+   Description: Subscription Template
+- supplier_taxes_id (many2many): account.tax
+   Description: Vendor Taxes
+- taxes_id (many2many): account.tax
+   Description: Customer Taxes
+- uom_id (many2one): uom.uom
+   Description: Unit of Measure
+- uom_po_id (many2one): uom.uom
+   Description: Purchase Unit of Measure
+- valid_product_template_attribute_line_ids (many2many): product.template.attribute.line
+   Description: Valid Product Attribute Lines
+- variant_bom_ids (one2many): mrp.bom
+   Description: BOM Product Variants
+- variant_seller_ids (one2many): product.supplierinfo
+   Description: Variant Seller
+- warehouse_id (many2one): stock.warehouse
+   Description: Warehouse
+- website_id (many2one): website
+   Description: Website
+- website_message_ids (one2many): mail.message
+   Description: Website Messages
+- website_ribbon_id (many2one): product.ribbon
+   Description: Ribbon
+- write_uid (many2one): res.users
+   Description: Last Updated by
+
+## Constraints:
+- product_product_barcode_uniq: A barcode can only be assigned to one product !
+- product_product_product_tmpl_id_fkey: False
+- product_variant_combination_product_template_attribute_value_id_fkey: False
+- product_product_message_main_attachment_id_fkey: False
+
+## Import Rules:
+### Required Fields:
+- categ_id: Product Category (many2one)
+- product_tmpl_id: Product Template (many2one)
+- uom_id: Unit of Measure (many2one)
+- uom_po_id: Purchase Unit of Measure (many2one)
+
+### Relational Fields:
+- accessory_product_ids: Accessory Products (many2many -> product.product)
+- activity_ids: Activities (one2many -> mail.activity)
+- activity_type_id: Next Activity Type (many2one -> mail.activity.type)
+- activity_user_id: Responsible User (many2one -> res.users)
+- alternative_product_ids: Alternative Products (many2many -> product.template)
+- attribute_line_ids: Product Attributes (one2many -> product.template.attribute.line)
+- bom_ids: Bill of Materials (one2many -> mrp.bom)
+- bom_line_ids: BoM Components (one2many -> mrp.bom.line)
+- categ_id: Product Category (many2one -> product.category)
+- company_id: Company (many2one -> res.company)
+- cost_currency_id: Cost Currency (many2one -> res.currency)
+- currency_id: Currency (many2one -> res.currency)
+- failed_message_ids: Failed Messages (one2many -> mail.message)
+- location_id: Location (many2one -> stock.location)
+- message_channel_ids: Followers (Channels) (many2many -> mail.channel)
+- message_follower_ids: Followers (one2many -> mail.followers)
+- message_ids: Messages (one2many -> mail.message)
+- message_main_attachment_id: Main Attachment (many2one -> ir.attachment)
+- message_partner_ids: Followers (Partners) (many2many -> res.partner)
+- orderpoint_ids: Minimum Stock Rules (one2many -> stock.warehouse.orderpoint)
+- packaging_ids: Product Packages (one2many -> product.packaging)
+- pack_ids: Product pack (one2many -> product.pack)
+- pricelist_id: Pricelist (many2one -> product.pricelist)
+- product_template_attribute_value_ids: Attribute Values (many2many -> product.template.attribute.value)
+- product_template_image_ids: Extra Product Media (one2many -> product.image)
+- product_tmpl_id: Product Template (many2one -> product.template)
+- product_variant_id: Product (many2one -> product.product)
+- product_variant_ids: Products (one2many -> product.product)
+- product_variant_image_ids: Extra Variant Images (one2many -> product.image)
+- project_id: Project (many2one -> project.project)
+- project_template_id: Project Template (many2one -> project.project)
+- property_account_creditor_price_difference: Price Difference Account (many2one -> account.account)
+- property_account_expense_id: Expense Account (many2one -> account.account)
+- property_account_income_id: Income Account (many2one -> account.account)
+- property_stock_inventory: Inventory Location (many2one -> stock.location)
+- property_stock_production: Production Location (many2one -> stock.location)
+- public_categ_ids: Website Product Category (many2many -> product.public.category)
+- purchase_order_line_ids: Purchase Order Line (one2many -> purchase.order.line)
+- putaway_rule_ids: Putaway Rules (one2many -> stock.putaway.rule)
+- rating_ids: Rating (one2many -> rating.rating)
+- responsible_id: Responsible (many2one -> res.users)
+- route_from_categ_ids: Category Routes (many2many -> stock.location.route)
+- route_ids: Routes (many2many -> stock.location.route)
+- seller_ids: Vendors (one2many -> product.supplierinfo)
+- stock_move_ids: Stock Move (one2many -> stock.move)
+- stock_quant_ids: Stock Quant (one2many -> stock.quant)
+- stock_valuation_layer_ids: Stock Valuation Layer (one2many -> stock.valuation.layer)
+- subscription_template_id: Subscription Template (many2one -> sale.subscription.template)
+- supplier_taxes_id: Vendor Taxes (many2many -> account.tax)
+- taxes_id: Customer Taxes (many2many -> account.tax)
+- uom_id: Unit of Measure (many2one -> uom.uom)
+- uom_po_id: Purchase Unit of Measure (many2one -> uom.uom)
+- valid_product_template_attribute_line_ids: Valid Product Attribute Lines (many2many -> product.template.attribute.line)
+- variant_bom_ids: BOM Product Variants (one2many -> mrp.bom)
+- variant_seller_ids: Variant Seller (one2many -> product.supplierinfo)
+- warehouse_id: Warehouse (many2one -> stock.warehouse)
+- website_id: Website (many2one -> website)
+- website_message_ids: Website Messages (one2many -> mail.message)
+- website_ribbon_id: Ribbon (many2one -> product.ribbon)
+
+### Special Import Rules:
+#### variants_import:
+product.product adalah varian produk dari product.template.
+1. Mengimpor ke product.product otomatis membuat product.template jika belum ada
+2. Untuk produk dengan varian, impor ke product.template terlebih dahulu,
+   kemudian impor varian ke product.product dengan mereferensikan template
+3. Field product_tmpl_id digunakan untuk mereferensikan template
+4. Atribut varian didefinisikan melalui field attribute_value_ids
+
+======================================================================
+
+# Model: Product Template (product.template)
+
+## Fields:
+- accessory_product_ids: many2many -> product.product
+   Label: Accessory Products
+   Help: Accessories show up when the customer reviews the cart before payment (cross-sell strategy).
+- active: boolean
+   Label: Active
+   Help: If unchecked, it will allow you to hide the product without removing it.
+- activity_date_deadline: date (readonly)
+   Label: Next Activity Deadline
+- activity_exception_decoration: selection (readonly)
+   Label: Activity Exception Decoration
+   Help: Type of the exception activity on record.
+- activity_exception_icon: char (readonly)
+   Label: Icon
+   Help: Icon to indicate an exception activity.
+- activity_ids: one2many -> mail.activity
+   Label: Activities
+- activity_state: selection (readonly)
+   Label: Activity State
+   Help: Status based on activities
+Overdue: Due date is already passed
+Today: Activity date is today
+Planned: Future activities.
+- activity_summary: char
+   Label: Next Activity Summary
+- activity_type_icon: char (readonly)
+   Label: Activity Type Icon
+   Help: Font awesome icon e.g. fa-tasks
+- activity_type_id: many2one -> mail.activity.type
+   Label: Next Activity Type
+- activity_user_id: many2one -> res.users
+   Label: Responsible User
+- allow_negative_stock: boolean
+   Label: Allow Negative Stock
+   Help: If this option is not active on this product nor on its product category and that this product is a stockable product, then the validation of the related stock moves will be blocked if the stock level becomes negative with the stock move.
+- alternative_product_ids: many2many -> product.template
+   Label: Alternative Products
+   Help: Suggest alternatives to your customer (upsell strategy). Those products show up on the product page.
+- attribute_line_ids: one2many -> product.template.attribute.line
+   Label: Product Attributes
+- available_threshold: float
+   Label: Availability Threshold
+- barcode: char
+   Label: Barcode
+- bom_count: integer (readonly)
+   Label: # Bill of Material
+- bom_ids: one2many -> mrp.bom
+   Label: Bill of Materials
+- bom_line_ids: one2many -> mrp.bom.line
+   Label: BoM Components
+- cal_pack_price: boolean
+   Label: Calculate Pack Price
+- can_be_expensed: boolean
+   Label: Can be Expensed
+   Help: Specify whether the product can be selected in an expense.
+- can_image_1024_be_zoomed: boolean (readonly)
+   Label: Can Image 1024 be zoomed
+- can_publish: boolean (readonly)
+   Label: Can Publish
+- categ_id: many2one -> product.category* (REQUIRED)
+   Label: Product Category
+   Help: Select category for the current product
+- color: integer
+   Label: Color Index
+- company_id: many2one -> res.company
+   Label: Company
+- cost_currency_id: many2one -> res.currency (readonly)
+   Label: Cost Currency
+- cost_method: selection (readonly)
+   Label: Costing Method
+   Help: Standard Price: The products are valued at their standard cost defined on the product.
+        Average Cost (AVCO): The products are valued at weighted average cost.
+        First In First Out (FIFO): The products are valued supposing those that enter the company first will also leave it first.
+        
+- create_date: datetime (readonly)
+   Label: Created on
+- create_uid: many2one -> res.users (readonly)
+   Label: Created by
+- currency_id: many2one -> res.currency (readonly)
+   Label: Currency
+- custom_message: text
+   Label: Custom Message
+- default_code: char
+   Label: Internal Reference
+- description: text
+   Label: Description
+- description_picking: text
+   Label: Description on Picking
+- description_pickingin: text
+   Label: Description on Receptions
+- description_pickingout: text
+   Label: Description on Delivery Orders
+- description_purchase: text
+   Label: Purchase Description
+- description_sale: text
+   Label: Sales Description
+   Help: A description of the Product that you want to communicate to your customers. This description will be copied to every Sales Order, Delivery Order and Customer Invoice/Credit Note
+- display_name: char (readonly)
+   Label: Display Name
+- expense_policy: selection
+   Label: Re-Invoice Expenses
+   Help: Expenses and vendor bills can be re-invoiced to a customer.With this option, a validated expense can be re-invoice to a customer at its cost or sales price.
+- failed_message_ids: one2many -> mail.message
+   Label: Failed Messages
+- has_available_route_ids: boolean (readonly)
+   Label: Routes can be selected on this product
+- has_configurable_attributes: boolean (readonly)
+   Label: Is a configurable product
+- hs_code: char
+   Label: HS Code
+   Help: Standardized code for international shipping and goods declaration. At the moment, only used for the FedEx shipping provider.
+- id: integer (readonly)
+   Label: ID
+- image_1024: binary (readonly)
+   Label: Image 1024
+- image_128: binary (readonly)
+   Label: Image 128
+- image_1920: binary
+   Label: Image
+- image_256: binary (readonly)
+   Label: Image 256
+- image_512: binary (readonly)
+   Label: Image 512
+- incoming_qty: float (readonly)
+   Label: Incoming
+- inventory_availability: selection
+   Label: Inventory Availability
+   Help: Adds an inventory availability status on the web product page.
+- invoice_policy: selection
+   Label: Invoicing Policy
+   Help: Ordered Quantity: Invoice quantities ordered by the customer.
+Delivered Quantity: Invoice quantities delivered to the customer.
+- is_pack: boolean
+   Label: Is Product Pack
+- is_product_variant: boolean (readonly)
+   Label: Is a product variant
+- is_published: boolean
+   Label: Is Published
+- is_seo_optimized: boolean (readonly)
+   Label: SEO optimized
+- __last_update: datetime (readonly)
+   Label: Last Modified on
+- list_price: float
+   Label: Sales Price
+   Help: Price at which the product is sold to customers.
+- location_id: many2one -> stock.location
+   Label: Location
+- lst_price: float
+   Label: Public Price
+   Help: Price at which the product is sold to customers.
+- message_attachment_count: integer (readonly)
+   Label: Attachment Count
+- message_channel_ids: many2many -> mail.channel (readonly)
+   Label: Followers (Channels)
+- message_follower_ids: one2many -> mail.followers
+   Label: Followers
+- message_has_error: boolean (readonly)
+   Label: Message Delivery error
+   Help: If checked, some messages have a delivery error.
+- message_has_error_counter: integer (readonly)
+   Label: Number of errors
+   Help: Number of messages with delivery error
+- message_has_sms_error: boolean (readonly)
+   Label: SMS Delivery error
+   Help: If checked, some messages have a delivery error.
+- message_ids: one2many -> mail.message
+   Label: Messages
+- message_is_follower: boolean (readonly)
+   Label: Is Follower
+- message_main_attachment_id: many2one -> ir.attachment
+   Label: Main Attachment
+- message_needaction: boolean (readonly)
+   Label: Action Needed
+   Help: If checked, new messages require your attention.
+- message_needaction_counter: integer (readonly)
+   Label: Number of Actions
+   Help: Number of messages which requires an action
+- message_partner_ids: many2many -> res.partner (readonly)
+   Label: Followers (Partners)
+- message_unread: boolean (readonly)
+   Label: Unread Messages
+   Help: If checked, new messages require your attention.
+- message_unread_counter: integer (readonly)
+   Label: Unread Messages Counter
+   Help: Number of unread messages
+- mrp_product_qty: float (readonly)
+   Label: Manufactured
+- my_activity_date_deadline: date (readonly)
+   Label: My Activity Deadline
+- name: char* (REQUIRED)
+   Label: Name
+- nbr_reordering_rules: integer (readonly)
+   Label: Reordering Rules
+- outgoing_qty: float (readonly)
+   Label: Outgoing
+- packaging_ids: one2many -> product.packaging
+   Label: Product Packages
+   Help: Gives the different ways to package the same product.
+- pack_ids: one2many -> product.pack
+   Label: Product pack
+- price: float
+   Label: Price
+- pricelist_id: many2one -> product.pricelist
+   Label: Pricelist
+   Help: Technical field. Used for searching on pricelists, not stored in database.
+- pricelist_item_count: integer (readonly)
+   Label: Number of price rules
+- produce_delay: float
+   Label: Manufacturing Lead Time
+   Help: Average lead time in days to manufacture this product. In the case of multi-level BOM, the manufacturing lead times of the components will be added.
+- product_template_image_ids: one2many -> product.image
+   Label: Extra Product Media
+- product_variant_count: integer (readonly)
+   Label: # Product Variants
+- product_variant_id: many2one -> product.product (readonly)
+   Label: Product
+- product_variant_ids: one2many -> product.product* (REQUIRED)
+   Label: Products
+- project_id: many2one -> project.project
+   Label: Project
+   Help: Select a billable project on which tasks can be created. This setting must be set for each company.
+- project_template_id: many2one -> project.project
+   Label: Project Template
+   Help: Select a billable project to be the skeleton of the new created project when selling the current product. Its stages and tasks will be duplicated.
+- property_account_creditor_price_difference: many2one -> account.account
+   Label: Price Difference Account
+   Help: This account is used in automated inventory valuation to record the price difference between a purchase order and its related vendor bill when validating this vendor bill.
+- property_account_expense_id: many2one -> account.account
+   Label: Expense Account
+   Help: Keep this field empty to use the default value from the product category. If anglo-saxon accounting with automated valuation method is configured, the expense account on the product category will be used.
+- property_account_income_id: many2one -> account.account
+   Label: Income Account
+   Help: Keep this field empty to use the default value from the product category.
+- property_stock_inventory: many2one -> stock.location
+   Label: Inventory Location
+   Help: This stock location will be used, instead of the default one, as the source location for stock moves generated when you do an inventory.
+- property_stock_production: many2one -> stock.location
+   Label: Production Location
+   Help: This stock location will be used, instead of the default one, as the source location for stock moves generated by manufacturing orders.
+- public_categ_ids: many2many -> product.public.category
+   Label: Website Product Category
+   Help: The product will be available in each mentioned eCommerce category. Go to Shop > Customize and enable 'eCommerce categories' to view all eCommerce categories.
+- purchased_product_qty: float (readonly)
+   Label: Purchased
+- purchase_line_warn: selection* (REQUIRED)
+   Label: Purchase Order Line Warning
+   Help: Selecting the "Warning" option will notify user with the message, Selecting "Blocking Message" will throw an exception with the message and block the flow. The Message has to be written in the next field.
+- purchase_line_warn_msg: text
+   Label: Message for Purchase Order Line
+- purchase_method: selection
+   Label: Control Policy
+   Help: On ordered quantities: Control bills based on ordered quantities.
+On received quantities: Control bills based on received quantities.
+- purchase_ok: boolean
+   Label: Can be Purchased
+- purchase_requisition: selection
+   Label: Procurement
+   Help: Create a draft purchase order: Based on your product configuration, the system will create a draft purchase order.Propose a call for tender : If the 'purchase_requisition' module is installed and this option is selected, the system will create a draft call for tender.
+- qty_available: float (readonly)
+   Label: Quantity On Hand
+- rating_avg: float (readonly)
+   Label: Rating Average
+- rating_count: integer (readonly)
+   Label: Rating count
+- rating_ids: one2many -> rating.rating
+   Label: Rating
+- rating_last_feedback: text (readonly)
+   Label: Rating Last Feedback
+   Help: Reason of the rating
+- rating_last_image: binary (readonly)
+   Label: Rating Last Image
+- rating_last_value: float (readonly)
+   Label: Rating Last Value
+- recurring_invoice: boolean
+   Label: Subscription Product
+   Help: If set, confirming a sale order with this product will create a subscription
+- reordering_max_qty: float (readonly)
+   Label: Reordering Max Qty
+- reordering_min_qty: float (readonly)
+   Label: Reordering Min Qty
+- responsible_id: many2one -> res.users
+   Label: Responsible
+   Help: This user will be responsible of the next activities related to logistic operations for this product.
+- route_from_categ_ids: many2many -> stock.location.route
+   Label: Category Routes
+- route_ids: many2many -> stock.location.route
+   Label: Routes
+   Help: Depending on the modules installed, this will allow you to define the route of the product: whether it will be bought, manufactured, replenished on order, etc.
+- sale_delay: float
+   Label: Customer Lead Time
+   Help: Delivery lead time, in days. It's the number of days, promised to the customer, between the confirmation of the sales order and the delivery.
+- sale_line_warn: selection* (REQUIRED)
+   Label: Sales Order Line
+   Help: Selecting the "Warning" option will notify user with the message, Selecting "Blocking Message" will throw an exception with the message and block the flow. The Message has to be written in the next field.
+- sale_line_warn_msg: text
+   Label: Message for Sales Order Line
+- sale_ok: boolean
+   Label: Can be Sold
+- sales_count: float (readonly)
+   Label: Sold
+- seller_ids: one2many -> product.supplierinfo
+   Label: Vendors
+   Help: Define vendor pricelists.
+- seo_name: char
+   Label: Seo name
+- sequence: integer
+   Label: Sequence
+   Help: Gives the sequence order when displaying a product list
+- service_policy: selection
+   Label: Service Invoicing Policy
+- service_to_purchase: boolean
+   Label: Purchase Automatically
+   Help: If ticked, each time you sell this product through a SO, a RfQ is automatically created to buy the product. Tip: don't forget to set a vendor on the product.
+- service_tracking: selection
+   Label: Service Tracking
+   Help: On Sales order confirmation, this product can generate a project and/or task.         From those, you can track the service you are selling.
+         'In sale order's project': Will use the sale order's configured project if defined or fallback to         creating a new project based on the selected template.
+- service_type: selection
+   Label: Track Service
+   Help: Manually set quantities on order: Invoice based on the manually entered quantity, without creating an analytic account.
+Timesheets on contract: Invoice based on the tracked hours on the related timesheet.
+Create a task and track hours: Create a task on the sales order validation and track the work hours.
+- show_on_hand_qty_status_button: boolean (readonly)
+   Label: Show On Hand Qty Status Button
+- standard_price: float
+   Label: Cost
+   Help: In Standard Price & AVCO: value of the product (automatically computed in AVCO).
+        In FIFO: value of the next unit that will leave the stock (automatically computed).
+        Used to value the product when the purchase cost is not known (e.g. inventory adjustment).
+        Used to compute margins on sale orders.
+- subscription_template_id: many2one -> sale.subscription.template
+   Label: Subscription Template
+   Help: Product will be included in a selected template
+- supplier_taxes_id: many2many -> account.tax
+   Label: Vendor Taxes
+   Help: Default taxes used when buying the product.
+- taxes_id: many2many -> account.tax
+   Label: Customer Taxes
+   Help: Default taxes used when selling the product.
+- tracking: selection* (REQUIRED)
+   Label: Tracking
+   Help: Ensure the traceability of a storable product in your warehouse.
+- type: selection* (REQUIRED)
+   Label: Product Type
+   Help: A storable product is a product for which you manage stock. The Inventory app has to be installed.
+A consumable product is a product for which stock is not managed.
+A service is a non-material product you provide.
+- uom_id: many2one -> uom.uom* (REQUIRED)
+   Label: Unit of Measure
+   Help: Default unit of measure used for all stock operations.
+- uom_name: char (readonly)
+   Label: Unit of Measure Name
+- uom_po_id: many2one -> uom.uom* (REQUIRED)
+   Label: Purchase Unit of Measure
+   Help: Default unit of measure used for purchase orders. It must be in the same category as the default unit of measure.
+- used_in_bom_count: integer (readonly)
+   Label: # of BoM Where is Used
+- valid_product_template_attribute_line_ids: many2many -> product.template.attribute.line (readonly)
+   Label: Valid Product Attribute Lines
+   Help: Technical compute
+- valuation: selection (readonly)
+   Label: Inventory Valuation
+   Help: Manual: The accounting entries to value the inventory are not posted automatically.
+        Automated: An accounting entry is automatically created to value the inventory when a product enters or leaves the company.
+        
+- variant_seller_ids: one2many -> product.supplierinfo
+   Label: Variant Seller
+- virtual_available: float (readonly)
+   Label: Forecasted Quantity
+- visible_expense_policy: boolean (readonly)
+   Label: Re-Invoice Policy visible
+- visible_qty_configurator: boolean (readonly)
+   Label: Quantity visible in configurator
+- volume: float
+   Label: Volume
+- volume_uom_name: char (readonly)
+   Label: Volume unit of measure label
+- warehouse_id: many2one -> stock.warehouse
+   Label: Warehouse
+- website_description: html
+   Label: Description for the website
+- website_id: many2one -> website
+   Label: Website
+   Help: Restrict publishing to this website.
+- website_message_ids: one2many -> mail.message
+   Label: Website Messages
+   Help: Website communication history
+- website_meta_description: text
+   Label: Website meta description
+- website_meta_keywords: char
+   Label: Website meta keywords
+- website_meta_og_img: char
+   Label: Website opengraph image
+- website_meta_title: char
+   Label: Website meta title
+- website_published: boolean
+   Label: Visible on current website
+- website_ribbon_id: many2one -> product.ribbon
+   Label: Ribbon
+- website_sequence: integer
+   Label: Website Sequence
+   Help: Determine the display order in the Website E-commerce
+- website_size_x: integer
+   Label: Size X
+- website_size_y: integer
+   Label: Size Y
+- website_url: char (readonly)
+   Label: Website URL
+   Help: The full URL to access the document through the website.
+- weight: float
+   Label: Weight
+- weight_uom_name: char (readonly)
+   Label: Weight unit of measure label
+- write_date: datetime (readonly)
+   Label: Last Updated on
+- write_uid: many2one -> res.users (readonly)
+   Label: Last Updated by
+- x_studio_link_tokopedia: char
+   Label: Link Tokopedia
+- x_studio_old_name: char
+   Label: Old Name
+- x_studio_product_type_vn: selection
+   Label: Product Type Info
+
+## Relationships:
+- accessory_product_ids (many2many): product.product
+   Description: Accessory Products
+- activity_ids (one2many): mail.activity
+   Description: Activities
+- activity_type_id (many2one): mail.activity.type
+   Description: Next Activity Type
+- activity_user_id (many2one): res.users
+   Description: Responsible User
+- alternative_product_ids (many2many): product.template
+   Description: Alternative Products
+- attribute_line_ids (one2many): product.template.attribute.line
+   Description: Product Attributes
+- bom_ids (one2many): mrp.bom
+   Description: Bill of Materials
+- bom_line_ids (one2many): mrp.bom.line
+   Description: BoM Components
+- categ_id (many2one): product.category
+   Description: Product Category
+- company_id (many2one): res.company
+   Description: Company
+- cost_currency_id (many2one): res.currency
+   Description: Cost Currency
+- create_uid (many2one): res.users
+   Description: Created by
+- currency_id (many2one): res.currency
+   Description: Currency
+- failed_message_ids (one2many): mail.message
+   Description: Failed Messages
+- location_id (many2one): stock.location
+   Description: Location
+- message_channel_ids (many2many): mail.channel
+   Description: Followers (Channels)
+- message_follower_ids (one2many): mail.followers
+   Description: Followers
+- message_ids (one2many): mail.message
+   Description: Messages
+- message_main_attachment_id (many2one): ir.attachment
+   Description: Main Attachment
+- message_partner_ids (many2many): res.partner
+   Description: Followers (Partners)
+- packaging_ids (one2many): product.packaging
+   Description: Product Packages
+- pack_ids (one2many): product.pack
+   Description: Product pack
+- pricelist_id (many2one): product.pricelist
+   Description: Pricelist
+- product_template_image_ids (one2many): product.image
+   Description: Extra Product Media
+- product_variant_id (many2one): product.product
+   Description: Product
+- product_variant_ids (one2many): product.product
+   Description: Products
+- project_id (many2one): project.project
+   Description: Project
+- project_template_id (many2one): project.project
+   Description: Project Template
+- property_account_creditor_price_difference (many2one): account.account
+   Description: Price Difference Account
+- property_account_expense_id (many2one): account.account
+   Description: Expense Account
+- property_account_income_id (many2one): account.account
+   Description: Income Account
+- property_stock_inventory (many2one): stock.location
+   Description: Inventory Location
+- property_stock_production (many2one): stock.location
+   Description: Production Location
+- public_categ_ids (many2many): product.public.category
+   Description: Website Product Category
+- rating_ids (one2many): rating.rating
+   Description: Rating
+- responsible_id (many2one): res.users
+   Description: Responsible
+- route_from_categ_ids (many2many): stock.location.route
+   Description: Category Routes
+- route_ids (many2many): stock.location.route
+   Description: Routes
+- seller_ids (one2many): product.supplierinfo
+   Description: Vendors
+- subscription_template_id (many2one): sale.subscription.template
+   Description: Subscription Template
+- supplier_taxes_id (many2many): account.tax
+   Description: Vendor Taxes
+- taxes_id (many2many): account.tax
+   Description: Customer Taxes
+- uom_id (many2one): uom.uom
+   Description: Unit of Measure
+- uom_po_id (many2one): uom.uom
+   Description: Purchase Unit of Measure
+- valid_product_template_attribute_line_ids (many2many): product.template.attribute.line
+   Description: Valid Product Attribute Lines
+- variant_seller_ids (one2many): product.supplierinfo
+   Description: Variant Seller
+- warehouse_id (many2one): stock.warehouse
+   Description: Warehouse
+- website_id (many2one): website
+   Description: Website
+- website_message_ids (one2many): mail.message
+   Description: Website Messages
+- website_ribbon_id (many2one): product.ribbon
+   Description: Ribbon
+- write_uid (many2one): res.users
+   Description: Last Updated by
+
+## Constraints:
+- product_template_categ_id_fkey: False
+- product_template_uom_id_fkey: False
+- product_template_uom_po_id_fkey: False
+- product_template_company_id_fkey: False
+- product_template_message_main_attachment_id_fkey: False
+- product_taxes_rel_prod_id_fkey: False
+- product_taxes_rel_tax_id_fkey: False
+- product_supplier_taxes_rel_prod_id_fkey: False
+- product_supplier_taxes_rel_tax_id_fkey: False
+- stock_route_product_route_id_fkey: False
+- product_template_service_to_purchase: Product that is not a service can not create RFQ.
+- product_template_subscription_template_id_fkey: False
+- product_public_category_product_product_public_category_id_fkey: False
+- product_template_website_id_fkey: False
+- product_alternative_rel_src_id_fkey: False
+- product_alternative_rel_dest_id_fkey: False
+- product_accessory_rel_src_id_fkey: False
+- product_accessory_rel_dest_id_fkey: False
+- product_template_website_ribbon_id_fkey: False
+
+## Import Rules:
+### Required Fields:
+- categ_id: Product Category (many2one)
+- name: Name (char)
+- purchase_line_warn: Purchase Order Line Warning (selection)
+- sale_line_warn: Sales Order Line (selection)
+- tracking: Tracking (selection)
+- type: Product Type (selection)
+- uom_id: Unit of Measure (many2one)
+- uom_po_id: Purchase Unit of Measure (many2one)
+
+### Recommended Fields:
+- sequence: Sequence (integer)
+
+### Relational Fields:
+- accessory_product_ids: Accessory Products (many2many -> product.product)
+- activity_ids: Activities (one2many -> mail.activity)
+- activity_type_id: Next Activity Type (many2one -> mail.activity.type)
+- activity_user_id: Responsible User (many2one -> res.users)
+- alternative_product_ids: Alternative Products (many2many -> product.template)
+- attribute_line_ids: Product Attributes (one2many -> product.template.attribute.line)
+- bom_ids: Bill of Materials (one2many -> mrp.bom)
+- bom_line_ids: BoM Components (one2many -> mrp.bom.line)
+- categ_id: Product Category (many2one -> product.category)
+- company_id: Company (many2one -> res.company)
+- cost_currency_id: Cost Currency (many2one -> res.currency)
+- currency_id: Currency (many2one -> res.currency)
+- failed_message_ids: Failed Messages (one2many -> mail.message)
+- location_id: Location (many2one -> stock.location)
+- message_channel_ids: Followers (Channels) (many2many -> mail.channel)
+- message_follower_ids: Followers (one2many -> mail.followers)
+- message_ids: Messages (one2many -> mail.message)
+- message_main_attachment_id: Main Attachment (many2one -> ir.attachment)
+- message_partner_ids: Followers (Partners) (many2many -> res.partner)
+- packaging_ids: Product Packages (one2many -> product.packaging)
+- pack_ids: Product pack (one2many -> product.pack)
+- pricelist_id: Pricelist (many2one -> product.pricelist)
+- product_template_image_ids: Extra Product Media (one2many -> product.image)
+- product_variant_id: Product (many2one -> product.product)
+- product_variant_ids: Products (one2many -> product.product)
+- project_id: Project (many2one -> project.project)
+- project_template_id: Project Template (many2one -> project.project)
+- property_account_creditor_price_difference: Price Difference Account (many2one -> account.account)
+- property_account_expense_id: Expense Account (many2one -> account.account)
+- property_account_income_id: Income Account (many2one -> account.account)
+- property_stock_inventory: Inventory Location (many2one -> stock.location)
+- property_stock_production: Production Location (many2one -> stock.location)
+- public_categ_ids: Website Product Category (many2many -> product.public.category)
+- rating_ids: Rating (one2many -> rating.rating)
+- responsible_id: Responsible (many2one -> res.users)
+- route_from_categ_ids: Category Routes (many2many -> stock.location.route)
+- route_ids: Routes (many2many -> stock.location.route)
+- seller_ids: Vendors (one2many -> product.supplierinfo)
+- subscription_template_id: Subscription Template (many2one -> sale.subscription.template)
+- supplier_taxes_id: Vendor Taxes (many2many -> account.tax)
+- taxes_id: Customer Taxes (many2many -> account.tax)
+- uom_id: Unit of Measure (many2one -> uom.uom)
+- uom_po_id: Purchase Unit of Measure (many2one -> uom.uom)
+- valid_product_template_attribute_line_ids: Valid Product Attribute Lines (many2many -> product.template.attribute.line)
+- variant_seller_ids: Variant Seller (one2many -> product.supplierinfo)
+- warehouse_id: Warehouse (many2one -> stock.warehouse)
+- website_id: Website (many2one -> website)
+- website_message_ids: Website Messages (one2many -> mail.message)
+- website_ribbon_id: Ribbon (many2one -> product.ribbon)
+
+======================================================================
+
+# Model: Bill of Material (mrp.bom)
+
+## Fields:
+- active: boolean
+   Label: Active
+   Help: If the active field is set to False, it will allow you to hide the bills of material without removing it.
+- bom_line_ids: one2many -> mrp.bom.line
+   Label: BoM Lines
+- byproduct_ids: one2many -> mrp.bom.byproduct
+   Label: By-products
+- code: char
+   Label: Reference
+- company_id: many2one -> res.company
+   Label: Company
+- consumption: selection* (REQUIRED)
+   Label: Flexible Consumption
+   Help: Defines if you can consume more or less components than the quantity defined on the BoM:
+  * Allowed: allowed for all manufacturing users.
+  * Allowed with warning: allowed for all manufacturing users with summary of consumption differences when closing the manufacturing order.
+  * Blocked: only a manager can close a manufacturing order when the BoM consumption is not respected.
+- create_date: datetime (readonly)
+   Label: Created on
+- create_uid: many2one -> res.users (readonly)
+   Label: Created by
+- display_name: char (readonly)
+   Label: Display Name
+- failed_message_ids: one2many -> mail.message
+   Label: Failed Messages
+- id: integer (readonly)
+   Label: ID
+- __last_update: datetime (readonly)
+   Label: Last Modified on
+- message_attachment_count: integer (readonly)
+   Label: Attachment Count
+- message_channel_ids: many2many -> mail.channel (readonly)
+   Label: Followers (Channels)
+- message_follower_ids: one2many -> mail.followers
+   Label: Followers
+- message_has_error: boolean (readonly)
+   Label: Message Delivery error
+   Help: If checked, some messages have a delivery error.
+- message_has_error_counter: integer (readonly)
+   Label: Number of errors
+   Help: Number of messages with delivery error
+- message_has_sms_error: boolean (readonly)
+   Label: SMS Delivery error
+   Help: If checked, some messages have a delivery error.
+- message_ids: one2many -> mail.message
+   Label: Messages
+- message_is_follower: boolean (readonly)
+   Label: Is Follower
+- message_main_attachment_id: many2one -> ir.attachment
+   Label: Main Attachment
+- message_needaction: boolean (readonly)
+   Label: Action Needed
+   Help: If checked, new messages require your attention.
+- message_needaction_counter: integer (readonly)
+   Label: Number of Actions
+   Help: Number of messages which requires an action
+- message_partner_ids: many2many -> res.partner (readonly)
+   Label: Followers (Partners)
+- message_unread: boolean (readonly)
+   Label: Unread Messages
+   Help: If checked, new messages require your attention.
+- message_unread_counter: integer (readonly)
+   Label: Unread Messages Counter
+   Help: Number of unread messages
+- operation_ids: one2many -> mrp.routing.workcenter
+   Label: Operations
+- picking_type_id: many2one -> stock.picking.type
+   Label: Operation Type
+   Help: When a procurement has a ‘produce’ route with a operation type set, it will try to create a Manufacturing Order for that product using a BoM of the same operation type. That allows to define stock rules which trigger different manufacturing orders with different BoMs.
+- product_id: many2one -> product.product
+   Label: Product Variant
+   Help: If a product variant is defined the BOM is available only for this product.
+- product_qty: float* (REQUIRED)
+   Label: Quantity
+- product_tmpl_id: many2one -> product.template* (REQUIRED)
+   Label: Product
+- product_uom_category_id: many2one -> uom.category (readonly)
+   Label: Category
+   Help: Conversion between Units of Measure can only occur if they belong to the same category. The conversion will be made based on the ratios.
+- product_uom_id: many2one -> uom.uom* (REQUIRED)
+   Label: Unit of Measure
+   Help: Unit of Measure (Unit of Measure) is the unit of measurement for the inventory control
+- ready_to_produce: selection* (REQUIRED)
+   Label: Manufacturing Readiness
+   Help: Defines when a Manufacturing Order is considered as ready to be started
+- sequence: integer
+   Label: Sequence
+   Help: Gives the sequence order when displaying a list of bills of material.
+- type: selection* (REQUIRED)
+   Label: BoM Type
+- website_message_ids: one2many -> mail.message
+   Label: Website Messages
+   Help: Website communication history
+- write_date: datetime (readonly)
+   Label: Last Updated on
+- write_uid: many2one -> res.users (readonly)
+   Label: Last Updated by
+
+## Relationships:
+- bom_line_ids (one2many): mrp.bom.line
+   Description: BoM Lines
+- byproduct_ids (one2many): mrp.bom.byproduct
+   Description: By-products
+- company_id (many2one): res.company
+   Description: Company
+- create_uid (many2one): res.users
+   Description: Created by
+- failed_message_ids (one2many): mail.message
+   Description: Failed Messages
+- message_channel_ids (many2many): mail.channel
+   Description: Followers (Channels)
+- message_follower_ids (one2many): mail.followers
+   Description: Followers
+- message_ids (one2many): mail.message
+   Description: Messages
+- message_main_attachment_id (many2one): ir.attachment
+   Description: Main Attachment
+- message_partner_ids (many2many): res.partner
+   Description: Followers (Partners)
+- operation_ids (one2many): mrp.routing.workcenter
+   Description: Operations
+- picking_type_id (many2one): stock.picking.type
+   Description: Operation Type
+- product_id (many2one): product.product
+   Description: Product Variant
+- product_tmpl_id (many2one): product.template
+   Description: Product
+- product_uom_category_id (many2one): uom.category
+   Description: Category
+- product_uom_id (many2one): uom.uom
+   Description: Unit of Measure
+- website_message_ids (one2many): mail.message
+   Description: Website Messages
+- write_uid (many2one): res.users
+   Description: Last Updated by
+
+## Constraints:
+- mrp_bom_qty_positive: The quantity to produce must be positive!
+- mrp_bom_message_main_attachment_id_fkey: False
+- mrp_bom_product_tmpl_id_fkey: False
+- mrp_bom_product_id_fkey: False
+- mrp_bom_product_uom_id_fkey: False
+- mrp_bom_picking_type_id_fkey: False
+- mrp_bom_company_id_fkey: False
+
+## Import Rules:
+### Required Fields:
+- consumption: Flexible Consumption (selection)
+- product_qty: Quantity (float)
+- product_tmpl_id: Product (many2one)
+- product_uom_id: Unit of Measure (many2one)
+- ready_to_produce: Manufacturing Readiness (selection)
+- type: BoM Type (selection)
+
+### Recommended Fields:
+- code: Reference (char)
+- sequence: Sequence (integer)
+
+### Relational Fields:
+- bom_line_ids: BoM Lines (one2many -> mrp.bom.line)
+- byproduct_ids: By-products (one2many -> mrp.bom.byproduct)
+- company_id: Company (many2one -> res.company)
+- failed_message_ids: Failed Messages (one2many -> mail.message)
+- message_channel_ids: Followers (Channels) (many2many -> mail.channel)
+- message_follower_ids: Followers (one2many -> mail.followers)
+- message_ids: Messages (one2many -> mail.message)
+- message_main_attachment_id: Main Attachment (many2one -> ir.attachment)
+- message_partner_ids: Followers (Partners) (many2many -> res.partner)
+- operation_ids: Operations (one2many -> mrp.routing.workcenter)
+- picking_type_id: Operation Type (many2one -> stock.picking.type)
+- product_id: Product Variant (many2one -> product.product)
+- product_tmpl_id: Product (many2one -> product.template)
+- product_uom_category_id: Category (many2one -> uom.category)
+- product_uom_id: Unit of Measure (many2one -> uom.uom)
+- website_message_ids: Website Messages (one2many -> mail.message)
+
+### Special Import Rules:
+#### bom_lines_import:
+Saat mengimpor BoM, komponen dapat didefinisikan dengan dua cara:
+1. Membuat record mrp.bom.line terpisah terlebih dahulu
+2. Menggunakan field 'bom_line_ids' atau kolom dengan format khusus di spreadsheet import
+   yang akan otomatis membuat record mrp.bom.line berdasarkan produk
+3. Format bom_line_ids: (0, 0, {'product_id': id, 'product_qty': qty})
+4. Saat melakukan import via CSV/XLS, product_id bisa berupa nama produk
+   dan Odoo akan mencari produk dengan nama tersebut
+
+======================================================================
+
+# Model: Bill of Material Line (mrp.bom.line)
+
+## Fields:
+- allowed_operation_ids: many2many -> mrp.routing.workcenter (readonly)
+   Label: Allowed Operation
+- attachments_count: integer (readonly)
+   Label: Attachments Count
+- bom_id: many2one -> mrp.bom* (REQUIRED)
+   Label: Parent BoM
+- bom_product_template_attribute_value_ids: many2many -> product.template.attribute.value
+   Label: Apply on Variants
+   Help: BOM Product Variants needed to apply this line.
+- child_bom_id: many2one -> mrp.bom (readonly)
+   Label: Sub BoM
+- child_line_ids: one2many -> mrp.bom.line (readonly)
+   Label: BOM lines of the referred bom
+- company_id: many2one -> res.company (readonly)
+   Label: Company
+- create_date: datetime (readonly)
+   Label: Created on
+- create_uid: many2one -> res.users (readonly)
+   Label: Created by
+- display_name: char (readonly)
+   Label: Display Name
+- id: integer (readonly)
+   Label: ID
+- __last_update: datetime (readonly)
+   Label: Last Modified on
+- operation_id: many2one -> mrp.routing.workcenter
+   Label: Consumed in Operation
+   Help: The operation where the components are consumed, or the finished products created.
+- parent_product_tmpl_id: many2one -> product.template (readonly)
+   Label: Parent Product Template
+- possible_bom_product_template_attribute_value_ids: many2many -> product.template.attribute.value (readonly)
+   Label: Possible Bom Product Template Attribute Value
+- product_id: many2one -> product.product* (REQUIRED)
+   Label: Component
+- product_qty: float* (REQUIRED)
+   Label: Quantity
+- product_tmpl_id: many2one -> product.template (readonly)
+   Label: Product Template
+- product_uom_category_id: many2one -> uom.category (readonly)
+   Label: Category
+   Help: Conversion between Units of Measure can only occur if they belong to the same category. The conversion will be made based on the ratios.
+- product_uom_id: many2one -> uom.uom* (REQUIRED)
+   Label: Product Unit of Measure
+   Help: Unit of Measure (Unit of Measure) is the unit of measurement for the inventory control
+- sequence: integer
+   Label: Sequence
+   Help: Gives the sequence order when displaying.
+- total_public_price: float (readonly)
+   Label: Total Public Price
+- write_date: datetime (readonly)
+   Label: Last Updated on
+- write_uid: many2one -> res.users (readonly)
+   Label: Last Updated by
+- x_studio_cost: float (readonly)
+   Label: Cost
+- x_studio_product_type: selection (readonly)
+   Label: Product Type
+- x_studio_public_price: float (readonly)
+   Label: Public Price
+- x_studio_total_cost: float (readonly)
+   Label: Total Cost
+- x_studio_vendor: char (readonly)
+   Label: Vendor
+
+## Relationships:
+- allowed_operation_ids (many2many): mrp.routing.workcenter
+   Description: Allowed Operation
+- bom_id (many2one): mrp.bom
+   Description: Parent BoM
+- bom_product_template_attribute_value_ids (many2many): product.template.attribute.value
+   Description: Apply on Variants
+- child_bom_id (many2one): mrp.bom
+   Description: Sub BoM
+- child_line_ids (one2many): mrp.bom.line
+   Description: BOM lines of the referred bom
+- company_id (many2one): res.company
+   Description: Company
+- create_uid (many2one): res.users
+   Description: Created by
+- operation_id (many2one): mrp.routing.workcenter
+   Description: Consumed in Operation
+- parent_product_tmpl_id (many2one): product.template
+   Description: Parent Product Template
+- possible_bom_product_template_attribute_value_ids (many2many): product.template.attribute.value
+   Description: Possible Bom Product Template Attribute Value
+- product_id (many2one): product.product
+   Description: Component
+- product_tmpl_id (many2one): product.template
+   Description: Product Template
+- product_uom_category_id (many2one): uom.category
+   Description: Category
+- product_uom_id (many2one): uom.uom
+   Description: Product Unit of Measure
+- write_uid (many2one): res.users
+   Description: Last Updated by
+
+## Constraints:
+- mrp_bom_line_bom_qty_zero: All product quantities must be greater or equal to 0.
+Lines with 0 quantities can be used as optional lines. 
+You should install the mrp_byproduct module if you want to manage extra products on BoMs !
+- mrp_bom_line_product_id_fkey: False
+- mrp_bom_line_company_id_fkey: False
+- mrp_bom_line_product_uom_id_fkey: False
+- mrp_bom_line_bom_id_fkey: False
+- mrp_bom_line_product_template_attribute_va_mrp_bom_line_id_fkey: False
+- mrp_bom_line_product_template_product_template_attribute_v_fkey: False
+- mrp_bom_line_operation_id_fkey: False
+
+## Import Rules:
+### Required Fields:
+- bom_id: Parent BoM (many2one)
+- product_id: Component (many2one)
+- product_qty: Quantity (float)
+- product_uom_id: Product Unit of Measure (many2one)
+
+### Recommended Fields:
+- sequence: Sequence (integer)
+
+### Relational Fields:
+- allowed_operation_ids: Allowed Operation (many2many -> mrp.routing.workcenter)
+- bom_id: Parent BoM (many2one -> mrp.bom)
+- bom_product_template_attribute_value_ids: Apply on Variants (many2many -> product.template.attribute.value)
+- child_bom_id: Sub BoM (many2one -> mrp.bom)
+- child_line_ids: BOM lines of the referred bom (one2many -> mrp.bom.line)
+- company_id: Company (many2one -> res.company)
+- operation_id: Consumed in Operation (many2one -> mrp.routing.workcenter)
+- parent_product_tmpl_id: Parent Product Template (many2one -> product.template)
+- possible_bom_product_template_attribute_value_ids: Possible Bom Product Template Attribute Value (many2many -> product.template.attribute.value)
+- product_id: Component (many2one -> product.product)
+- product_tmpl_id: Product Template (many2one -> product.template)
+- product_uom_category_id: Category (many2one -> uom.category)
+- product_uom_id: Product Unit of Measure (many2one -> uom.uom)
+
+## Sample Data:
+
+### Record 1:
+- id: 7
+- display_name: [0202103000056] Jasa Instalasi
+- product_id: [0202103000056] Jasa Instalasi (id: 1201)
+- product_tmpl_id: [0202103000056] Jasa Instalasi (id: 1204)
+- bom_id: [G022086501] [0202103000113] Cable Ties 3. (id: 2)
+- product_qty: 1.0
+- company_id: PT. Visiniaga Mitra Kreasindo (id: 5)
+- product_uom_id: Unit (id: 1)
+- product_uom_category_id: Unit (id: 1)
+- sequence: 1
+- parent_product_tmpl_id: [G022086501] [0202103000113] Cable Ties 3. (id: 10061)
+- possible_bom_product_template_attribute_value_ids: []
+- bom_product_template_attribute_value_ids: []
+- allowed_operation_ids: []
+- operation_id: False
+- child_bom_id: False
+- child_line_ids: []
+- attachments_count: 0
+- total_public_price: 0.0
+- create_uid: Fiko Aditama (id: 45)
+- create_date: 2022-11-21 09:26:13
+- write_uid: Administration (DOA) (id: 1)
+- write_date: 2023-09-06 05:51:07
+- __last_update: 2023-09-06 05:51:07
+- x_studio_cost: 35780000.0
+- x_studio_vendor: False
+- x_studio_public_price: 0.0
+- x_studio_total_cost: 35780000.0
+- x_studio_product_type: service
+  (truncated for brevity)
+
+### Record 2:
+- id: 8
+- display_name: [0202103000004] Biaya Kirim Expedisi
+- product_id: [0202103000004] Biaya Kirim Expedisi (id: 1106)
+- product_tmpl_id: [0202103000004] Biaya Kirim Expedisi (id: 1109)
+- bom_id: [G022086501] [0202103000113] Cable Ties 3. (id: 2)
+- product_qty: 1.0
+- company_id: PT. Visiniaga Mitra Kreasindo (id: 5)
+- product_uom_id: Pack (id: 39)
+- product_uom_category_id: Pack (id: 10)
+- sequence: 1
+- parent_product_tmpl_id: [G022086501] [0202103000113] Cable Ties 3. (id: 10061)
+- possible_bom_product_template_attribute_value_ids: []
+- bom_product_template_attribute_value_ids: []
+- allowed_operation_ids: []
+- operation_id: False
+- child_bom_id: False
+- child_line_ids: []
+- attachments_count: 0
+- total_public_price: 1.0
+- create_uid: Fiko Aditama (id: 45)
+- create_date: 2022-11-21 09:26:13
+- write_uid: Administration (DOA) (id: 1)
+- write_date: 2023-09-06 05:51:07
+- __last_update: 2023-09-06 05:51:07
+- x_studio_cost: 0.0
+- x_studio_vendor: False
+- x_studio_public_price: 1.0
+- x_studio_total_cost: 0.0
+- x_studio_product_type: service
+  (truncated for brevity)
+
+### Record 3:
+- id: 9
+- display_name: [G022118252] Fiber Optic Cable Singlemode, Outdoor, 12 CORE - NPR
+- product_id: [G022118252] Fiber Optic Cable Singlemode, Outdoor, 12 CORE - NPR (id: 10062)
+- product_tmpl_id: [G022118252] Fiber Optic Cable Singlemode, Outdoor, 12 CORE - NPR (id: 11048)
+- bom_id: [G022118249] Cost Jasa (id: 3)
+- product_qty: 450.0
+- company_id: PT. Visiniaga Mitra Kreasindo (id: 5)
+- product_uom_id: meters (id: 63)
+- product_uom_category_id: Unit (id: 1)
+- sequence: 1
+- parent_product_tmpl_id: [G022118249] Cost Jasa (id: 11046)
+- possible_bom_product_template_attribute_value_ids: []
+- bom_product_template_attribute_value_ids: []
+- allowed_operation_ids: []
+- operation_id: False
+- child_bom_id: False
+- child_line_ids: []
+- attachments_count: 0
+- total_public_price: 5062500.0
+- create_uid: Diana Safira (id: 37)
+- create_date: 2022-11-21 09:56:40
+- write_uid: Administration (DOA) (id: 1)
+- write_date: 2023-09-06 05:51:07
+- __last_update: 2023-09-06 05:51:07
+- x_studio_cost: 9000.0
+- x_studio_vendor: Fiber Solution
+- x_studio_public_price: 11250.0
+- x_studio_total_cost: 4050000.0
+- x_studio_product_type: product
+  (truncated for brevity)
+
+### Record 4:
+- id: 15
+- display_name: [G022117847] NVR 32 Channel DS7732NI-I4 Hikvision
+- product_id: [G022117847] NVR 32 Channel DS7732NI-I4 Hikvision (id: 9860)
+- product_tmpl_id: [G022117847] NVR 32 Channel DS7732NI-I4 Hikvision (id: 10831)
+- bom_id: [G022118238] Peralatan utama lt.1 ruang Piket. (id: 4)
+- product_qty: 2.0
+- company_id: PT. Visiniaga Mitra Kreasindo (id: 5)
+- product_uom_id: Unit (id: 1)
+- product_uom_category_id: Unit (id: 1)
+- sequence: 1
+- parent_product_tmpl_id: [G022118238] Peralatan utama lt.1 ruang Piket. (id: 11041)
+- possible_bom_product_template_attribute_value_ids: []
+- bom_product_template_attribute_value_ids: []
+- allowed_operation_ids: []
+- operation_id: False
+- child_bom_id: False
+- child_line_ids: []
+- attachments_count: 0
+- total_public_price: 2.0
+- create_uid: Dewi Tri Wibawati (id: 20)
+- create_date: 2022-11-22 03:30:34
+- write_uid: Administration (DOA) (id: 1)
+- write_date: 2023-09-06 05:51:07
+- __last_update: 2023-09-06 05:51:07
+- x_studio_cost: 6294594.59
+- x_studio_vendor: PT. ZIONCOM TECHNOLOGY
+- x_studio_public_price: 1.0
+- x_studio_total_cost: 12589189.18
+- x_studio_product_type: product
+  (truncated for brevity)
+
+### Record 5:
+- id: 16
+- display_name: [G022118270] Monitor 32" Include Braket Samsung TV 32 Inch
+- product_id: [G022118270] Monitor 32" Include Braket Samsung TV 32 Inch (id: 10069)
+- product_tmpl_id: [G022118270] Monitor 32" Include Braket Samsung TV 32 Inch (id: 11059)
+- bom_id: [G022118238] Peralatan utama lt.1 ruang Piket. (id: 4)
+- product_qty: 2.0
+- company_id: PT. Visiniaga Mitra Kreasindo (id: 5)
+- product_uom_id: Unit (id: 1)
+- product_uom_category_id: Unit (id: 1)
+- sequence: 1
+- parent_product_tmpl_id: [G022118238] Peralatan utama lt.1 ruang Piket. (id: 11041)
+- possible_bom_product_template_attribute_value_ids: []
+- bom_product_template_attribute_value_ids: []
+- allowed_operation_ids: []
+- operation_id: False
+- child_bom_id: False
+- child_line_ids: []
+- attachments_count: 0
+- total_public_price: 2.0
+- create_uid: Dewi Tri Wibawati (id: 20)
+- create_date: 2022-11-22 03:30:34
+- write_uid: Administration (DOA) (id: 1)
+- write_date: 2023-09-06 05:51:07
+- __last_update: 2023-09-06 05:51:07
+- x_studio_cost: 1707207.21
+- x_studio_vendor: PERDANA ELEKTRONIK
+- x_studio_public_price: 1.0
+- x_studio_total_cost: 3414414.42
+- x_studio_product_type: product
+  (truncated for brevity)
+
+======================================================================
+
+# Model: Sales Order (sale.order)
+
+## Fields:
+- access_token: char
+   Label: Security Token
+- access_url: char (readonly)
+   Label: Portal Access URL
+   Help: Customer Portal URL
+- access_warning: text (readonly)
+   Label: Access warning
+- activity_date_deadline: date (readonly)
+   Label: Next Activity Deadline
+- activity_exception_decoration: selection (readonly)
+   Label: Activity Exception Decoration
+   Help: Type of the exception activity on record.
+- activity_exception_icon: char (readonly)
+   Label: Icon
+   Help: Icon to indicate an exception activity.
+- activity_ids: one2many -> mail.activity
+   Label: Activities
+- activity_state: selection (readonly)
+   Label: Activity State
+   Help: Status based on activities
+Overdue: Due date is already passed
+Today: Activity date is today
+Planned: Future activities.
+- activity_summary: char
+   Label: Next Activity Summary
+- activity_type_icon: char (readonly)
+   Label: Activity Type Icon
+   Help: Font awesome icon e.g. fa-tasks
+- activity_type_id: many2one -> mail.activity.type
+   Label: Next Activity Type
+- activity_user_id: many2one -> res.users
+   Label: Responsible User
+- amount_by_group: binary (readonly)
+   Label: Tax amount by group
+   Help: type: [(name, amount, base, formated amount, formated base)]
+- amount_delivery: monetary (readonly)
+   Label: Delivery Amount
+   Help: The amount without tax.
+- amount_tax: monetary (readonly)
+   Label: Taxes
+- amount_terbilang: char
+   Label: Amount Terbilang
+- amount_total: monetary (readonly)
+   Label: Total
+- amount_undiscounted: float (readonly)
+   Label: Amount Before Discount
+- amount_untaxed: monetary (readonly)
+   Label: Untaxed Amount
+- analytic_account_id: many2one -> account.analytic.account
+   Label: Analytic Account
+   Help: The analytic account related to a sales order.
+- applied_coupon_ids: one2many -> coupon.coupon
+   Label: Applied Coupons
+- authorized_transaction_ids: many2many -> payment.transaction (readonly)
+   Label: Authorized Transactions
+- auto_generated: boolean
+   Label: Auto Generated Sales Order
+- auto_purchase_order_id: many2one -> purchase.order (readonly)
+   Label: Source Purchase Order
+- campaign_id: many2one -> utm.campaign
+   Label: Campaign
+   Help: This is a name that helps you keep track of your different campaign efforts, e.g. Fall_Drive, Christmas_Special
+- carrier_id: many2one -> delivery.carrier
+   Label: Delivery Method
+   Help: Fill this field if you plan to invoice the shipping based on picking.
+- cart_quantity: integer (readonly)
+   Label: Cart Quantity
+- cart_recovery_email_sent: boolean
+   Label: Cart recovery email already sent
+- client_order_ref: char
+   Label: Customer Reference
+- code_promo_program_id: many2one -> coupon.program
+   Label: Applied Promo Program
+- commission_ids: one2many -> invoice.sale.commission
+   Label: Sales Commissions
+   Help: Sale Commission related to this order(based on sales person)
+- commitment_date: datetime
+   Label: Delivery Date
+   Help: This is the delivery date promised to the customer. If set, the delivery order will be scheduled based on this date rather than product lead times.
+- company_id: many2one -> res.company* (REQUIRED)
+   Label: Company
+- create_date: datetime (readonly)
+   Label: Creation Date
+   Help: Date on which sales order is created.
+- create_uid: many2one -> res.users (readonly)
+   Label: Created by
+- currency_id: many2one -> res.currency (readonly)
+   Label: Currency
+- currency_rate: float (readonly)
+   Label: Currency Rate
+   Help: The rate of the currency to the currency of rate 1 applicable at the date of the order
+- date_order: datetime* (REQUIRED) (readonly)
+   Label: Order Date
+   Help: Creation date of draft/sent orders,
+Confirmation date of confirmed orders.
+- delivery_count: integer (readonly)
+   Label: Delivery Orders
+- delivery_message: char (readonly)
+   Label: Delivery Message
+- delivery_rating_success: boolean
+   Label: Delivery Rating Success
+- delivery_set: boolean (readonly)
+   Label: Delivery Set
+- display_name: char (readonly)
+   Label: Display Name
+- effective_date: date (readonly)
+   Label: Effective Date
+   Help: Completion date of the first delivery order.
+- expected_date: datetime (readonly)
+   Label: Expected Date
+   Help: Delivery date you can promise to the customer, computed from the minimum lead time of the order lines in case of Service products. In case of shipping, the shipping policy of the order will be taken into account to either use the minimum or maximum lead time of the order lines.
+- expense_count: integer (readonly)
+   Label: # of Expenses
+- expense_ids: one2many -> hr.expense (readonly)
+   Label: Expenses
+- failed_message_ids: one2many -> mail.message
+   Label: Failed Messages
+- fiscal_position_id: many2one -> account.fiscal.position
+   Label: Fiscal Position
+   Help: Fiscal positions are used to adapt taxes and accounts for particular customers or sales orders/invoices.The default value comes from the customer.
+- generated_coupon_ids: one2many -> coupon.coupon
+   Label: Offered Coupons
+- id: integer (readonly)
+   Label: ID
+- incoterm: many2one -> account.incoterms
+   Label: Incoterm
+   Help: International Commercial Terms are a series of predefined commercial terms used in international transactions.
+- invoice_count: integer (readonly)
+   Label: Invoice Count
+- invoice_ids: many2many -> account.move (readonly)
+   Label: Invoices
+- invoice_status: selection (readonly)
+   Label: Invoice Status
+- is_abandoned_cart: boolean (readonly)
+   Label: Abandoned Cart
+- is_all_service: boolean (readonly)
+   Label: Service Product
+- is_expired: boolean (readonly)
+   Label: Is expired
+- json_popover: char (readonly)
+   Label: JSON data for the popover widget
+- __last_update: datetime (readonly)
+   Label: Last Modified on
+- margin: monetary (readonly)
+   Label: Margin
+- margin_percent: float (readonly)
+   Label: Margin (%)
+- medium_id: many2one -> utm.medium
+   Label: Medium
+   Help: This is the method of delivery, e.g. Postcard, Email, or Banner Ad
+- message_attachment_count: integer (readonly)
+   Label: Attachment Count
+- message_channel_ids: many2many -> mail.channel (readonly)
+   Label: Followers (Channels)
+- message_follower_ids: one2many -> mail.followers
+   Label: Followers
+- message_has_error: boolean (readonly)
+   Label: Message Delivery error
+   Help: If checked, some messages have a delivery error.
+- message_has_error_counter: integer (readonly)
+   Label: Number of errors
+   Help: Number of messages with delivery error
+- message_has_sms_error: boolean (readonly)
+   Label: SMS Delivery error
+   Help: If checked, some messages have a delivery error.
+- message_ids: one2many -> mail.message
+   Label: Messages
+- message_is_follower: boolean (readonly)
+   Label: Is Follower
+- message_main_attachment_id: many2one -> ir.attachment
+   Label: Main Attachment
+- message_needaction: boolean (readonly)
+   Label: Action Needed
+   Help: If checked, new messages require your attention.
+- message_needaction_counter: integer (readonly)
+   Label: Number of Actions
+   Help: Number of messages which requires an action
+- message_partner_ids: many2many -> res.partner (readonly)
+   Label: Followers (Partners)
+- message_unread: boolean (readonly)
+   Label: Unread Messages
+   Help: If checked, new messages require your attention.
+- message_unread_counter: integer (readonly)
+   Label: Unread Messages Counter
+   Help: Number of unread messages
+- mrp_production_count: integer (readonly)
+   Label: Count of MO generated
+- my_activity_date_deadline: date (readonly)
+   Label: My Activity Deadline
+- name: char* (REQUIRED) (readonly)
+   Label: Order Reference
+- no_code_promo_program_ids: many2many -> coupon.program
+   Label: Applied Immediate Promo Programs
+- note: text
+   Label: Terms and conditions
+- only_services: boolean (readonly)
+   Label: Only Services
+- opportunity_id: many2one -> crm.lead
+   Label: Products For Quotation
+- order_line: one2many -> sale.order.line
+   Label: Order Lines
+- origin: char
+   Label: Source Document
+   Help: Reference of the document that generated this sales order request.
+- partner_id: many2one -> res.partner* (REQUIRED) (readonly)
+   Label: Customer
+- partner_invoice_id: many2one -> res.partner* (REQUIRED) (readonly)
+   Label: Invoice Address
+- partner_shipping_id: many2one -> res.partner* (REQUIRED) (readonly)
+   Label: Delivery Address
+- payment_term_id: many2one -> account.payment.term
+   Label: Payment Terms
+- picking_ids: one2many -> stock.picking
+   Label: Transfers
+- picking_policy: selection* (REQUIRED) (readonly)
+   Label: Shipping Policy
+   Help: If you deliver all products at once, the delivery order will be scheduled based on the greatest product lead time. Otherwise, it will be based on the shortest.
+- pricelist_id: many2one -> product.pricelist* (REQUIRED) (readonly)
+   Label: Pricelist
+   Help: If you change the pricelist, only newly added lines will be affected.
+- procurement_group_id: many2one -> procurement.group
+   Label: Procurement Group
+- project_id: many2one -> project.project (readonly)
+   Label: Project
+   Help: Select a non billable project on which tasks can be created.
+- project_ids: many2many -> project.project (readonly)
+   Label: Projects
+   Help: Projects used in this sales order.
+- promo_code: char
+   Label: Promotion Code
+   Help: Applied program code
+- purchase_order_count: integer (readonly)
+   Label: Number of Purchase Order Generated
+- recompute_delivery_price: boolean
+   Label: Delivery cost should be recomputed
+- reference: char
+   Label: Payment Ref.
+   Help: The payment communication of this sale order.
+- report_token: char
+   Label: Access Token
+- require_payment: boolean (readonly)
+   Label: Online Payment
+   Help: Request an online payment to the customer in order to confirm orders automatically.
+- require_signature: boolean (readonly)
+   Label: Online Signature
+   Help: Request a online signature to the customer in order to confirm orders automatically.
+- reward_amount: float (readonly)
+   Label: Reward Amount
+- sale_order_option_ids: one2many -> sale.order.option (readonly)
+   Label: Optional Products Lines
+- sale_order_template_id: many2one -> sale.order.template (readonly)
+   Label: Quotation Template
+- sale_url: text
+   Label: Url
+- show_json_popover: boolean (readonly)
+   Label: Has late picking
+- show_update_pricelist: boolean
+   Label: Has Pricelist Changed
+   Help: Technical Field, True if the pricelist was changed;
+ this will then display a recomputation button
+- signature: binary
+   Label: Signature
+   Help: Signature received through the portal.
+- signed_by: char
+   Label: Signed By
+   Help: Name of the person that signed the SO.
+- signed_on: datetime
+   Label: Signed On
+   Help: Date of the signature.
+- source_id: many2one -> utm.source
+   Label: Source
+   Help: This is the source of the link, e.g. Search Engine, another domain, or name of email list
+- state: selection (readonly)
+   Label: Status
+- subscription_count: integer (readonly)
+   Label: Subscription Count
+- subscription_management: selection
+   Label: Subscription Management
+   Help: Creation: The Sales Order created the subscription
+Upselling: The Sales Order added lines to the subscription
+Renewal: The Sales Order replaced the subscription's content with its own
+- tag_ids: many2many -> crm.tag
+   Label: Tags
+- tasks_count: integer (readonly)
+   Label: Tasks
+- tasks_ids: many2many -> project.task (readonly)
+   Label: Tasks associated to this sale
+- team_id: many2one -> crm.team
+   Label: Sales Team
+- text_message: text (readonly)
+   Label: Message
+- timesheet_count: float (readonly)
+   Label: Timesheet activities
+- timesheet_encode_uom_id: many2one -> uom.uom (readonly)
+   Label: Timesheet Encoding Unit
+   Help: This will set the unit of measure used to encode timesheet. This will simply provide tools
+        and widgets to help the encoding. All reporting will still be expressed in hours (default value).
+- timesheet_ids: many2many -> account.analytic.line (readonly)
+   Label: Timesheet activities associated to this sale
+- timesheet_total_duration: integer (readonly)
+   Label: Timesheet Total Duration
+   Help: Total recorded duration, expressed in the encoding UoM, and rounded to the unit
+- transaction_ids: many2many -> payment.transaction (readonly)
+   Label: Transactions
+- type_name: char (readonly)
+   Label: Type Name
+- user_id: many2one -> res.users
+   Label: Salesperson
+- validity_date: date (readonly)
+   Label: Expiration
+- visible_project: boolean (readonly)
+   Label: Display project
+- warehouse_id: many2one -> stock.warehouse* (REQUIRED) (readonly)
+   Label: Warehouse
+- warning_stock: char
+   Label: Warning
+- website_id: many2one -> website (readonly)
+   Label: Website
+   Help: Website through which this order was placed.
+- website_message_ids: one2many -> mail.message
+   Label: Website Messages
+   Help: Website communication history
+- website_order_line: one2many -> sale.order.line (readonly)
+   Label: Order Lines displayed on Website
+   Help: Order Lines to be displayed on the website. They should not be used for computation purpose.
+- write_date: datetime (readonly)
+   Label: Last Updated on
+- write_uid: many2one -> res.users (readonly)
+   Label: Last Updated by
+- x_studio_administration: char (readonly)
+   Label: CRM Administration
+- x_studio_assigned_it_engineer: char (readonly)
+   Label: CRM IT / Estimator
+- x_studio_assigned_it_spv: char (readonly)
+   Label: CRM IT Spv / PM
+- x_studio_assigned_pm: char (readonly)
+   Label: CRM Project Mgmt.
+- x_studio_assigned_procurement: char (readonly)
+   Label: CRM Procurement
+- x_studio_assigned_procurement_userid: integer (readonly)
+   Label: Assigned Procurement UserID
+- x_studio_assigned_tim_solusi: char (readonly)
+   Label: CRM Tim Solusi
+- x_studio_bast_checklist: binary
+   Label: BAST Checklist
+- x_studio_bast_checklist_filename: char
+   Label: Filename for x_studio_binary_field_JrKLf
+- x_studio_bast_complete_signed: binary
+   Label: BAST Complete
+- x_studio_bast_document: binary
+   Label: BAST Document
+- x_studio_bast_document_filename: char
+   Label: Filename for x_studio_binary_field_8yxP2
+- x_studio_catatan_pembayaran: char (readonly)
+   Label: Catatan Pembayaran
+- x_studio_checking: boolean
+   Label: To Check
+- x_studio_client_industry: many2one -> res.partner.industry (readonly)
+   Label: Client Industry
+- x_studio_client_reference_po: char (readonly)
+   Label: Client Reference / PO
+- x_studio_client_ref_locked: boolean
+   Label: Client Ref. Locked
+- x_studio_client_request_kb: boolean
+   Label: Client Request EC
+- x_studio_client_request_lock: boolean
+   Label: Client Costing Locked
+- x_studio_client_tags: many2many -> res.partner.category (readonly)
+   Label: Client Tags
+- x_studio_contact_type: selection (readonly)
+   Label: Contact Type
+- x_studio_cost_budget_details: text
+   Label: Cost Budget Details
+- x_studio_cost_budget_total: float
+   Label: Cost Budget Total
+- x_studio_credit_limit: float (readonly)
+   Label: Credit Limit
+- x_studio_crm_boq_checked_by: char (readonly)
+   Label: CRM BOQ Checked By
+- x_studio_crm_ext_sales_lead: char (readonly)
+   Label: CRM External Lead
+- x_studio_crm_internal_lead: many2one -> res.users (readonly)
+   Label: CRM Internal Lead
+- x_studio_crm_lead: many2one -> res.users (readonly)
+   Label: CRM Lead
+- x_studio_crm_lead_type: char (readonly)
+   Label: CRM Lead Type
+- x_studio_crm_presales: char (readonly)
+   Label: CRM Presales
+- x_studio_crm_project_installation: boolean (readonly)
+   Label: CRM Project Installation
+- x_studio_crm_sales_support: char (readonly)
+   Label: CRM Sales Support
+- x_studio_crm_stage: char (readonly)
+   Label: CRM Current Stage
+- x_studio_crm_warranty_25_tahun: selection (readonly)
+   Label: CRM Warranty 25
+- x_studio_cust_email: char (readonly)
+   Label: Cust. Email
+- x_studio_customer_dp_: float
+   Label: PI Customer DP %
+- x_studio_customer_overdue: monetary (readonly)
+   Label: Customer Overdue
+- x_studio_date: date (readonly)
+   Label: Expected Date.
+- x_studio_delivery_time_vendor: char
+   Label: Estimation Delivery
+- x_studio_drive_links: char
+   Label: Drive Links
+- x_studio_duration: char (readonly)
+   Label: Duration
+- x_studio_duration_minutes: float (readonly)
+   Label: Minutes
+- x_studio_expense_code: one2many -> x_expensecode
+   Label: Expense Code
+- x_studio_focus_account: boolean (readonly)
+   Label: Focus Account
+- x_studio_goods_services: float (readonly)
+   Label: Goods & Services
+- x_studio_gross_profit: float (readonly)
+   Label: Gross Profit
+- x_studio_gross_profit_filter: float (readonly)
+   Label: Gross Profit SO
+- x_studio_gross_profit_percentage: float (readonly)
+   Label: Gross Profit %
+- x_studio_gross_profit_percentage_filter: float (readonly)
+   Label: Gross Profit SO %
+- x_studio_gross_profit_total: float (readonly)
+   Label: Gross Profit (Total)
+- x_studio_gross_profit_total_1: float (readonly)
+   Label: Gross Profit % (Total)
+- x_studio_gross_profit_total_calculated_filter: float (readonly)
+   Label: GP Calculated Filter SO
+- x_studio_installation_bast: boolean
+   Label: Installation & BAST
+- x_studio_invoice_status: char (readonly)
+   Label: Invoice Status
+- x_studio_lead_ticket_number: char (readonly)
+   Label: CRM Lead Number
+- x_studio_line_spacing: html
+   Label: Line Spacing
+- x_studio_modifier: char
+   Label: modifier
+- x_studio_new_client_max_1y: boolean (readonly)
+   Label: New Client (Max 1Y)
+- x_studio_new_so_sequence: char
+   Label: New SO Sequence
+- x_studio_payment_method: selection
+   Label: Payment Method
+- x_studio_payment_terms_locked: boolean
+   Label: Payment Terms Lock
+- x_studio_ppn: monetary (readonly)
+   Label: PPN
+- x_studio_project_name: char
+   Label: Project / Order Name
+- x_studio_quotation_margin: float (readonly)
+   Label: Quotation Margin
+- x_studio_related_approval: one2many -> approval.request
+   Label: Related Approval
+- x_studio_related_ec: one2many -> hr.expense.code.approval
+   Label: Related EC
+- x_studio_related_expense: one2many -> hr.expense
+   Label: Related Expense
+- x_studio_renewal_license: boolean
+   Label: Renewal / License
+- x_studio_request_amount: float
+   Label: Request Amount
+- x_studio_request_info: text
+   Label: Request Details
+- x_studio_require_create_invoice_dp: boolean
+   Label: Require Create Invoice DP
+- x_studio_require_delivery: datetime
+   Label: Require Delivery
+- x_studio_sale_order_status: char (readonly)
+   Label: Sale Order Status
+- x_studio_sales_lead: many2one -> res.users (readonly)
+   Label: Sales Internal Lead
+- x_studio_strategic_bidding: selection (readonly)
+   Label: Strategic Bidding
+- x_studio_total_cost: float (readonly)
+   Label: Cost Untaxed
+- x_studio_total_cost_before_tax: float (readonly)
+   Label: Total All Cost Excld.
+- x_studio_total_untaxed_amount: float (readonly)
+   Label: Total Untaxed Amount
+- x_studio_warranty_25_tahun: boolean
+   Label: Warranty 25 Tahun
+- x_x_studio_related_sale_order__purchase_order_count: integer
+   Label: Related Sales Order count
+- x_x_studio_related_sale_order__stock_picking_count: integer
+   Label: Related SO count
+- x_x_studio_related_sales_order__account_move_count: integer
+   Label: Related Inv
+- x_x_studio_related_sales_order__approval_request_count: integer
+   Label: Sales Order count
+- x_x_studio_related_sales_order__project_project_count: integer
+   Label: Task Timeline
+
+## Relationships:
+- activity_ids (one2many): mail.activity
+   Description: Activities
+- activity_type_id (many2one): mail.activity.type
+   Description: Next Activity Type
+- activity_user_id (many2one): res.users
+   Description: Responsible User
+- analytic_account_id (many2one): account.analytic.account
+   Description: Analytic Account
+- applied_coupon_ids (one2many): coupon.coupon
+   Description: Applied Coupons
+- authorized_transaction_ids (many2many): payment.transaction
+   Description: Authorized Transactions
+- auto_purchase_order_id (many2one): purchase.order
+   Description: Source Purchase Order
+- campaign_id (many2one): utm.campaign
+   Description: Campaign
+- carrier_id (many2one): delivery.carrier
+   Description: Delivery Method
+- code_promo_program_id (many2one): coupon.program
+   Description: Applied Promo Program
+- commission_ids (one2many): invoice.sale.commission
+   Description: Sales Commissions
+- company_id (many2one): res.company
+   Description: Company
+- create_uid (many2one): res.users
+   Description: Created by
+- currency_id (many2one): res.currency
+   Description: Currency
+- expense_ids (one2many): hr.expense
+   Description: Expenses
+- failed_message_ids (one2many): mail.message
+   Description: Failed Messages
+- fiscal_position_id (many2one): account.fiscal.position
+   Description: Fiscal Position
+- generated_coupon_ids (one2many): coupon.coupon
+   Description: Offered Coupons
+- incoterm (many2one): account.incoterms
+   Description: Incoterm
+- invoice_ids (many2many): account.move
+   Description: Invoices
+- medium_id (many2one): utm.medium
+   Description: Medium
+- message_channel_ids (many2many): mail.channel
+   Description: Followers (Channels)
+- message_follower_ids (one2many): mail.followers
+   Description: Followers
+- message_ids (one2many): mail.message
+   Description: Messages
+- message_main_attachment_id (many2one): ir.attachment
+   Description: Main Attachment
+- message_partner_ids (many2many): res.partner
+   Description: Followers (Partners)
+- no_code_promo_program_ids (many2many): coupon.program
+   Description: Applied Immediate Promo Programs
+- opportunity_id (many2one): crm.lead
+   Description: Products For Quotation
+- order_line (one2many): sale.order.line
+   Description: Order Lines
+- partner_id (many2one): res.partner
+   Description: Customer
+- partner_invoice_id (many2one): res.partner
+   Description: Invoice Address
+- partner_shipping_id (many2one): res.partner
+   Description: Delivery Address
+- payment_term_id (many2one): account.payment.term
+   Description: Payment Terms
+- picking_ids (one2many): stock.picking
+   Description: Transfers
+- pricelist_id (many2one): product.pricelist
+   Description: Pricelist
+- procurement_group_id (many2one): procurement.group
+   Description: Procurement Group
+- project_id (many2one): project.project
+   Description: Project
+- project_ids (many2many): project.project
+   Description: Projects
+- sale_order_option_ids (one2many): sale.order.option
+   Description: Optional Products Lines
+- sale_order_template_id (many2one): sale.order.template
+   Description: Quotation Template
+- source_id (many2one): utm.source
+   Description: Source
+- tag_ids (many2many): crm.tag
+   Description: Tags
+- tasks_ids (many2many): project.task
+   Description: Tasks associated to this sale
+- team_id (many2one): crm.team
+   Description: Sales Team
+- timesheet_encode_uom_id (many2one): uom.uom
+   Description: Timesheet Encoding Unit
+- timesheet_ids (many2many): account.analytic.line
+   Description: Timesheet activities associated to this sale
+- transaction_ids (many2many): payment.transaction
+   Description: Transactions
+- user_id (many2one): res.users
+   Description: Salesperson
+- warehouse_id (many2one): stock.warehouse
+   Description: Warehouse
+- website_id (many2one): website
+   Description: Website
+- website_message_ids (one2many): mail.message
+   Description: Website Messages
+- website_order_line (one2many): sale.order.line
+   Description: Order Lines displayed on Website
+- write_uid (many2one): res.users
+   Description: Last Updated by
+- x_studio_client_industry (many2one): res.partner.industry
+   Description: Client Industry
+- x_studio_client_tags (many2many): res.partner.category
+   Description: Client Tags
+- x_studio_crm_internal_lead (many2one): res.users
+   Description: CRM Internal Lead
+- x_studio_crm_lead (many2one): res.users
+   Description: CRM Lead
+- x_studio_expense_code (one2many): x_expensecode
+   Description: Expense Code
+- x_studio_related_approval (one2many): approval.request
+   Description: Related Approval
+- x_studio_related_ec (one2many): hr.expense.code.approval
+   Description: Related EC
+- x_studio_related_expense (one2many): hr.expense
+   Description: Related Expense
+- x_studio_sales_lead (many2one): res.users
+   Description: Sales Internal Lead
+
+## Constraints:
+- sale_order_date_order_conditional_required: A confirmed sales order requires a confirmation date.
+- sale_order_user_id_fkey: False
+- sale_order_partner_id_fkey: False
+- sale_order_partner_invoice_id_fkey: False
+- sale_order_partner_shipping_id_fkey: False
+- sale_order_pricelist_id_fkey: False
+- sale_order_currency_id_fkey: False
+- sale_order_analytic_account_id_fkey: False
+- sale_order_payment_term_id_fkey: False
+- sale_order_fiscal_position_id_fkey: False
+- sale_order_company_id_fkey: False
+- sale_order_team_id_fkey: False
+- sale_order_transaction_rel_transaction_id_fkey: False
+- sale_order_tag_rel_order_id_fkey: False
+- sale_order_tag_rel_tag_id_fkey: False
+- sale_order_campaign_id_fkey: False
+- sale_order_source_id_fkey: False
+- sale_order_medium_id_fkey: False
+- sale_order_message_main_attachment_id_fkey: False
+- sale_order_sale_order_template_id_fkey: False
+- sale_order_incoterm_fkey: False
+- sale_order_warehouse_id_fkey: False
+- sale_order_procurement_group_id_fkey: False
+- sale_order_carrier_id_fkey: False
+- sale_order_auto_purchase_order_id_fkey: False
+- sale_order_opportunity_id_fkey: False
+- coupon_program_sale_order_rel_sale_order_id_fkey: False
+- coupon_program_sale_order_rel_coupon_program_id_fkey: False
+- sale_order_code_promo_program_id_fkey: False
+- sale_order_project_id_fkey: False
+- sale_order_website_id_fkey: False
+
+## Import Rules:
+### Required Fields:
+- company_id: Company (many2one)
+- partner_id: Customer (many2one)
+- partner_invoice_id: Invoice Address (many2one)
+- partner_shipping_id: Delivery Address (many2one)
+- pricelist_id: Pricelist (many2one)
+- warehouse_id: Warehouse (many2one)
+
+### Relational Fields:
+- activity_ids: Activities (one2many -> mail.activity)
+- activity_type_id: Next Activity Type (many2one -> mail.activity.type)
+- activity_user_id: Responsible User (many2one -> res.users)
+- analytic_account_id: Analytic Account (many2one -> account.analytic.account)
+- applied_coupon_ids: Applied Coupons (one2many -> coupon.coupon)
+- authorized_transaction_ids: Authorized Transactions (many2many -> payment.transaction)
+- auto_purchase_order_id: Source Purchase Order (many2one -> purchase.order)
+- campaign_id: Campaign (many2one -> utm.campaign)
+- carrier_id: Delivery Method (many2one -> delivery.carrier)
+- code_promo_program_id: Applied Promo Program (many2one -> coupon.program)
+- commission_ids: Sales Commissions (one2many -> invoice.sale.commission)
+- company_id: Company (many2one -> res.company)
+- currency_id: Currency (many2one -> res.currency)
+- expense_ids: Expenses (one2many -> hr.expense)
+- failed_message_ids: Failed Messages (one2many -> mail.message)
+- fiscal_position_id: Fiscal Position (many2one -> account.fiscal.position)
+- generated_coupon_ids: Offered Coupons (one2many -> coupon.coupon)
+- incoterm: Incoterm (many2one -> account.incoterms)
+- invoice_ids: Invoices (many2many -> account.move)
+- medium_id: Medium (many2one -> utm.medium)
+- message_channel_ids: Followers (Channels) (many2many -> mail.channel)
+- message_follower_ids: Followers (one2many -> mail.followers)
+- message_ids: Messages (one2many -> mail.message)
+- message_main_attachment_id: Main Attachment (many2one -> ir.attachment)
+- message_partner_ids: Followers (Partners) (many2many -> res.partner)
+- no_code_promo_program_ids: Applied Immediate Promo Programs (many2many -> coupon.program)
+- opportunity_id: Products For Quotation (many2one -> crm.lead)
+- order_line: Order Lines (one2many -> sale.order.line)
+- partner_id: Customer (many2one -> res.partner)
+- partner_invoice_id: Invoice Address (many2one -> res.partner)
+- partner_shipping_id: Delivery Address (many2one -> res.partner)
+- payment_term_id: Payment Terms (many2one -> account.payment.term)
+- picking_ids: Transfers (one2many -> stock.picking)
+- pricelist_id: Pricelist (many2one -> product.pricelist)
+- procurement_group_id: Procurement Group (many2one -> procurement.group)
+- project_id: Project (many2one -> project.project)
+- project_ids: Projects (many2many -> project.project)
+- sale_order_option_ids: Optional Products Lines (one2many -> sale.order.option)
+- sale_order_template_id: Quotation Template (many2one -> sale.order.template)
+- source_id: Source (many2one -> utm.source)
+- tag_ids: Tags (many2many -> crm.tag)
+- tasks_ids: Tasks associated to this sale (many2many -> project.task)
+- team_id: Sales Team (many2one -> crm.team)
+- timesheet_encode_uom_id: Timesheet Encoding Unit (many2one -> uom.uom)
+- timesheet_ids: Timesheet activities associated to this sale (many2many -> account.analytic.line)
+- transaction_ids: Transactions (many2many -> payment.transaction)
+- user_id: Salesperson (many2one -> res.users)
+- warehouse_id: Warehouse (many2one -> stock.warehouse)
+- website_id: Website (many2one -> website)
+- website_message_ids: Website Messages (one2many -> mail.message)
+- website_order_line: Order Lines displayed on Website (one2many -> sale.order.line)
+- x_studio_client_industry: Client Industry (many2one -> res.partner.industry)
+- x_studio_client_tags: Client Tags (many2many -> res.partner.category)
+- x_studio_crm_internal_lead: CRM Internal Lead (many2one -> res.users)
+- x_studio_crm_lead: CRM Lead (many2one -> res.users)
+- x_studio_expense_code: Expense Code (one2many -> x_expensecode)
+- x_studio_related_approval: Related Approval (one2many -> approval.request)
+- x_studio_related_ec: Related EC (one2many -> hr.expense.code.approval)
+- x_studio_related_expense: Related Expense (one2many -> hr.expense)
+- x_studio_sales_lead: Sales Internal Lead (many2one -> res.users)
+
+### Special Import Rules:
+#### order_lines_import:
+Saat mengimpor Sales Order, baris pesanan dapat didefinisikan dengan dua cara:
+1. Membuat record sale.order.line terpisah terlebih dahulu
+2. Menggunakan field 'order_line' atau kolom dengan format khusus di spreadsheet import
+   yang akan otomatis membuat record sale.order.line
+3. Format order_line: (0, 0, {'product_id': id, 'product_uom_qty': qty, 'price_unit': price})
+4. Saat melakukan import via CSV/XLS, product_id bisa berupa nama produk
+   dan Odoo akan mencari produk dengan nama tersebut
+
+======================================================================
+
+# Model: Sales Order Line (sale.order.line)
+
+## Fields:
+- analytic_line_ids: one2many -> account.analytic.line
+   Label: Analytic lines
+- analytic_tag_ids: many2many -> account.analytic.tag
+   Label: Analytic Tags
+- company_id: many2one -> res.company (readonly)
+   Label: Company
+- create_date: datetime (readonly)
+   Label: Created on
+- create_uid: many2one -> res.users (readonly)
+   Label: Created by
+- currency_id: many2one -> res.currency (readonly)
+   Label: Currency
+- customer_lead: float* (REQUIRED)
+   Label: Lead Time
+   Help: Number of days between the order confirmation and the shipping of the products to the customer
+- discount: float
+   Label: Discount (%)
+- display_name: char (readonly)
+   Label: Display Name
+- display_qty_widget: boolean (readonly)
+   Label: Display Qty Widget
+- display_type: selection
+   Label: Display Type
+   Help: Technical field for UX purpose.
+- forecast_expected_date: datetime (readonly)
+   Label: Forecast Expected Date
+- free_qty_today: float (readonly)
+   Label: Free Qty Today
+- id: integer (readonly)
+   Label: ID
+- invoice_lines: many2many -> account.move.line
+   Label: Invoice Lines
+- invoice_status: selection (readonly)
+   Label: Invoice Status
+- is_delivery: boolean
+   Label: Is a Delivery
+- is_downpayment: boolean
+   Label: Is a down payment
+   Help: Down payments are made when creating invoices from a sales order. They are not copied when duplicating a sales order.
+- is_expense: boolean
+   Label: Is expense
+   Help: Is true if the sales order line comes from an expense or a vendor bills
+- is_mto: boolean (readonly)
+   Label: Is Mto
+- is_reward_line: boolean
+   Label: Is a program reward line
+- is_service: boolean (readonly)
+   Label: Is a Service
+   Help: Sales Order item should generate a task and/or a project, depending on the product settings.
+- __last_update: datetime (readonly)
+   Label: Last Modified on
+- linked_line_id: many2one -> sale.order.line
+   Label: Linked Order Line
+- margin: float (readonly)
+   Label: Margin
+- margin_percent: float (readonly)
+   Label: Margin (%)
+- move_ids: one2many -> stock.move
+   Label: Stock Moves
+- name: text* (REQUIRED)
+   Label: Description
+- name_short: char (readonly)
+   Label: Name Short
+- option_line_ids: one2many -> sale.order.line
+   Label: Options Linked
+- order_id: many2one -> sale.order* (REQUIRED)
+   Label: Order Reference
+- order_partner_id: many2one -> res.partner
+   Label: Customer
+- price_reduce: float (readonly)
+   Label: Price Reduce
+- price_reduce_taxexcl: monetary (readonly)
+   Label: Price Reduce Tax excl
+- price_reduce_taxinc: monetary (readonly)
+   Label: Price Reduce Tax inc
+- price_subtotal: monetary (readonly)
+   Label: Subtotal
+- price_tax: float (readonly)
+   Label: Total Tax
+- price_total: monetary (readonly)
+   Label: Total
+- price_unit: float* (REQUIRED)
+   Label: Unit Price
+- product_custom_attribute_value_ids: one2many -> product.attribute.custom.value
+   Label: Custom Values
+- product_id: many2one -> product.product
+   Label: Product
+- product_no_variant_attribute_value_ids: many2many -> product.template.attribute.value
+   Label: Extra Values
+- product_packaging: many2one -> product.packaging
+   Label: Package
+- product_qty: float (readonly)
+   Label: Product Qty
+- product_template_id: many2one -> product.template (readonly)
+   Label: Product Template
+- product_type: selection (readonly)
+   Label: Product Type
+   Help: A storable product is a product for which you manage stock. The Inventory app has to be installed.
+A consumable product is a product for which stock is not managed.
+A service is a non-material product you provide.
+- product_uom: many2one -> uom.uom
+   Label: Unit of Measure
+- product_uom_category_id: many2one -> uom.category (readonly)
+   Label: Category
+   Help: Conversion between Units of Measure can only occur if they belong to the same category. The conversion will be made based on the ratios.
+- product_uom_qty: float* (REQUIRED)
+   Label: Quantity
+- product_uom_readonly: boolean (readonly)
+   Label: Product Uom Readonly
+- product_updatable: boolean (readonly)
+   Label: Can Edit Product
+- project_id: many2one -> project.project
+   Label: Generated Project
+   Help: Project generated by the sales order item
+- purchase_line_count: integer (readonly)
+   Label: Number of generated purchase items
+- purchase_line_ids: one2many -> purchase.order.line (readonly)
+   Label: Generated Purchase Lines
+   Help: Purchase line generated by this Sales item on order confirmation, or when the quantity was increased.
+- purchase_price: float
+   Label: Cost
+- qty_available_today: float (readonly)
+   Label: Qty Available Today
+- qty_delivered: float
+   Label: Delivered Quantity
+- qty_delivered_manual: float
+   Label: Delivered Manually
+- qty_delivered_method: selection (readonly)
+   Label: Method to update delivered qty
+   Help: According to product configuration, the delivered quantity can be automatically computed by mechanism :
+  - Manual: the quantity is set manually on the line
+  - Analytic From expenses: the quantity is the quantity sum from posted expenses
+  - Timesheet: the quantity is the sum of hours recorded on tasks linked to this sale line
+  - Stock Moves: the quantity comes from confirmed pickings
+
+- qty_invoiced: float (readonly)
+   Label: Invoiced Quantity
+- qty_to_deliver: float (readonly)
+   Label: Qty To Deliver
+- qty_to_invoice: float (readonly)
+   Label: To Invoice Quantity
+- recompute_delivery_price: boolean (readonly)
+   Label: Delivery cost should be recomputed
+- remaining_hours: float (readonly)
+   Label: Remaining Hours on SO
+- remaining_hours_available: boolean (readonly)
+   Label: Remaining Hours Available
+- route_id: many2one -> stock.location.route
+   Label: Route
+- sale_order_option_ids: one2many -> sale.order.option
+   Label: Optional Products Lines
+- salesman_id: many2one -> res.users (readonly)
+   Label: Salesperson
+- scheduled_date: datetime (readonly)
+   Label: Scheduled Date
+- sequence: integer
+   Label: Sequence
+- state: selection (readonly)
+   Label: Order Status
+- subscription_id: many2one -> sale.subscription
+   Label: Subscription
+- task_id: many2one -> project.task
+   Label: Generated Task
+   Help: Task generated by the sales order item
+- tax_id: many2many -> account.tax
+   Label: Taxes
+- untaxed_amount_invoiced: monetary (readonly)
+   Label: Untaxed Invoiced Amount
+- untaxed_amount_to_invoice: monetary (readonly)
+   Label: Untaxed Amount To Invoice
+- virtual_available_at_date: float (readonly)
+   Label: Virtual Available At Date
+- warehouse_id: many2one -> stock.warehouse (readonly)
+   Label: Warehouse
+- warning_stock: char
+   Label: Warning
+- write_date: datetime (readonly)
+   Label: Last Updated on
+- write_uid: many2one -> res.users (readonly)
+   Label: Last Updated by
+- x_studio_bom_type: selection (readonly)
+   Label: BoM Type
+- x_studio_cost_info: float (readonly)
+   Label: Cost Info
+- x_studio_cost_ref: float (readonly)
+   Label: Cost Ref.
+- x_studio_internal_reference: char (readonly)
+   Label: Internal Reference
+- x_studio_product_name: char (readonly)
+   Label: Product Name
+- x_studio_unit_of_measure_product: char (readonly)
+   Label: Unit of Measure Product
+- x_studio_uom_product: char (readonly)
+   Label: UoM ( Product )
+- x_studio_vendor: char (readonly)
+   Label: Vendor
+
+## Relationships:
+- analytic_line_ids (one2many): account.analytic.line
+   Description: Analytic lines
+- analytic_tag_ids (many2many): account.analytic.tag
+   Description: Analytic Tags
+- company_id (many2one): res.company
+   Description: Company
+- create_uid (many2one): res.users
+   Description: Created by
+- currency_id (many2one): res.currency
+   Description: Currency
+- invoice_lines (many2many): account.move.line
+   Description: Invoice Lines
+- linked_line_id (many2one): sale.order.line
+   Description: Linked Order Line
+- move_ids (one2many): stock.move
+   Description: Stock Moves
+- option_line_ids (one2many): sale.order.line
+   Description: Options Linked
+- order_id (many2one): sale.order
+   Description: Order Reference
+- order_partner_id (many2one): res.partner
+   Description: Customer
+- product_custom_attribute_value_ids (one2many): product.attribute.custom.value
+   Description: Custom Values
+- product_id (many2one): product.product
+   Description: Product
+- product_no_variant_attribute_value_ids (many2many): product.template.attribute.value
+   Description: Extra Values
+- product_packaging (many2one): product.packaging
+   Description: Package
+- product_template_id (many2one): product.template
+   Description: Product Template
+- product_uom (many2one): uom.uom
+   Description: Unit of Measure
+- product_uom_category_id (many2one): uom.category
+   Description: Category
+- project_id (many2one): project.project
+   Description: Generated Project
+- purchase_line_ids (one2many): purchase.order.line
+   Description: Generated Purchase Lines
+- route_id (many2one): stock.location.route
+   Description: Route
+- sale_order_option_ids (one2many): sale.order.option
+   Description: Optional Products Lines
+- salesman_id (many2one): res.users
+   Description: Salesperson
+- subscription_id (many2one): sale.subscription
+   Description: Subscription
+- task_id (many2one): project.task
+   Description: Generated Task
+- tax_id (many2many): account.tax
+   Description: Taxes
+- warehouse_id (many2one): stock.warehouse
+   Description: Warehouse
+- write_uid (many2one): res.users
+   Description: Last Updated by
+
+## Constraints:
+- sale_order_line_accountable_required_fields: Missing required fields on accountable sale order line.
+- sale_order_line_non_accountable_null_fields: Forbidden values on non-accountable sale order line
+- sale_order_line_invoice_rel_invoice_line_id_fkey: False
+- sale_order_line_order_id_fkey: False
+- account_tax_sale_order_line_rel_sale_order_line_id_fkey: False
+- account_tax_sale_order_line_rel_account_tax_id_fkey: False
+- sale_order_line_product_id_fkey: False
+- sale_order_line_product_uom_fkey: False
+- product_template_attribute_value_sale_order_line_rel_sale_order_line_id_fkey: False
+- product_template_attribute_value_sale_order_line_rel_product_template_attribute_value_id_fkey: False
+- sale_order_line_salesman_id_fkey: False
+- sale_order_line_currency_id_fkey: False
+- sale_order_line_company_id_fkey: False
+- sale_order_line_order_partner_id_fkey: False
+- account_analytic_tag_sale_order_line_rel_sale_order_line_id_fkey: False
+- account_analytic_tag_sale_order_line_rel_account_analytic_tag_id_fkey: False
+- sale_order_line_product_packaging_fkey: False
+- sale_order_line_route_id_fkey: False
+- sale_order_line_project_id_fkey: False
+- sale_order_line_task_id_fkey: False
+- sale_order_line_subscription_id_fkey: False
+- sale_order_line_linked_line_id_fkey: False
+
+## Import Rules:
+### Required Fields:
+- customer_lead: Lead Time (float)
+- name: Description (text)
+- order_id: Order Reference (many2one)
+- price_unit: Unit Price (float)
+- product_uom_qty: Quantity (float)
+
+### Recommended Fields:
+- sequence: Sequence (integer)
+
+### Relational Fields:
+- analytic_line_ids: Analytic lines (one2many -> account.analytic.line)
+- analytic_tag_ids: Analytic Tags (many2many -> account.analytic.tag)
+- company_id: Company (many2one -> res.company)
+- currency_id: Currency (many2one -> res.currency)
+- invoice_lines: Invoice Lines (many2many -> account.move.line)
+- linked_line_id: Linked Order Line (many2one -> sale.order.line)
+- move_ids: Stock Moves (one2many -> stock.move)
+- option_line_ids: Options Linked (one2many -> sale.order.line)
+- order_id: Order Reference (many2one -> sale.order)
+- order_partner_id: Customer (many2one -> res.partner)
+- product_custom_attribute_value_ids: Custom Values (one2many -> product.attribute.custom.value)
+- product_id: Product (many2one -> product.product)
+- product_no_variant_attribute_value_ids: Extra Values (many2many -> product.template.attribute.value)
+- product_packaging: Package (many2one -> product.packaging)
+- product_template_id: Product Template (many2one -> product.template)
+- product_uom: Unit of Measure (many2one -> uom.uom)
+- product_uom_category_id: Category (many2one -> uom.category)
+- project_id: Generated Project (many2one -> project.project)
+- purchase_line_ids: Generated Purchase Lines (one2many -> purchase.order.line)
+- route_id: Route (many2one -> stock.location.route)
+- sale_order_option_ids: Optional Products Lines (one2many -> sale.order.option)
+- salesman_id: Salesperson (many2one -> res.users)
+- subscription_id: Subscription (many2one -> sale.subscription)
+- task_id: Generated Task (many2one -> project.task)
+- tax_id: Taxes (many2many -> account.tax)
+- warehouse_id: Warehouse (many2one -> stock.warehouse)
+
+## Sample Data:
+
+### Record 1:
+- id: 20333
+- name: [G025020399] HIKVISION DS-2CD3121G2E-LIU 2MP (2.8mm) INDOOR Smart Hybrid Light Fixed Dome Network Camera CCTV
+- display_name: VMK-SO-2502-00082 - [G025020399] HIKVISION DS-2CD3121G2E-LIU 2MP (2.8mm) INDOOR Smart Hybrid Light Fixed Dome Network Camera CCTV (VN24/06367)
+- product_id: [G025020399] HIKVISION DS-2CD3121G2E-LIU 2MP (2.8mm) INDOOR Smart Hybrid Light Fixed Dome Network Camera CCTV (id: 17379)
+- order_id: VMK-SO-2502-00082 (id: 3974)
+- product_qty: 9.0
+- price_unit: 699000.0
+- state: done
+- sequence: 10
+- invoice_lines: []
+- invoice_status: no
+- price_subtotal: 6291000.0
+- price_tax: 692010.0
+- price_total: 6983010.0
+- price_reduce: 699000.0
+- tax_id: [54]
+- price_reduce_taxinc: 775890.0
+- price_reduce_taxexcl: 699000.0
+- discount: 0.0
+- product_template_id: [G025020399] HIKVISION DS-2CD3121G2E-LIU 2MP (2.8mm) INDOOR Smart Hybrid Light Fixed Dome Network Camera CCTV (id: 18803)
+- product_updatable: False
+- product_uom_qty: 9.0
+- product_uom: Unit (id: 1)
+- product_uom_category_id: Unit (id: 1)
+- product_uom_readonly: True
+- product_custom_attribute_value_ids: []
+- product_no_variant_attribute_value_ids: []
+- qty_delivered: 0.0
+- qty_delivered_manual: 0.0
+- qty_to_invoice: 0.0
+- qty_invoiced: 0.0
+- untaxed_amount_invoiced: 0.0
+- untaxed_amount_to_invoice: 0.0
+- salesman_id: Yves Arcadi Cana Santos (id: 2359)
+- currency_id: IDR (id: 12)
+- company_id: PT. Visiniaga Mitra Kreasindo (id: 5)
+- order_partner_id: Pak Satrya (Toko Cahaya Putra) (id: 16007)
+- analytic_tag_ids: []
+- is_expense: False
+- is_downpayment: False
+- customer_lead: 5.0
+- display_type: False
+- is_reward_line: False
+- sale_order_option_ids: []
+- purchase_line_ids: []
+- purchase_line_count: 0
+- product_packaging: False
+- route_id: False
+- move_ids: [32648]
+- product_type: product
+- virtual_available_at_date: 0.0
+- scheduled_date: False
+- forecast_expected_date: False
+- free_qty_today: 0.0
+- qty_available_today: 0.0
+- warehouse_id: PT. Visiniaga Mitra Kreasindo (id: 6)
+- qty_to_deliver: 9.0
+- is_mto: False
+- display_qty_widget: False
+- name_short: HIKVISION DS-2CD3121G2E-LIU 2MP (2.8mm) INDOOR Smart Hybrid Light Fixed Dome Network Camera CCTV
+- linked_line_id: False
+- option_line_ids: []
+- is_delivery: False
+- recompute_delivery_price: False
+- margin: 766612.35
+- margin_percent: 0.12185858369098712
+- purchase_price: 613820.85
+- project_id: False
+- task_id: False
+- is_service: False
+- subscription_id: False
+- warning_stock: False
+- qty_delivered_method: stock_move
+- analytic_line_ids: []
+- remaining_hours_available: False
+- remaining_hours: 0.0
+- create_uid: Yves Arcadi Cana Santos (id: 2359)
+- create_date: 2025-02-14 06:41:49
+- write_uid: Lewi Supranata Kristianto (id: 14)
+- write_date: 2025-02-14 10:44:12
+- __last_update: 2025-02-14 10:44:12
+- x_studio_vendor: CV. Sarana Duta Solusindo
+- x_studio_cost_info: 613820.85
+- x_studio_unit_of_measure_product: Unit
+- x_studio_uom_product: Unit
+- x_studio_product_name: HIKVISION DS-2CD3121G2E-LIU 2MP (2.8mm) INDOOR Smart Hybrid Light Fixed Dome Network Camera CCTV
+- x_studio_internal_reference: G025020399
+- x_studio_cost_ref: 613820.85
+- x_studio_bom_type: False
+  (truncated for brevity)
+
+### Record 2:
+- id: 20334
+- name: [G025020401] HDD CCTV Seagate Skyhwk 1TB
+- display_name: VMK-SO-2502-00082 - [G025020401] HDD CCTV Seagate Skyhwk 1TB (VN24/06367)
+- product_id: [G025020401] HDD CCTV Seagate Skyhwk 1TB (id: 17380)
+- order_id: VMK-SO-2502-00082 (id: 3974)
+- product_qty: 1.0
+- price_unit: 667567.57
+- state: done
+- sequence: 10
+- invoice_lines: []
+- invoice_status: no
+- price_subtotal: 667567.57
+- price_tax: 73432.43000000001
+- price_total: 741000.0
+- price_reduce: 667567.57
+- tax_id: [54]
+- price_reduce_taxinc: 741000.0
+- price_reduce_taxexcl: 667567.57
+- discount: 0.0
+- product_template_id: [G025020401] HDD CCTV Seagate Skyhwk 1TB (id: 18804)
+- product_updatable: False
+- product_uom_qty: 1.0
+- product_uom: Unit (id: 1)
+- product_uom_category_id: Unit (id: 1)
+- product_uom_readonly: True
+- product_custom_attribute_value_ids: []
+- product_no_variant_attribute_value_ids: []
+- qty_delivered: 0.0
+- qty_delivered_manual: 0.0
+- qty_to_invoice: 0.0
+- qty_invoiced: 0.0
+- untaxed_amount_invoiced: 0.0
+- untaxed_amount_to_invoice: 0.0
+- salesman_id: Yves Arcadi Cana Santos (id: 2359)
+- currency_id: IDR (id: 12)
+- company_id: PT. Visiniaga Mitra Kreasindo (id: 5)
+- order_partner_id: Pak Satrya (Toko Cahaya Putra) (id: 16007)
+- analytic_tag_ids: []
+- is_expense: False
+- is_downpayment: False
+- customer_lead: 5.0
+- display_type: False
+- is_reward_line: False
+- sale_order_option_ids: []
+- purchase_line_ids: []
+- purchase_line_count: 0
+- product_packaging: False
+- route_id: False
+- move_ids: [32649]
+- product_type: product
+- virtual_available_at_date: 0.0
+- scheduled_date: False
+- forecast_expected_date: False
+- free_qty_today: 0.0
+- qty_available_today: 0.0
+- warehouse_id: PT. Visiniaga Mitra Kreasindo (id: 6)
+- qty_to_deliver: 1.0
+- is_mto: False
+- display_qty_widget: False
+- name_short: HDD CCTV Seagate Skyhwk 1TB
+- linked_line_id: False
+- option_line_ids: []
+- is_delivery: False
+- recompute_delivery_price: False
+- margin: 81981.98
+- margin_percent: 0.12280701412742384
+- purchase_price: 585585.59
+- project_id: False
+- task_id: False
+- is_service: False
+- subscription_id: False
+- warning_stock: False
+- qty_delivered_method: stock_move
+- analytic_line_ids: []
+- remaining_hours_available: False
+- remaining_hours: 0.0
+- create_uid: Yves Arcadi Cana Santos (id: 2359)
+- create_date: 2025-02-14 06:41:49
+- write_uid: Lewi Supranata Kristianto (id: 14)
+- write_date: 2025-02-14 10:44:12
+- __last_update: 2025-02-14 10:44:12
+- x_studio_vendor: CV. Sarana Duta Solusindo
+- x_studio_cost_info: 585585.59
+- x_studio_unit_of_measure_product: Unit
+- x_studio_uom_product: Unit
+- x_studio_product_name: HDD CCTV Seagate Skyhwk 1TB
+- x_studio_internal_reference: G025020401
+- x_studio_cost_ref: 585585.59
+- x_studio_bom_type: False
+  (truncated for brevity)
+
+### Record 3:
+- id: 20335
+- name: [G025020403] DS-7608NI-Q1/8P NVR Hikvision 8 Channel POE
+- display_name: VMK-SO-2502-00082 - [G025020403] DS-7608NI-Q1/8P NVR Hikvision 8 Channel POE (VN24/06367)
+- product_id: [G025020403] DS-7608NI-Q1/8P NVR Hikvision 8 Channel POE (id: 17381)
+- order_id: VMK-SO-2502-00082 (id: 3974)
+- product_qty: 1.0
+- price_unit: 2025000.0
+- state: done
+- sequence: 11
+- invoice_lines: []
+- invoice_status: no
+- price_subtotal: 2025000.0
+- price_tax: 222750.0
+- price_total: 2247750.0
+- price_reduce: 2025000.0
+- tax_id: [54]
+- price_reduce_taxinc: 2247750.0
+- price_reduce_taxexcl: 2025000.0
+- discount: 0.0
+- product_template_id: [G025020403] DS-7608NI-Q1/8P NVR Hikvision 8 Channel POE (id: 18805)
+- product_updatable: False
+- product_uom_qty: 1.0
+- product_uom: Unit (id: 1)
+- product_uom_category_id: Unit (id: 1)
+- product_uom_readonly: True
+- product_custom_attribute_value_ids: []
+- product_no_variant_attribute_value_ids: []
+- qty_delivered: 0.0
+- qty_delivered_manual: 0.0
+- qty_to_invoice: 0.0
+- qty_invoiced: 0.0
+- untaxed_amount_invoiced: 0.0
+- untaxed_amount_to_invoice: 0.0
+- salesman_id: Yves Arcadi Cana Santos (id: 2359)
+- currency_id: IDR (id: 12)
+- company_id: PT. Visiniaga Mitra Kreasindo (id: 5)
+- order_partner_id: Pak Satrya (Toko Cahaya Putra) (id: 16007)
+- analytic_tag_ids: []
+- is_expense: False
+- is_downpayment: False
+- customer_lead: 5.0
+- display_type: False
+- is_reward_line: False
+- sale_order_option_ids: []
+- purchase_line_ids: []
+- purchase_line_count: 0
+- product_packaging: False
+- route_id: False
+- move_ids: [32650]
+- product_type: product
+- virtual_available_at_date: 0.0
+- scheduled_date: False
+- forecast_expected_date: False
+- free_qty_today: 0.0
+- qty_available_today: 0.0
+- warehouse_id: PT. Visiniaga Mitra Kreasindo (id: 6)
+- qty_to_deliver: 1.0
+- is_mto: False
+- display_qty_widget: False
+- name_short: DS-7608NI-Q1/8P NVR Hikvision 8 Channel POE
+- linked_line_id: False
+- option_line_ids: []
+- is_delivery: False
+- recompute_delivery_price: False
+- margin: 247821.62
+- margin_percent: 0.12238104691358025
+- purchase_price: 1777178.38
+- project_id: False
+- task_id: False
+- is_service: False
+- subscription_id: False
+- warning_stock: False
+- qty_delivered_method: stock_move
+- analytic_line_ids: []
+- remaining_hours_available: False
+- remaining_hours: 0.0
+- create_uid: Yves Arcadi Cana Santos (id: 2359)
+- create_date: 2025-02-14 06:49:19
+- write_uid: Lewi Supranata Kristianto (id: 14)
+- write_date: 2025-02-14 10:44:12
+- __last_update: 2025-02-14 10:44:12
+- x_studio_vendor: CV. Sarana Duta Solusindo
+- x_studio_cost_info: 1777178.38
+- x_studio_unit_of_measure_product: Unit
+- x_studio_uom_product: Unit
+- x_studio_product_name: DS-7608NI-Q1/8P NVR Hikvision 8 Channel POE
+- x_studio_internal_reference: G025020403
+- x_studio_cost_ref: 1777178.3800000001
+- x_studio_bom_type: False
+  (truncated for brevity)
+
+### Record 4:
+- id: 20336
+- name: [G025020405] Kabel UTP Hikvision Grey DS-1LN6U-G
+- display_name: VMK-SO-2502-00082 - [G025020405] Kabel UTP Hikvision Grey DS-1LN6U-G (VN24/06367)
+- product_id: [G025020405] Kabel UTP Hikvision Grey DS-1LN6U-G (id: 17382)
+- order_id: VMK-SO-2502-00082 (id: 3974)
+- product_qty: 1.0
+- price_unit: 1615000.0
+- state: done
+- sequence: 12
+- invoice_lines: []
+- invoice_status: no
+- price_subtotal: 1615000.0
+- price_tax: 177650.0
+- price_total: 1792650.0
+- price_reduce: 1615000.0
+- tax_id: [54]
+- price_reduce_taxinc: 1792650.0
+- price_reduce_taxexcl: 1615000.0
+- discount: 0.0
+- product_template_id: [G025020405] Kabel UTP Hikvision Grey DS-1LN6U-G (id: 18806)
+- product_updatable: False
+- product_uom_qty: 1.0
+- product_uom: Unit (id: 1)
+- product_uom_category_id: Unit (id: 1)
+- product_uom_readonly: True
+- product_custom_attribute_value_ids: []
+- product_no_variant_attribute_value_ids: []
+- qty_delivered: 0.0
+- qty_delivered_manual: 0.0
+- qty_to_invoice: 0.0
+- qty_invoiced: 0.0
+- untaxed_amount_invoiced: 0.0
+- untaxed_amount_to_invoice: 0.0
+- salesman_id: Yves Arcadi Cana Santos (id: 2359)
+- currency_id: IDR (id: 12)
+- company_id: PT. Visiniaga Mitra Kreasindo (id: 5)
+- order_partner_id: Pak Satrya (Toko Cahaya Putra) (id: 16007)
+- analytic_tag_ids: []
+- is_expense: False
+- is_downpayment: False
+- customer_lead: 5.0
+- display_type: False
+- is_reward_line: False
+- sale_order_option_ids: []
+- purchase_line_ids: []
+- purchase_line_count: 0
+- product_packaging: False
+- route_id: False
+- move_ids: [32651]
+- product_type: product
+- virtual_available_at_date: 0.0
+- scheduled_date: False
+- forecast_expected_date: False
+- free_qty_today: 0.0
+- qty_available_today: 0.0
+- warehouse_id: PT. Visiniaga Mitra Kreasindo (id: 6)
+- qty_to_deliver: 1.0
+- is_mto: False
+- display_qty_widget: False
+- name_short: Kabel UTP Hikvision Grey DS-1LN6U-G
+- linked_line_id: False
+- option_line_ids: []
+- is_delivery: False
+- recompute_delivery_price: False
+- margin: 199800.0
+- margin_percent: 0.12371517027863776
+- purchase_price: 1415200.0
+- project_id: False
+- task_id: False
+- is_service: False
+- subscription_id: False
+- warning_stock: False
+- qty_delivered_method: stock_move
+- analytic_line_ids: []
+- remaining_hours_available: False
+- remaining_hours: 0.0
+- create_uid: Yves Arcadi Cana Santos (id: 2359)
+- create_date: 2025-02-14 06:49:19
+- write_uid: Lewi Supranata Kristianto (id: 14)
+- write_date: 2025-02-14 10:44:12
+- __last_update: 2025-02-14 10:44:12
+- x_studio_vendor: CV. Sarana Duta Solusindo
+- x_studio_cost_info: 1415200.0
+- x_studio_unit_of_measure_product: Unit
+- x_studio_uom_product: Unit
+- x_studio_product_name: Kabel UTP Hikvision Grey DS-1LN6U-G
+- x_studio_internal_reference: G025020405
+- x_studio_cost_ref: 1415200.0
+- x_studio_bom_type: False
+  (truncated for brevity)
+
+### Record 5:
+- id: 20337
+- name: [G025020407] UPS VERTIV LIEBERT GXT5-3000IRT2UXL ONLINE 3000VA/3000W 230V LCD PF 1.0
+- display_name: VMK-SO-2502-00083 - [G025020407] UPS VERTIV LIEBERT GXT5-3000IRT2UXL ONLINE 3000VA/3000W 230V LCD PF 1.0 (VN25/261872)
+- product_id: [G025020407] UPS VERTIV LIEBERT GXT5-3000IRT2UXL ONLINE 3000VA/3000W 230V LCD PF 1.0 (id: 17383)
+- order_id: VMK-SO-2502-00083 (id: 3975)
+- product_qty: 1.0
+- price_unit: 31100000.0
+- state: sent
+- sequence: 10
+- invoice_lines: []
+- invoice_status: no
+- price_subtotal: 31100000.0
+- price_tax: 3421000.0
+- price_total: 34521000.0
+- price_reduce: 31100000.0
+- tax_id: [54]
+- price_reduce_taxinc: 34521000.0
+- price_reduce_taxexcl: 31100000.0
+- discount: 0.0
+- product_template_id: [G025020407] UPS VERTIV LIEBERT GXT5-3000IRT2UXL ONLINE 3000VA/3000W 230V LCD PF 1.0 (id: 18807)
+- product_updatable: True
+- product_uom_qty: 1.0
+- product_uom: Unit (id: 1)
+- product_uom_category_id: Unit (id: 1)
+- product_uom_readonly: False
+- product_custom_attribute_value_ids: []
+- product_no_variant_attribute_value_ids: []
+- qty_delivered: 0.0
+- qty_delivered_manual: 0.0
+- qty_to_invoice: 0.0
+- qty_invoiced: 0.0
+- untaxed_amount_invoiced: 0.0
+- untaxed_amount_to_invoice: 0.0
+- salesman_id: Dewi Tri Wibawati (id: 20)
+- currency_id: IDR (id: 12)
+- company_id: PT. Visiniaga Mitra Kreasindo (id: 5)
+- order_partner_id: PT. INDOSPRING TBK., Purchasing (id: 271546)
+- analytic_tag_ids: []
+- is_expense: False
+- is_downpayment: False
+- customer_lead: 5.0
+- display_type: False
+- is_reward_line: False
+- sale_order_option_ids: []
+- purchase_line_ids: []
+- purchase_line_count: 0
+- product_packaging: False
+- route_id: False
+- move_ids: []
+- product_type: product
+- virtual_available_at_date: 0.0
+- scheduled_date: 2025-02-28 06:58:52
+- forecast_expected_date: False
+- free_qty_today: 0.0
+- qty_available_today: 0.0
+- warehouse_id: PT. Visiniaga Mitra Kreasindo (id: 6)
+- qty_to_deliver: 1.0
+- is_mto: False
+- display_qty_widget: True
+- name_short: UPS VERTIV LIEBERT GXT5-3000IRT2UXL ONLINE 3000VA/3000W 230V LCD PF 1.0
+- linked_line_id: False
+- option_line_ids: []
+- is_delivery: False
+- recompute_delivery_price: False
+- margin: 6100000.0
+- margin_percent: 0.19614147909967847
+- purchase_price: 25000000.0
+- project_id: False
+- task_id: False
+- is_service: False
+- subscription_id: False
+- warning_stock: False
+- qty_delivered_method: stock_move
+- analytic_line_ids: []
+- remaining_hours_available: False
+- remaining_hours: 0.0
+- create_uid: Yves Arcadi Cana Santos (id: 2359)
+- create_date: 2025-02-14 07:45:39
+- write_uid: Yves Arcadi Cana Santos (id: 2359)
+- write_date: 2025-02-14 07:49:20
+- __last_update: 2025-02-14 07:49:20
+- x_studio_vendor: PT. Synnex Metrodata Indonesia
+- x_studio_cost_info: 25000000.0
+- x_studio_unit_of_measure_product: Unit
+- x_studio_uom_product: Unit
+- x_studio_product_name: UPS VERTIV LIEBERT GXT5-3000IRT2UXL ONLINE 3000VA/3000W 230V LCD PF 1.0
+- x_studio_internal_reference: G025020407
+- x_studio_cost_ref: 25000000.0
+- x_studio_bom_type: False
+  (truncated for brevity)
+
+======================================================================

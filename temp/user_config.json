@@ -1,0 +1,10 @@
+{
+    "show_df_base": true,
+    "odoo": {
+        "url": "https://api-odoo.visiniaga.com",
+        "db": "Final6.Copy250301",
+        "username": "odoo2@visiniaga.com",
+        "password": "PH8EQ?YF}<ac2A:T9n6%^*",
+        "enabled": true
+    }
+}
